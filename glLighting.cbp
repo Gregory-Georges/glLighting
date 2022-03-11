@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="glLighting" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Option virtualFolders="Abstractions/Buffer/;Abstractions/;Abstractions/Init/;Abstractions/Texture/;Abstractions/Camera/;Abstractions/Errors/;Abstractions/Keyboard/;Abstractions/Model/;Abstractions/Mouse/;Abstractions/Renderable/;Abstractions/Shader/;Abstractions/Timer/;Abstractions/Buffer/IndexBuffer/;Abstractions/Uniform/;Abstractions/VertexArray/;Abstractions/Buffer/VertexBuffer/;Abstractions/Window/;Abstractions/ModelData/;Managers/;Managers/BufferManager/;Useful/;Useful/String_Loading/;Useful/Constants/;shaders/;shaders/normal/;shaders/light/" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/glLighting" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/glLighting" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add directory="useful" />
+			<Add directory="managers" />
+			<Add directory="abstractions" />
+		</Compiler>
+		<Linker>
+			<Add library="/usr/lib/x86_64-linux-gnu/libGL.so" />
+			<Add library="/usr/lib/x86_64-linux-gnu/libGLEW.so" />
+			<Add library="/lib/x86_64-linux-gnu/libglfw.so" />
+		</Linker>
+		<Unit filename="../../../../usr/include/GL/glew.h" />
+		<Unit filename="../../../../usr/include/GLFW/glfw3.h" />
+		<Unit filename="../../../../usr/include/glm/glm.hpp" />
+		<Unit filename="../../../../usr/include/glm/gtc/matrix_transform.hpp" />
+		<Unit filename="../../../../usr/include/glm/gtc/type_ptr.hpp" />
+		<Unit filename="abstractions/Buffer/Buffer.cpp">
+			<Option virtualFolder="Abstractions/Buffer/" />
+		</Unit>
+		<Unit filename="abstractions/Buffer/Buffer.hpp">
+			<Option virtualFolder="Abstractions/Buffer/" />
+		</Unit>
+		<Unit filename="abstractions/Buffer/IndexBuffer/indexbuffer.cpp">
+			<Option virtualFolder="Abstractions/Buffer/IndexBuffer/" />
+		</Unit>
+		<Unit filename="abstractions/Buffer/IndexBuffer/indexbuffer.hpp">
+			<Option virtualFolder="Abstractions/Buffer/IndexBuffer/" />
+		</Unit>
+		<Unit filename="abstractions/Buffer/Model/model.cpp">
+			<Option virtualFolder="Abstractions/Model/" />
+		</Unit>
+		<Unit filename="abstractions/Buffer/Model/model.hpp">
+			<Option virtualFolder="Abstractions/Model/" />
+		</Unit>
+		<Unit filename="abstractions/Buffer/VertexBuffer/vertexbuffer.cpp">
+			<Option virtualFolder="Abstractions/Buffer/VertexBuffer/" />
+		</Unit>
+		<Unit filename="abstractions/Buffer/VertexBuffer/vertexbuffer.hpp">
+			<Option virtualFolder="Abstractions/Buffer/VertexBuffer/" />
+		</Unit>
+		<Unit filename="abstractions/Camera/camera.cpp">
+			<Option virtualFolder="Abstractions/Camera/" />
+		</Unit>
+		<Unit filename="abstractions/Camera/camera.hpp">
+			<Option virtualFolder="Abstractions/Camera/" />
+		</Unit>
+		<Unit filename="abstractions/Init/Init.cpp">
+			<Option virtualFolder="Abstractions/Init/" />
+		</Unit>
+		<Unit filename="abstractions/Init/Init.hpp">
+			<Option virtualFolder="Abstractions/Init/" />
+		</Unit>
+		<Unit filename="abstractions/Keyboard/Keyboard.cpp">
+			<Option virtualFolder="Abstractions/Keyboard/" />
+		</Unit>
+		<Unit filename="abstractions/Keyboard/Keyboard.hpp">
+			<Option virtualFolder="Abstractions/Keyboard/" />
+		</Unit>
+		<Unit filename="abstractions/ModelData/ModelData.cpp">
+			<Option virtualFolder="Abstractions/ModelData/" />
+		</Unit>
+		<Unit filename="abstractions/ModelData/ModelData.hpp">
+			<Option virtualFolder="Abstractions/ModelData/" />
+		</Unit>
+		<Unit filename="abstractions/Mouse/Mouse.cpp">
+			<Option virtualFolder="Abstractions/Mouse/" />
+		</Unit>
+		<Unit filename="abstractions/Mouse/Mouse.hpp">
+			<Option virtualFolder="Abstractions/Mouse/" />
+		</Unit>
+		<Unit filename="abstractions/Renderable/Renderable.cpp">
+			<Option virtualFolder="Abstractions/Renderable/" />
+		</Unit>
+		<Unit filename="abstractions/Renderable/Renderable.hpp">
+			<Option virtualFolder="Abstractions/Renderable/" />
+		</Unit>
+		<Unit filename="abstractions/Shader/Shader.cpp">
+			<Option virtualFolder="Abstractions/Shader/" />
+		</Unit>
+		<Unit filename="abstractions/Shader/Shader.hpp">
+			<Option virtualFolder="Abstractions/Shader/" />
+		</Unit>
+		<Unit filename="abstractions/Shader/Shader_utility.cpp">
+			<Option virtualFolder="Abstractions/Shader/" />
+		</Unit>
+		<Unit filename="abstractions/Shader/Shader_utility.hpp">
+			<Option virtualFolder="Abstractions/Shader/" />
+		</Unit>
+		<Unit filename="abstractions/Texture/Texture.cpp">
+			<Option virtualFolder="Abstractions/Texture/" />
+		</Unit>
+		<Unit filename="abstractions/Texture/Texture.hpp">
+			<Option virtualFolder="Abstractions/Texture/" />
+		</Unit>
+		<Unit filename="abstractions/Texture/Texture_utility.cpp">
+			<Option virtualFolder="Abstractions/Texture/" />
+		</Unit>
+		<Unit filename="abstractions/Texture/Texture_utility.hpp">
+			<Option virtualFolder="Abstractions/Texture/" />
+		</Unit>
+		<Unit filename="abstractions/Timer/timer.cpp">
+			<Option virtualFolder="Abstractions/Timer/" />
+		</Unit>
+		<Unit filename="abstractions/Timer/timer.hpp">
+			<Option virtualFolder="Abstractions/Timer/" />
+		</Unit>
+		<Unit filename="abstractions/Uniform/Uniform.cpp">
+			<Option virtualFolder="Abstractions/Uniform/" />
+		</Unit>
+		<Unit filename="abstractions/Uniform/Uniform.hpp">
+			<Option virtualFolder="Abstractions/Uniform/" />
+		</Unit>
+		<Unit filename="abstractions/VertexArray/VertexArray.cpp">
+			<Option virtualFolder="Abstractions/VertexArray/" />
+		</Unit>
+		<Unit filename="abstractions/VertexArray/VertexArray.hpp">
+			<Option virtualFolder="Abstractions/VertexArray/" />
+		</Unit>
+		<Unit filename="abstractions/Window/Window.cpp">
+			<Option virtualFolder="Abstractions/Window/" />
+		</Unit>
+		<Unit filename="abstractions/Window/Window.hpp">
+			<Option virtualFolder="Abstractions/Window/" />
+		</Unit>
+		<Unit filename="abstractions/errors/errors.cpp">
+			<Option virtualFolder="Abstractions/Errors/" />
+		</Unit>
+		<Unit filename="abstractions/errors/errors.hpp">
+			<Option virtualFolder="Abstractions/Errors/" />
+		</Unit>
+		<Unit filename="abstractions/include_abstraction.hpp">
+			<Option virtualFolder="Abstractions/" />
+		</Unit>
+		<Unit filename="main.cpp" />
+		<Unit filename="managers/bufferManager/buffermanager.cpp">
+			<Option virtualFolder="Managers/BufferManager/" />
+		</Unit>
+		<Unit filename="managers/bufferManager/buffermanager.hpp">
+			<Option virtualFolder="Managers/BufferManager/" />
+		</Unit>
+		<Unit filename="managers/include_managers.hpp">
+			<Option virtualFolder="Managers/" />
+		</Unit>
+		<Unit filename="managers/manager.hpp">
+			<Option virtualFolder="Managers/" />
+		</Unit>
+		<Unit filename="shaders/light/fragment.shd">
+			<Option virtualFolder="shaders/light/" />
+		</Unit>
+		<Unit filename="shaders/light/vertex.shd">
+			<Option virtualFolder="shaders/light/" />
+		</Unit>
+		<Unit filename="shaders/normal/fragment.shd">
+			<Option virtualFolder="shaders/normal/" />
+		</Unit>
+		<Unit filename="shaders/normal/vertex.shd">
+			<Option virtualFolder="shaders/normal/" />
+		</Unit>
+		<Unit filename="useful/Constants/Constants.hpp">
+			<Option virtualFolder="Useful/Constants/" />
+		</Unit>
+		<Unit filename="useful/include_useful.hpp">
+			<Option virtualFolder="Useful/" />
+		</Unit>
+		<Unit filename="useful/string_loading/string_loading.cpp">
+			<Option virtualFolder="Useful/String_Loading/" />
+		</Unit>
+		<Unit filename="useful/string_loading/string_loading.hpp">
+			<Option virtualFolder="Useful/String_Loading/" />
+		</Unit>
+		<Extensions />
+	</Project>
+</CodeBlocks_project_file>

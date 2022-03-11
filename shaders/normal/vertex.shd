@@ -1,0 +1,29 @@
+#version 310 es
+precision highp float;
+
+
+
+//Retrieve elements from buffer
+layout (location = 0) in vec3 inPos;        //Position in vertex buffer
+layout (location = 1) in vec2 inTexPos;     //Position of the texture
+
+//Transformation matrices
+uniform mat4 modl;                          //Model uniform
+uniform mat4 view;                          //View uniform
+uniform mat4 proj;                          //Projection uniform
+
+//Colors
+out vec2 vTexPos;                           //Texture position
+out vec4 vColors;                           //Colors
+
+
+
+void main()
+{
+    //Sert the position of the vertex
+    gl_Position = proj * view * modl * vec4(inPos, 1.0);
+
+    //Send data to fragment
+    vTexPos = inTexPos;
+    vColors = vec4(1.0, 0.0, 0.0, 1.0);
+}

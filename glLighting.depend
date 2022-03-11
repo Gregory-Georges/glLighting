@@ -1,0 +1,245 @@
+# depslib dependency file v1.0
+1646666238 source:/home/gregory-george/Desktop/glCube/abstractions/Buffer/Buffer.cpp
+	"Buffer.hpp"
+
+1646665742 /home/gregory-george/Desktop/glCube/abstractions/Buffer/Buffer.hpp
+	<string>
+	<GL/glew.h>
+	<GLFW/glfw3.h>
+
+1646666252 source:/home/gregory-george/Desktop/glCube/abstractions/Buffer/IndexBuffer/indexbuffer.cpp
+	"indexbuffer.hpp"
+
+1646665742 /home/gregory-george/Desktop/glCube/abstractions/Buffer/IndexBuffer/indexbuffer.hpp
+	"../Buffer.hpp"
+
+1646666260 source:/home/gregory-george/Desktop/glCube/abstractions/Buffer/VertexBuffer/vertexbuffer.cpp
+	"vertexbuffer.hpp"
+
+1646666238 /home/gregory-george/Desktop/glCube/abstractions/Buffer/VertexBuffer/vertexbuffer.hpp
+	"../Buffer.hpp"
+
+1646862830 source:/home/gregory-george/Desktop/glCube/abstractions/Buffer/Model/model.cpp
+	"model.hpp"
+
+1646862778 /home/gregory-george/Desktop/glCube/abstractions/Buffer/Model/model.hpp
+	<string>
+	<fstream>
+	<stdexcept>
+	<iostream>
+	"Buffer/IndexBuffer/indexbuffer.hpp"
+	"Buffer/VertexBuffer/vertexbuffer.hpp"
+	"string_loading/string_loading.hpp"
+
+1646845200 /home/gregory-george/Desktop/glCube/useful/string_loading/string_loading.hpp
+	<iostream>
+	<string>
+	<fstream>
+	<vector>
+
+1646917348 source:/home/gregory-george/Desktop/glCube/abstractions/Camera/camera.cpp
+	"camera.hpp"
+
+1646917348 /home/gregory-george/Desktop/glCube/abstractions/Camera/camera.hpp
+	<iostream>
+	<GL/glew.h>
+	<GLFW/glfw3.h>
+	<glm/glm.hpp>
+	<glm/gtc/type_ptr.hpp>
+	<glm/gtc/matrix_transform.hpp>
+
+1646902201 source:/home/gregory-george/Desktop/glCube/abstractions/errors/errors.cpp
+	"errors.hpp"
+
+1646857876 /home/gregory-george/Desktop/glCube/abstractions/errors/errors.hpp
+	<iostream>
+	<stdexcept>
+	<GL/glew.h>
+	<GLFW/glfw3.h>
+
+1646895131 source:/home/gregory-george/Desktop/glCube/abstractions/Init/Init.cpp
+	"Init.hpp"
+
+1646895131 /home/gregory-george/Desktop/glCube/abstractions/Init/Init.hpp
+	<iostream>
+	<GL/glew.h>
+	<GLFW/glfw3.h>
+	"../Window/Window.hpp"
+
+1645992624 /home/gregory-george/Desktop/glCube/abstractions/Window/Window.hpp
+	<string>
+	<stdexcept>
+	<GL/glew.h>
+	<GLFW/glfw3.h>
+
+1645992632 source:/home/gregory-george/Desktop/glCube/abstractions/Keyboard/Keyboard.cpp
+	"Keyboard.hpp"
+
+1645992609 /home/gregory-george/Desktop/glCube/abstractions/Keyboard/Keyboard.hpp
+	<GL/glew.h>
+	<GLFW/glfw3.h>
+	"Window/Window.hpp"
+
+1646881848 source:/home/gregory-george/Desktop/glCube/abstractions/ModelData/ModelData.cpp
+	"ModelData.hpp"
+
+1646670290 /home/gregory-george/Desktop/glCube/abstractions/ModelData/ModelData.hpp
+	<string>
+	<stdexcept>
+	<GL/glew.h>
+	<GLFW/glfw3.h>
+	<glm/glm.hpp>
+	<glm/gtc/matrix_transform.hpp>
+	<glm/gtc/type_ptr.hpp>
+	"Constants/Constants.hpp"
+
+1646845200 /home/gregory-george/Desktop/glCube/useful/Constants/Constants.hpp
+	<glm/glm.hpp>
+
+1645992633 source:/home/gregory-george/Desktop/glCube/abstractions/Mouse/Mouse.cpp
+	"Mouse.hpp"
+
+1645992631 /home/gregory-george/Desktop/glCube/abstractions/Mouse/Mouse.hpp
+	<GL/glew.h>
+	<GLFW/glfw3.h>
+	"Window/Window.hpp"
+
+1645992143 source:/home/gregory-george/Desktop/glCube/abstractions/Renderable/Renderable.cpp
+	"Renderable.hpp"
+
+1646861725 /home/gregory-george/Desktop/glCube/abstractions/Renderable/Renderable.hpp
+	<string>
+	<stdexcept>
+	<GL/glew.h>
+	<GLFW/glfw3.h>
+	<glm/glm.hpp>
+	<glm/gtc/matrix_transform.hpp>
+	<glm/gtc/type_ptr.hpp>
+	<ModelData/ModelData.hpp>
+
+1646668647 source:/home/gregory-george/Desktop/glCube/abstractions/Shader/Shader.cpp
+	"Shader.hpp"
+
+1646668644 /home/gregory-george/Desktop/glCube/abstractions/Shader/Shader.hpp
+	<string>
+	<GL/glew.h>
+	<GLFW/glfw3.h>
+	"Shader_utility.hpp"
+
+1645562256 /home/gregory-george/Desktop/glCube/abstractions/Shader/Shader_utility.hpp
+	<iostream>
+	<string>
+	<stdexcept>
+	<fstream>
+	<GL/glew.h>
+	<GLFW/glfw3.h>
+
+1645580654 source:/home/gregory-george/Desktop/glCube/abstractions/Shader/Shader_utility.cpp
+	"Shader_utility.hpp"
+
+1646845182 source:/home/gregory-george/Desktop/glCube/abstractions/Texture/Texture.cpp
+	"Texture.hpp"
+
+1646845182 /home/gregory-george/Desktop/glCube/abstractions/Texture/Texture.hpp
+	<string>
+	<GL/glew.h>
+	<GLFW/glfw3.h>
+	<stb/stb_image.h>
+	"Texture_utility.hpp"
+
+1645545670 /home/gregory-george/Desktop/glCube/abstractions/Texture/Texture_utility.hpp
+	<string>
+	<stdexcept>
+	<stb/stb_image.h>
+
+1646845182 source:/home/gregory-george/Desktop/glCube/abstractions/Texture/Texture_utility.cpp
+	"Texture_utility.hpp"
+
+1646860886 source:/home/gregory-george/Desktop/glCube/abstractions/Timer/timer.cpp
+	"timer.hpp"
+
+1646860886 /home/gregory-george/Desktop/glCube/abstractions/Timer/timer.hpp
+	<GL/glew.h>
+	<GLFW/glfw3.h>
+
+1646915431 source:/home/gregory-george/Desktop/glCube/abstractions/Uniform/Uniform.cpp
+	"Uniform.hpp"
+
+1646908093 /home/gregory-george/Desktop/glCube/abstractions/Uniform/Uniform.hpp
+	<string>
+	<stdexcept>
+	<GL/glew.h>
+	<GLFW/glfw3.h>
+	<glm/glm.hpp>
+	<glm/gtc/type_ptr.hpp>
+	<glm/gtc/matrix_transform.hpp>
+	"Shader/Shader.hpp"
+
+1645992630 source:/home/gregory-george/Desktop/glCube/abstractions/VertexArray/VertexArray.cpp
+	"VertexArray.hpp"
+
+1645992619 /home/gregory-george/Desktop/glCube/abstractions/VertexArray/VertexArray.hpp
+	<GL/glew.h>
+	<GLFW/glfw3.h>
+
+1645992625 source:/home/gregory-george/Desktop/glCube/abstractions/Window/Window.cpp
+	"Window.hpp"
+
+1646917775 source:/home/gregory-george/Desktop/glCube/main.cpp
+	<iostream>
+	<GL/glew.h>
+	<GLFW/glfw3.h>
+	"include_abstraction.hpp"
+	"include_managers.hpp"
+	"include_useful.hpp"
+
+1646845200 source:/home/gregory-george/Desktop/glCube/managers/bufferManager/buffermanager.cpp
+	"buffermanager.hpp"
+
+1646845200 /home/gregory-george/Desktop/glCube/managers/bufferManager/buffermanager.hpp
+	<string>
+	<vector>
+	<iterator>
+	"Buffer/Model/model.hpp"
+	"manager.hpp"
+	"string_loading/string_loading.hpp"
+
+1646845200 /home/gregory-george/Desktop/glCube/managers/manager.hpp
+	<vector>
+
+1646845200 source:/home/gregory-george/Desktop/glCube/useful/string_loading/string_loading.cpp
+	"string_loading.hpp"
+
+1646875521 /home/gregory-george/Desktop/glCube/abstractions/include_abstraction.hpp
+	<GL/glew.h>
+	<GLFW/glfw3.h>
+	<glm/glm.hpp>
+	<glm/gtc/type_ptr.hpp>
+	<glm/gtc/matrix_transform.hpp>
+	"Init/Init.hpp"
+	"Window/Window.hpp"
+	"Buffer/Buffer.hpp"
+	"Buffer/IndexBuffer/indexbuffer.hpp"
+	"Buffer/VertexBuffer/vertexbuffer.hpp"
+	"Buffer/Model/model.hpp"
+	"Shader/Shader.hpp"
+	"Texture/Texture.hpp"
+	"VertexArray/VertexArray.hpp"
+	"Uniform/Uniform.hpp"
+	"errors/errors.hpp"
+	"Timer/timer.hpp"
+	"Constants/Constants.hpp"
+	"Keyboard/Keyboard.hpp"
+	"Mouse/Mouse.hpp"
+	"ModelData/ModelData.hpp"
+	"Camera/camera.hpp"
+	"Renderable/Renderable.hpp"
+
+1646894576 /home/gregory-george/Desktop/glCube/managers/include_managers.hpp
+	"manager.hpp"
+	"bufferManager/buffermanager.hpp"
+
+1646845200 /home/gregory-george/Desktop/glCube/useful/include_useful.hpp
+	"string_loading/string_loading.hpp"
+	"Constants/Constants.hpp"
+

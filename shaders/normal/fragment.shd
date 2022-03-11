@@ -1,0 +1,21 @@
+#version 310 es
+precision highp float;
+
+
+
+//Variables from vertex
+in vec2 vTexPos;
+in vec4 vColors;
+
+//Texture
+uniform sampler2D tex;
+
+//Output color
+out vec4 outColors;
+
+
+
+void main()
+{
+    outColors = texture(tex, vTexPos);
+}
