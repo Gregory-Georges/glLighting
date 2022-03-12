@@ -56,7 +56,8 @@ int Shader::getValid()
     if(result != GL_TRUE)
     {
         //Get error string
-        int logLength = 512;
+        int logLength;
+        glGetProgramiv(id, GL_INFO_LOG_LENGTH, &logLength);
         char err_str[logLength];
         glGetProgramInfoLog(id, logLength, &logLength, err_str);
 

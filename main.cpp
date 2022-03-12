@@ -38,6 +38,9 @@ int main()
 
     Shader shd(getSource("shaders/normal/vertex.shd"), getSource("shaders/normal/fragment.shd"));
     Shader lightshd(getSource("shaders/light/lightvertex.shd"), getSource("shaders/light/lightfragment.shd"));
+    printShaderUniformList(shd.getID());
+    printShaderUniformList(lightshd.getID());
+
 
 
 
@@ -290,7 +293,6 @@ int main()
         const double turnSpeed = 1;
         cam.simpleControl(KB, moveSpeed, turnSpeed);
         view = cam.genViewMatrix();
-        viewUni.data(glm::value_ptr(view));
 
 
 
@@ -304,25 +306,33 @@ int main()
         //Clear screen
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-        //Draw box
+        //Bind normal
+        shd.use();
+        VA.bind();
+        VB.bind();
+        //Update uniforms
         modl = object.CalculateMatrix();
         modlUni.data(glm::value_ptr(modl));
-        VA.bind();
-        //shd.use();
-        VB.bind();
+        viewUni.data(glm::value_ptr(view));
+        projUni.data(glm::value_ptr(proj));
+        objectColorUni.data(glm::value_ptr(objectColor));
+        lightColorUni.data(glm::value_ptr(lightColor));
+        //Draw
         glDrawArrays(GL_TRIANGLES, 0, indices);
-        std::cout << "Normal binded : \n";
-        printBindedElements();
 
-        //Draw light
+        //Bind light
+        lightshd.use();
+        lightVA.bind();
+        VB.bind();
+        //Update uniforms
         modl = light.CalculateMatrix();
         modlUni.data(glm::value_ptr(modl));
-        lightVA.bind();
-        lightshd.use();
-        VB.bind();
+        viewUni.data(glm::value_ptr(view));
+        projUni.data(glm::value_ptr(proj));
+        objectColorUni.data(glm::value_ptr(objectColor));
+        lightColorUni.data(glm::value_ptr(lightColor));
+        //Draw
         glDrawArrays(GL_TRIANGLES, 0, indices);
-        std::cout << "Light binded : \n";
-        printBindedElements();
 
         //Display changes
         win.swapBuffers();

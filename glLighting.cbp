@@ -5,7 +5,7 @@
 		<Option title="glLighting" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
-		<Option virtualFolders="Abstractions/Buffer/;Abstractions/;Abstractions/Init/;Abstractions/Texture/;Abstractions/Camera/;Abstractions/Errors/;Abstractions/Keyboard/;Abstractions/Model/;Abstractions/Mouse/;Abstractions/Renderable/;Abstractions/Shader/;Abstractions/Timer/;Abstractions/Buffer/IndexBuffer/;Abstractions/Uniform/;Abstractions/VertexArray/;Abstractions/Buffer/VertexBuffer/;Abstractions/Window/;Abstractions/ModelData/;Managers/;Managers/BufferManager/;Useful/;Useful/String_Loading/;Useful/Constants/;shaders/;shaders/normal/;shaders/light/;Useful/glState/" />
+		<Option virtualFolders="shaders/;Abstractions/Buffer/;Abstractions/;Abstractions/Init/;Abstractions/Texture/;Abstractions/Camera/;Abstractions/Errors/;Abstractions/Keyboard/;Abstractions/Model/;Abstractions/Mouse/;Abstractions/Renderable/;Abstractions/Shader/;Abstractions/Timer/;Abstractions/Buffer/IndexBuffer/;Abstractions/Uniform/;Abstractions/VertexArray/;Abstractions/Buffer/VertexBuffer/;Abstractions/Window/;Abstractions/ModelData/;Useful/Constants/;Managers/;Useful/String_Loading/;Useful/glState/;Managers/BufferManager/;Useful/;shaders/normal/;shaders/light/" />
 		<Build>
 			<Target title="Debug">
 				<Option output="bin/Debug/glLighting" prefix_auto="1" extension_auto="1" />

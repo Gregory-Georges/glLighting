@@ -7,7 +7,7 @@
 //////////////////////////////////
 
 //Constructs an uniform based in a shader
-Uniform::Uniform(uniformType ut, Shader shd, std::string ufName)
+Uniform::Uniform(uniformType ut, Shader &shd, std::string ufName)
 {
     //Assign variables
     this->ut = ut;

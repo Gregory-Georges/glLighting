@@ -59,7 +59,7 @@ public:
     // Constructor / destructor
     //////////////////////////////////
 
-    Uniform(uniformType ut, Shader shd, std::string ufName);    /**< Constructs an uniform of said type */
+    Uniform(uniformType ut, Shader &shd, std::string ufName);   /**< Constructs an uniform of said type */
 
 
 

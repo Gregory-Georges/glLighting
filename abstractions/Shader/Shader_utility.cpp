@@ -26,7 +26,8 @@ unsigned int compileShader(std::string shaderSource, unsigned int shaderType)
     if(result != GL_TRUE)
     {
         //Get error string
-        int logLength = 512;
+        int logLength;
+        glGetShaderiv(shd, GL_INFO_LOG_LENGTH, &logLength);
         char err_str[logLength];
         glGetShaderInfoLog(shd, logLength, &logLength, err_str);
 
