@@ -15,6 +15,9 @@
 //Constants
 #include "Constants/Constants.hpp"
 
+//glState
+#include "glState/glState.hpp"
+
 
 
 #endif // INCLUDE_USEFUL_H_INCLUDED

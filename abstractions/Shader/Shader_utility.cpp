@@ -19,7 +19,7 @@ unsigned int compileShader(std::string shaderSource, unsigned int shaderType)
     //Compile shader
     glCompileShader(shd);
 
-    //Check whether shader is compiled or not
+    //Check whether shader is compiled correctly or not
     int result = GL_FALSE;
     glGetShaderiv(shd, GL_COMPILE_STATUS, &result);
 
@@ -60,4 +60,26 @@ std::string getSource(std::string path)
 
     //Return
     return out;
+}
+
+
+
+//Gets a string and prints the list of uniforms in the program
+void printShaderUniformList(unsigned int ShaderID)
+{
+    int i;
+    int count;
+    int size; // size of the variable
+    GLenum type; // type of the variable (float, vec3 or mat4, etc)
+    const GLsizei bufSize = 16; // maximum name length
+    char name[bufSize]; // variable name in GLSL
+    int length; // name length
+
+    glGetProgramiv(ShaderID, GL_ACTIVE_UNIFORMS, &count);
+    std::cout << "Active Uniforms: " << count << "\n";
+    for (i = 0; i < count; i++)
+    {
+        glGetActiveUniform(ShaderID, (GLuint)i, bufSize, &length, &size, &type, name);
+        std::cout << i << ". Uniform type : " << type << " Name : " << name << "\n";
+    }
 }

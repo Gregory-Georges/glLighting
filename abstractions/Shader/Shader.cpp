@@ -48,8 +48,23 @@ unsigned int Shader::getID()
 
 int Shader::getValid()
 {
-    int result = GL_FALSE;
+    //Get if shader program is valid
+    int result;
     glGetProgramiv(id, GL_VALIDATE_STATUS, &result);
+
+    //If shader is invalid, get error log
+    if(result != GL_TRUE)
+    {
+        //Get error string
+        int logLength = 512;
+        char err_str[logLength];
+        glGetProgramInfoLog(id, logLength, &logLength, err_str);
+
+        //Throw error
+        throw std::runtime_error(err_str);
+    }
+
+    //Return if valid
     return result;
 }
 

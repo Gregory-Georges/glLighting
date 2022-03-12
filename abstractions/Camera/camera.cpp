@@ -150,3 +150,27 @@ glm::mat4 Camera::genViewMatrix()
     regenUpRight();
     return glm::lookAt(camPos, camPos + camDirection, camUp);
 }
+
+void Camera::simpleControl(Keyboard KB, float moveSpeed, float turnSpeed)
+{
+    if(KB.isKeyPressed(GLFW_KEY_W))             //WASD movement
+        moveForward(moveSpeed);
+    if(KB.isKeyPressed(GLFW_KEY_S))
+        moveForward(-moveSpeed);
+    if(KB.isKeyPressed(GLFW_KEY_A))
+        moveRight(-moveSpeed);
+    if(KB.isKeyPressed(GLFW_KEY_D))
+        moveRight(moveSpeed);
+    if(KB.isKeyPressed(GLFW_KEY_I))             //IJKL turn movement
+        addPitch(turnSpeed);
+    if(KB.isKeyPressed(GLFW_KEY_K))
+        addPitch(-turnSpeed);
+    if(KB.isKeyPressed(GLFW_KEY_J))
+        addYaw(-turnSpeed);
+    if(KB.isKeyPressed(GLFW_KEY_L))
+        addYaw(turnSpeed);
+    if(KB.isKeyPressed(GLFW_KEY_SPACE))         //Up down movement
+        moveWorldUp(moveSpeed);
+    if(KB.isKeyPressed(GLFW_KEY_LEFT_SHIFT))
+        moveWorldUp(-moveSpeed);
+}

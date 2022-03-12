@@ -13,6 +13,9 @@
 #include <glm/gtc/type_ptr.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 
+//Abstraction headers
+#include "Keyboard/Keyboard.hpp"
+
 
 
 /**
@@ -110,6 +113,7 @@ public:
     void calculateDirection();
     void regenUpRight();
     glm::mat4 genViewMatrix();
+    void simpleControl(Keyboard KB, float moveSpeed, float turnSpeed);
 };
 
 #endif // CAMERA_HPP

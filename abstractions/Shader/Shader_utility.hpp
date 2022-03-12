@@ -19,6 +19,7 @@
 
 unsigned int compileShader(std::string shaderSource, unsigned int shaderType);      /**< Returns a compiled glShader object */
 std::string getSource(std::string path);                                            /**< Returns the source of the file specifid at path */
+void printShaderUniformList(unsigned int ShaderID);                                 /**< Gets a string and prints the list of uniforms in the program */
 
 
 

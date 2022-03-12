@@ -11,16 +11,10 @@ uniform mat4 modl;                          //Model uniform
 uniform mat4 view;                          //View uniform
 uniform mat4 proj;                          //Projection uniform
 
-//Colors
-out vec4 vColors;                           //Colors
-
 
 
 void main()
 {
     //Sert the position of the vertex
     gl_Position = proj * view * modl * vec4(inPos, 1.0);
-
-    //Send data to fragment
-    vColors = vec4(1.0, 1.0, 1.0, 1.0);
 }

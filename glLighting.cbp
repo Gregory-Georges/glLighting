@@ -5,7 +5,7 @@
 		<Option title="glLighting" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
-		<Option virtualFolders="Abstractions/Buffer/;Abstractions/;Abstractions/Init/;Abstractions/Texture/;Abstractions/Camera/;Abstractions/Errors/;Abstractions/Keyboard/;Abstractions/Model/;Abstractions/Mouse/;Abstractions/Renderable/;Abstractions/Shader/;Abstractions/Timer/;Abstractions/Buffer/IndexBuffer/;Abstractions/Uniform/;Abstractions/VertexArray/;Abstractions/Buffer/VertexBuffer/;Abstractions/Window/;Abstractions/ModelData/;Managers/;Managers/BufferManager/;Useful/;Useful/String_Loading/;Useful/Constants/;shaders/;shaders/normal/;shaders/light/" />
+		<Option virtualFolders="Abstractions/Buffer/;Abstractions/;Abstractions/Init/;Abstractions/Texture/;Abstractions/Camera/;Abstractions/Errors/;Abstractions/Keyboard/;Abstractions/Model/;Abstractions/Mouse/;Abstractions/Renderable/;Abstractions/Shader/;Abstractions/Timer/;Abstractions/Buffer/IndexBuffer/;Abstractions/Uniform/;Abstractions/VertexArray/;Abstractions/Buffer/VertexBuffer/;Abstractions/Window/;Abstractions/ModelData/;Managers/;Managers/BufferManager/;Useful/;Useful/String_Loading/;Useful/Constants/;shaders/;shaders/normal/;shaders/light/;Useful/glState/" />
 		<Build>
 			<Target title="Debug">
 				<Option output="bin/Debug/glLighting" prefix_auto="1" extension_auto="1" />
@@ -14,6 +14,8 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
+					<Add directory="include" />
+					<Add directory="home/gregory-george/Desktop/glLighting/useful/glState" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -23,6 +25,8 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-O2" />
+					<Add directory="include" />
+					<Add directory="home/gregory-george/Desktop/glLighting/useful/glState" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -175,10 +179,10 @@
 		<Unit filename="managers/manager.hpp">
 			<Option virtualFolder="Managers/" />
 		</Unit>
-		<Unit filename="shaders/light/fragment.shd">
+		<Unit filename="shaders/light/lightfragment.shd">
 			<Option virtualFolder="shaders/light/" />
 		</Unit>
-		<Unit filename="shaders/light/vertex.shd">
+		<Unit filename="shaders/light/lightvertex.shd">
 			<Option virtualFolder="shaders/light/" />
 		</Unit>
 		<Unit filename="shaders/normal/fragment.shd">
@@ -189,6 +193,12 @@
 		</Unit>
 		<Unit filename="useful/Constants/Constants.hpp">
 			<Option virtualFolder="Useful/Constants/" />
+		</Unit>
+		<Unit filename="useful/glState/glState.cpp">
+			<Option virtualFolder="Useful/glState/" />
+		</Unit>
+		<Unit filename="useful/glState/glState.hpp">
+			<Option virtualFolder="Useful/glState/" />
 		</Unit>
 		<Unit filename="useful/include_useful.hpp">
 			<Option virtualFolder="Useful/" />

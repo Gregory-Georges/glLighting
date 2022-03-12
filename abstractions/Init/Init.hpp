@@ -27,6 +27,14 @@ public:
     static Window initContext(int x, int y, std::string title);     /**< Initializes a valid context */
     static void initGLEW();                                         /**< Initializes GLEW */
     static void initGLFW();                                         /**< Initializes GLFW */
+
+
+
+    //////////////////////////////////
+    // End
+    //////////////////////////////////
+
+    static void endContext(Window win);                             /**< Ends an active context */
 };
 
 #endif // INIT_HPP

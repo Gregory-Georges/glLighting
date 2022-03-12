@@ -44,3 +44,22 @@ void Init::initGLFW()
         throw std::runtime_error(err_string);
     }
 }
+
+
+
+
+
+
+
+
+
+//////////////////////////////////
+// End
+//////////////////////////////////
+
+//Ends a context
+void Init::endContext(Window win)
+{
+    glfwDestroyWindow(win.getWindow());
+    glfwTerminate();
+}

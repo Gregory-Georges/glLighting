@@ -3,8 +3,8 @@ precision highp float;
 
 
 
-//Variables from vertex
-in vec4 vColors;
+//Color uniforms
+uniform vec4 lightColor;
 
 //Output color
 out vec4 outColors;
@@ -13,5 +13,5 @@ out vec4 outColors;
 
 void main()
 {
-    outColors = vColors;
+    outColors = vec4(1.0);
 }

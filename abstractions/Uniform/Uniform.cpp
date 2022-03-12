@@ -9,10 +9,15 @@
 //Constructs an uniform based in a shader
 Uniform::Uniform(uniformType ut, Shader shd, std::string ufName)
 {
+    //Assign variables
     this->ut = ut;
     attachedShader = shd.getID();
     this->ufName = ufName;
 
+    //Bind program
+    shd.use();
+
+    //Get uniform
     id = glGetUniformLocation(attachedShader, ufName.c_str());
     validate();
 }
@@ -75,11 +80,15 @@ void Uniform::validate()
 //Assigns data to the uniform
 void Uniform::data(float* uniformValue)
 {
-    //Bind attached
-    glUseProgram(attachedShader);
-
     switch(ut)
     {
+    //Float value vectors
+    //vec3 Matrix
+    case UNIFORM_VEC_4_FV :
+        glUniform4fv(id, 1, uniformValue);
+        break;
+
+    //Float value matrices
     //Mat3 Matrix
     case UNIFORM_MAT_3_FV :
         glUniformMatrix3fv(id, 1, GL_FALSE, uniformValue);
@@ -92,6 +101,6 @@ void Uniform::data(float* uniformValue)
 
     //Invalid uniform
     default :
-        throw std::runtime_error("Uniform type of " + ufName + " is invalid");
+        throw std::runtime_error("Uniform type of " + ufName + " is invalid for function data(float)");
     }
 }

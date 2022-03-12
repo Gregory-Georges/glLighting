@@ -7,6 +7,10 @@ precision highp float;
 in vec2 vTexPos;
 in vec4 vColors;
 
+//Color uniforms
+uniform vec4 objectColor;
+uniform vec4 lightColor;
+
 //Texture
 uniform sampler2D tex;
 
@@ -17,5 +21,5 @@ out vec4 outColors;
 
 void main()
 {
-    outColors = texture(tex, vTexPos);
+    outColors = texture(tex, vTexPos) * objectColor * lightColor * vColors;
 }
