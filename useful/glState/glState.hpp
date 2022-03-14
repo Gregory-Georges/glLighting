@@ -8,6 +8,9 @@
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 
+//Useful
+#include "errors/errors.hpp"
+
 
 
 
@@ -33,6 +36,21 @@
  * -Texture is binded
  */
 void printBindedElements();
+
+
+
+
+
+
+//////////////////////////////////
+// Check gl version
+//////////////////////////////////
+
+/**
+ * Checks wether the openGL version is supported or not. Throws
+ * an error if not
+ */
+void checkGlVersion(int req1, int req2, std::string functionnality);
 
 
 

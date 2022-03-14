@@ -2,11 +2,15 @@
 #define BUFFER_HPP
 
 //Standart headers
+#include <iostream>
 #include <string>
 
 //Graphic headers
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
+
+//Utility
+#include "include_useful.hpp"
 
 
 
@@ -36,6 +40,7 @@ public:
     virtual ~Buffer();      /**< Destroys a buffer object */
 
     Buffer(unsigned int bufferType, void* Data, unsigned int size, unsigned int usage);    /**< Constructs a filled buffer object. Binds the buffer */
+    Buffer(const Buffer &buf);      /**< Copy constructor */
 
 
 

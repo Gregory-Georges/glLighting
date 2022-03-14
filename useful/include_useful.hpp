@@ -18,6 +18,9 @@
 //glState
 #include "glState/glState.hpp"
 
+//Errors
+#include "errors/errors.hpp"
+
 
 
 #endif // INCLUDE_USEFUL_H_INCLUDED

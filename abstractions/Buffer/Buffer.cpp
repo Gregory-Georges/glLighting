@@ -23,12 +23,32 @@ Buffer::~Buffer()
 
 
 
-//Constructs and filled buffer object
+//Constructs a filled buffer object
 Buffer::Buffer(unsigned int bufferType, void* data, unsigned int size, unsigned int usage)
 {
     glGenBuffers(1, &id);
     this->bufferType = bufferType;
     setData(data, size, usage);
+}
+
+
+
+//Copy constructor
+Buffer::Buffer(const Buffer &buf)
+{
+    //Check glVersion before executing, must be at least 3.1
+    checkGlVersion(3, 1, "Buffer copy constructor");
+    //Gen new buffer
+    glGenBuffers(1, &id);
+    bufferType = buf.bufferType;
+    //Bind buffers to copy locations
+    glBindBuffer(buf.bufferType, buf.id);
+    glBindBuffer(GL_COPY_WRITE_BUFFER, id);
+    //Get copy size
+    int bufSize;
+    glGetBufferParameteriv(buf.bufferType, GL_BUFFER_SIZE, &bufSize);
+    //Transfer buffer data
+    glCopyBufferSubData(buf.bufferType, GL_COPY_WRITE_BUFFER, 0, 0, bufSize);
 }
 
 

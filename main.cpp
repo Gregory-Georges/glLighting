@@ -10,11 +10,24 @@
 #include "include_managers.hpp"
 #include "include_useful.hpp"
 
+//useful macro
+#define getError()\
+while(int i = glGetError())\
+{\
+    std::cout << i << "\n";\
+}
 
 
 
 
 
+
+/**
+ * To do list :
+ * - Create copy constructors for openGL classes
+ * Done : Buffers
+ * Done : Shaders
+ */
 int main()
 {
     ///////////////////////////////

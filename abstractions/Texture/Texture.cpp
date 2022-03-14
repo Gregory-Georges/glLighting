@@ -49,6 +49,9 @@ Texture::Texture(const Texture &tex)
 
     //Free image
     freeImgRgb(Image);
+
+    //Warning
+    std::cout << "Warning : texture copy constructor called\n";
 }
 
 

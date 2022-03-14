@@ -29,7 +29,6 @@
 #include "Texture/Texture.hpp"          // Texture
 #include "VertexArray/VertexArray.hpp"  // VertexArray
 #include "Uniform/Uniform.hpp"          // Uniform
-#include "errors/errors.hpp"            // glErrors
 #include "Timer/timer.hpp"              // Timer
 #include "Constants/Constants.hpp"      // Constant values
 
@@ -40,7 +39,7 @@
 //Models and rendering
 #include "ModelData/ModelData.hpp"      //Model information
 #include "Camera/camera.hpp"            //Camera abstraction
-#include "Renderable/Renderable.hpp"
+#include "Renderable/Renderable.hpp"    //Renderble data
 
 
 

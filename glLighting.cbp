@@ -5,7 +5,7 @@
 		<Option title="glLighting" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
-		<Option virtualFolders="shaders/;Abstractions/Buffer/;Abstractions/;Abstractions/Init/;Abstractions/Texture/;Abstractions/Camera/;Abstractions/Errors/;Abstractions/Keyboard/;Abstractions/Model/;Abstractions/Mouse/;Abstractions/Renderable/;Abstractions/Shader/;Abstractions/Timer/;Abstractions/Buffer/IndexBuffer/;Abstractions/Uniform/;Abstractions/VertexArray/;Abstractions/Buffer/VertexBuffer/;Abstractions/Window/;Abstractions/ModelData/;Useful/Constants/;Managers/;Useful/String_Loading/;Useful/glState/;Managers/BufferManager/;Useful/;shaders/normal/;shaders/light/" />
+		<Option virtualFolders="shaders/;Abstractions/Buffer/;Abstractions/;Abstractions/Init/;Abstractions/Texture/;Abstractions/Camera/;Abstractions/Keyboard/;Abstractions/Model/;Abstractions/Mouse/;Abstractions/Renderable/;Abstractions/Shader/;Abstractions/Timer/;Abstractions/Buffer/IndexBuffer/;Abstractions/Uniform/;Abstractions/VertexArray/;Abstractions/Buffer/VertexBuffer/;Abstractions/Window/;Abstractions/ModelData/;Useful/Constants/;Managers/;Useful/String_Loading/;Useful/glState/;Managers/BufferManager/;Useful/;shaders/normal/;shaders/light/;Useful/Errors/" />
 		<Build>
 			<Target title="Debug">
 				<Option output="bin/Debug/glLighting" prefix_auto="1" extension_auto="1" />
@@ -16,6 +16,7 @@
 					<Add option="-g" />
 					<Add directory="include" />
 					<Add directory="home/gregory-george/Desktop/glLighting/useful/glState" />
+					<Add directory="home/gregory-george/Desktop/glLighting/useful/errors" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -27,6 +28,7 @@
 					<Add option="-O2" />
 					<Add directory="include" />
 					<Add directory="home/gregory-george/Desktop/glLighting/useful/glState" />
+					<Add directory="home/gregory-george/Desktop/glLighting/useful/errors" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -157,12 +159,6 @@
 		<Unit filename="abstractions/Window/Window.hpp">
 			<Option virtualFolder="Abstractions/Window/" />
 		</Unit>
-		<Unit filename="abstractions/errors/errors.cpp">
-			<Option virtualFolder="Abstractions/Errors/" />
-		</Unit>
-		<Unit filename="abstractions/errors/errors.hpp">
-			<Option virtualFolder="Abstractions/Errors/" />
-		</Unit>
 		<Unit filename="abstractions/include_abstraction.hpp">
 			<Option virtualFolder="Abstractions/" />
 		</Unit>
@@ -194,6 +190,8 @@
 		<Unit filename="useful/Constants/Constants.hpp">
 			<Option virtualFolder="Useful/Constants/" />
 		</Unit>
+		<Unit filename="useful/errors/errors.cpp" />
+		<Unit filename="useful/errors/errors.hpp" />
 		<Unit filename="useful/glState/glState.cpp">
 			<Option virtualFolder="Useful/glState/" />
 		</Unit>

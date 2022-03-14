@@ -2,6 +2,7 @@
 #define TEXTURE_HPP
 
 //Standart headers
+#include <iostream>
 #include <string>
 
 //Graphic headers

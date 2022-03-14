@@ -6,6 +6,7 @@
 // Constructor / destructor
 //////////////////////////////////
 
+//Constructs an empty shader object
 Shader::Shader()
 {
     id = glCreateProgram();
@@ -13,6 +14,7 @@ Shader::Shader()
 
 
 
+//Destroys a shader object
 Shader::~Shader()
 {
     glDeleteProgram(id);
@@ -20,11 +22,22 @@ Shader::~Shader()
 
 
 
+//Constructs an usable shader object
 Shader::Shader(std::string vertexShd, std::string fragmentShd)
 {
     id = glCreateProgram();
     compile(vertexShd, fragmentShd);
     use();
+}
+
+
+
+//Copy constructor
+Shader::Shader(const Shader &shd)
+{
+    std::string errStr = "";
+    errStr += "Error : Shader program copy constructor called. ";
+    throwError(errStr);
 }
 
 

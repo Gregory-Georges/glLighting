@@ -11,6 +11,9 @@
 //Abstractions
 #include "Shader_utility.hpp"
 
+//Useful
+#include "errors/errors.hpp"
+
 
 
 /**
@@ -38,6 +41,7 @@ public:
     ~Shader();      /**< Destroys the shader object */
 
     Shader(std::string vertexShd, std::string fragmentShd);     /**< Constructs a usable shader object */
+    Shader(const Shader& shd);                                  /**< Copies a shader object */
 
 
 
