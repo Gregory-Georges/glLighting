@@ -7,15 +7,8 @@
 
 //user-defined
 #include "include_abstraction.hpp"
-#include "include_managers.hpp"
+#include "include_containers.hpp"
 #include "include_useful.hpp"
-
-//useful macro
-#define getError()\
-while(int i = glGetError())\
-{\
-    std::cout << i << "\n";\
-}
 
 
 
@@ -81,11 +74,11 @@ int main()
     // Setup texture
     ///////////////////////////////
 
-    Manager<Texture> texMan;
-    texMan.add(Texture("media/images/box.jpg", GL_TEXTURE_2D));
-    texMan.add(Texture("media/images/place_m.jpg", GL_TEXTURE_2D));
-    texMan.add(Texture("media/images/colors.jpg", GL_TEXTURE_2D));
-    texMan.get(1).bind();
+    TextureContainer texMan("media/images/box.jpg");
+    texMan.add("media/images/box.jpg", GL_TEXTURE_2D);
+    texMan.add("media/images/place_m.jpg", GL_TEXTURE_2D);
+    texMan.add("media/images/colors.jpg", GL_TEXTURE_2D);
+    texMan.get(0).bind();
 
 
 

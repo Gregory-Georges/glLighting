@@ -385,10 +385,10 @@
 1647255017 source:/home/gregory-george/Desktop/glLighting/abstractions/Shader/Shader_utility.cpp
 	"Shader_utility.hpp"
 
-1647268552 source:/home/gregory-george/Desktop/glLighting/abstractions/Texture/Texture.cpp
+1647369083 source:/home/gregory-george/Desktop/glLighting/abstractions/Texture/Texture.cpp
 	"Texture.hpp"
 
-1647268569 /home/gregory-george/Desktop/glLighting/abstractions/Texture/Texture.hpp
+1647368804 /home/gregory-george/Desktop/glLighting/abstractions/Texture/Texture.hpp
 	<iostream>
 	<string>
 	<GL/glew.h>
@@ -434,12 +434,12 @@
 1645992625 source:/home/gregory-george/Desktop/glLighting/abstractions/Window/Window.cpp
 	"Window.hpp"
 
-1647269427 source:/home/gregory-george/Desktop/glLighting/main.cpp
+1647369357 source:/home/gregory-george/Desktop/glLighting/main.cpp
 	<iostream>
 	<GL/glew.h>
 	<GLFW/glfw3.h>
 	"include_abstraction.hpp"
-	"include_managers.hpp"
+	"include_containers.hpp"
 	"include_useful.hpp"
 
 1647267545 /home/gregory-george/Desktop/glLighting/abstractions/include_abstraction.hpp
@@ -470,10 +470,11 @@
 	"manager.hpp"
 	"bufferManager/buffermanager.hpp"
 
-1647269716 /home/gregory-george/Desktop/glLighting/managers/manager.hpp
+1647274330 /home/gregory-george/Desktop/glLighting/managers/manager.hpp
 	<vector>
+	"errors/errors.hpp"
 
-1646845200 /home/gregory-george/Desktop/glLighting/managers/bufferManager/buffermanager.hpp
+1647271245 /home/gregory-george/Desktop/glLighting/managers/bufferManager/buffermanager.hpp
 	<string>
 	<vector>
 	<iterator>
@@ -510,4 +511,24 @@
 
 1647267918 source:/home/gregory-george/Desktop/glLighting/useful/errors/errors.cpp
 	"errors.hpp"
+
+1647272749 source:/home/gregory-george/Desktop/glLighting/managers/manager.cpp
+	"manager.hpp"
+
+1647369050 source:/home/gregory-george/Desktop/glLighting/containers/TextureContainer/TextureContainer.cpp
+	"TextureContainer.hpp"
+
+1647368841 /home/gregory-george/Desktop/glLighting/containers/TextureContainer/TextureContainer.hpp
+	<string>
+	<stdexcept>
+	"container.hpp"
+	"Texture/Texture.hpp"
+
+1647367296 /home/gregory-george/Desktop/glLighting/containers/container.hpp
+	<vector>
+	<stdexcept>
+
+1647366663 /home/gregory-george/Desktop/glLighting/containers/include_containers.hpp
+	"container.hpp"
+	"TextureContainer/TextureContainer.hpp"
 

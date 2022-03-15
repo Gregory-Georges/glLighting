@@ -56,7 +56,7 @@ public:
 
     unsigned int getID();               /**< Returns the name of the texture object */
     unsigned int getTextureType();      /**< Returns the buffer type of the object */
-    std::string getPath();              /**< Returns the path of the texture */
+    const std::string& getPath();              /**< Returns the path of the texture */
     int getX();                         /**< Returns the lenght of the texture */
     int getY();                         /**< Returns the height of the texture */
 

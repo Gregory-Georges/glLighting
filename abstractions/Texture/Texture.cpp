@@ -9,7 +9,11 @@
 
 
 //Destroys a texture
-Texture::~Texture() { glDeleteTextures(1, &id); }
+Texture::~Texture()
+{
+    std::cout << "Texture destructor called\n";
+    glDeleteTextures(1, &id);
+}
 
 
 
@@ -73,7 +77,7 @@ unsigned int Texture::getID() { return id; }
 unsigned int Texture::getTextureType() { return textureType; }
 
 //Returns the path to the loaded texture image
-std::string Texture::getPath() { return texPath; }
+const std::string& Texture::getPath() { return texPath; }
 
 //Returns the coordinates of the texture
 int Texture::getX() { return x; }
