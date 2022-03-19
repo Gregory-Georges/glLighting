@@ -4,6 +4,7 @@
 //Standard headers
 #include <vector>       //Contain data
 #include <stdexcept>    //Throw errors
+#include <utility>
 
 
 
@@ -56,18 +57,12 @@
 // Class declaration
 ///////////////////////////////////
 
-/**
- * Object container class. Define necessary components in specilized class before use, such as :
- * - Personnalized adders
- * - Personnalized getters
- * - Other personnalized methods
- */
 template<class T> class Container
 {
     protected:
 
         //Container vector
-        std::vector<T*> container;
+        std::vector<T> container;
 
 
 
@@ -96,7 +91,7 @@ template<class T> class Container
         // Add
         ///////////////////////////////////
 
-        void add(T* obj);                   /**< Adds l-value to the container */
+        void add(T&& obj);                  /**< Adds r-value to the container */
 
 
 
@@ -151,7 +146,7 @@ template<class T> Container<T>::Container(const Container &con)
 
 template<class T> T& Container<T>::get(int index)
 {
-    return *container.at(index);
+    return container.at(index);
 }
 
 
@@ -174,9 +169,9 @@ template<class T> int Container<T>::getSize(void)
 ///////////////////////////////////
 
 //Adding l-values
-template<class T> void Container<T>::add(T* obj)
+template<class T> void Container<T>::add(T&& obj)
 {
-    container.push_back(obj);
+    container.push_back(std::move(obj));
 }
 
 
@@ -193,11 +188,6 @@ template<class T> void Container<T>::add(T* obj)
 
 template<class T> void Container<T>::clear()
 {
-    //Make sure to delete every element before deleting pointer targets
-    for(T* i : container)
-        delete i;
-
-    //Empty all pointers
     container.clear();
 }
 

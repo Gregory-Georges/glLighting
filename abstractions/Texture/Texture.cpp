@@ -11,12 +11,12 @@
 //Destroys a texture
 Texture::~Texture()
 {
-    std::cout << "Texture destructor called\n";
     glDeleteTextures(1, &id);
 }
 
 
 
+//Creates a texture
 Texture::Texture(std::string Path, unsigned int textureType)
 {
     //Create new texture
@@ -38,6 +38,7 @@ Texture::Texture(std::string Path, unsigned int textureType)
 
 
 
+//Copies a texture
 Texture::Texture(const Texture &tex)
 {
     //Create new texture
@@ -53,9 +54,6 @@ Texture::Texture(const Texture &tex)
 
     //Free image
     freeImgRgb(Image);
-
-    //Warning
-    std::cout << "Warning : texture copy constructor called\n";
 }
 
 

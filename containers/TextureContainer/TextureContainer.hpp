@@ -27,15 +27,7 @@ class TextureContainer : public Container<Texture>
     // Constructor / destructor
     //////////////////////////////////
 
-        TextureContainer(std::string defaultPath);
-
-
-
-    //////////////////////////////////
-    // Adders
-    //////////////////////////////////
-
-        void add(std::string Path, unsigned int textureType);
+        TextureContainer(std::string defaultPath, int defaulType);
 
 
 
@@ -43,6 +35,7 @@ class TextureContainer : public Container<Texture>
     // Getters
     //////////////////////////////////
 
+        Texture getDefault();
         Texture find(const std::string& Path);
 };
 
