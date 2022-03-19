@@ -17,9 +17,9 @@ TextureContainer::TextureContainer(std::string defaultPath, int defaultType) : d
 // Getters
 //////////////////////////////////
 
-    Texture TextureContainer::getDefault() { return defaultTexture; }
+    Texture& TextureContainer::getDefault() { return defaultTexture; }
 
-    Texture TextureContainer::find(const std::string& Path)
+    Texture& TextureContainer::find(const std::string& Path)
     {
         for(Texture tex : container)
             if(tex.getPath() == Path)

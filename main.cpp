@@ -74,11 +74,10 @@ int main()
     // Setup texture
     ///////////////////////////////
 
-    TextureContainer texMan("media/images/place_m.jpg", GL_TEXTURE_2D);
+    TextureContainer texMan("media/images/testscreen.jpg", GL_TEXTURE_2D);
     texMan.add(Texture("media/images/box.jpg", GL_TEXTURE_2D));
     texMan.add(Texture("media/images/place_m.jpg", GL_TEXTURE_2D));
     texMan.add(Texture("media/images/colors.jpg", GL_TEXTURE_2D));
-    texMan.get(0).bind();
 
 
 
@@ -280,7 +279,7 @@ int main()
         static double interval = 1.5;
         time = tmr.getTime();
         if(int(time / interval) % 4 == 0)
-            texMan.getDefault().getPath();
+            texMan.getDefault().bind();
         if(int(time / interval) % 4 == 1)
             texMan.get(0).bind();
         if(int(time / interval) % 4 == 2)

@@ -35,8 +35,8 @@ class TextureContainer : public Container<Texture>
     // Getters
     //////////////////////////////////
 
-        Texture getDefault();
-        Texture find(const std::string& Path);
+        Texture& getDefault();
+        Texture& find(const std::string& Path);
 };
 
 #endif // TEXTURECONTAINER_HPP

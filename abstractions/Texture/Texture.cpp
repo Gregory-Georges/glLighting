@@ -58,6 +58,20 @@ Texture::Texture(const Texture &tex)
 
 
 
+//Move texture
+Texture::Texture(Texture&& tex)
+{
+    this->id = tex.id;
+    this->textureType = tex.textureType;
+    this->texPath = tex.texPath;
+    this->x = tex.x;
+    this->y = tex.y;
+
+    tex.id = 0;
+}
+
+
+
 
 
 
