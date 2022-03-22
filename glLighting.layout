@@ -2,19 +2,24 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
-	<File name="abstractions/Renderable/Renderable.hpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="abstractions/Window/Window.hpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="0" topLine="24" />
+			<Cursor1 position="0" topLine="65" />
 		</Cursor>
 	</File>
-	<File name="abstractions/Buffer/VertexBuffer/vertexbuffer.hpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="abstractions/Buffer/Model/model.hpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="0" topLine="5" />
+			<Cursor1 position="463" topLine="18" />
 		</Cursor>
 	</File>
-	<File name="abstractions/Buffer/Model/model.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="abstractions/Shader/Shader_utility.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="288" topLine="8" />
+			<Cursor1 position="693" topLine="9" />
+		</Cursor>
+	</File>
+	<File name="shaders/normal/vertex.shd" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="215" topLine="13" />
 		</Cursor>
 	</File>
 	<File name="abstractions/Uniform/Uniform.hpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -22,34 +27,34 @@
 			<Cursor1 position="1217" topLine="53" />
 		</Cursor>
 	</File>
-	<File name="containers/TextureContainer/TextureContainer.cpp" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="containers/container.hpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="132" topLine="0" />
+			<Cursor1 position="1599" topLine="114" />
 		</Cursor>
 	</File>
-	<File name="abstractions/Buffer/Buffer.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="abstractions/Renderable/Renderable.hpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="24" topLine="6" />
+			<Cursor1 position="0" topLine="24" />
 		</Cursor>
 	</File>
-	<File name="shaders/light/lightfragment.shd" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="useful/string_loading/string_loading.hpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="70" topLine="1" />
+			<Cursor1 position="1157" topLine="46" />
 		</Cursor>
 	</File>
-	<File name="abstractions/Camera/camera.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="abstractions/Buffer/Buffer.hpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="4187" topLine="0" />
+			<Cursor1 position="1406" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="abstractions/ModelData/ModelData.hpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="containers/include_containers.hpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="63" topLine="0" />
+			<Cursor1 position="123" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="useful/glState/glState.hpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="abstractions/Keyboard/Keyboard.hpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="178" topLine="0" />
+			<Cursor1 position="0" topLine="44" />
 		</Cursor>
 	</File>
 	<File name="useful/glState/glState.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -62,124 +67,9 @@
 			<Cursor1 position="920" topLine="36" />
 		</Cursor>
 	</File>
-	<File name="useful/string_loading/string_loading.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="0" topLine="127" />
-		</Cursor>
-	</File>
-	<File name="abstractions/ModelData/ModelData.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="311" topLine="29" />
-		</Cursor>
-	</File>
-	<File name="containers/TextureContainer/TextureContainer.hpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="646" topLine="5" />
-		</Cursor>
-	</File>
-	<File name="useful/include_useful.hpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="315" topLine="7" />
-		</Cursor>
-	</File>
-	<File name="abstractions/include_abstraction.hpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1366" topLine="30" />
-		</Cursor>
-	</File>
-	<File name="abstractions/Texture/Texture.hpp" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1215" topLine="30" />
-		</Cursor>
-	</File>
-	<File name="abstractions/Shader/Shader_utility.hpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="641" topLine="13" />
-		</Cursor>
-	</File>
-	<File name="abstractions/Shader/Shader_utility.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="693" topLine="9" />
-		</Cursor>
-	</File>
-	<File name="abstractions/Texture/Texture.cpp" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="976" topLine="33" />
-		</Cursor>
-	</File>
 	<File name="abstractions/Init/Init.hpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="598" topLine="24" />
-		</Cursor>
-	</File>
-	<File name="abstractions/Shader/Shader.hpp" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="223" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="abstractions/Buffer/Model/model.hpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="463" topLine="18" />
-		</Cursor>
-	</File>
-	<File name="abstractions/Buffer/Buffer.hpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1406" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="abstractions/Window/Window.hpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="0" topLine="65" />
-		</Cursor>
-	</File>
-	<File name="abstractions/Init/Init.cpp" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="506" topLine="6" />
-		</Cursor>
-	</File>
-	<File name="containers/include_containers.hpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="123" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="abstractions/Uniform/Uniform.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="310" topLine="12" />
-		</Cursor>
-	</File>
-	<File name="shaders/light/lightvertex.shd" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="145" topLine="4" />
-		</Cursor>
-	</File>
-	<File name="abstractions/Texture/Texture_utility.hpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="0" topLine="9" />
-		</Cursor>
-	</File>
-	<File name="shaders/normal/fragment.shd" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="330" topLine="9" />
-		</Cursor>
-	</File>
-	<File name="abstractions/Camera/camera.hpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1928" topLine="40" />
-		</Cursor>
-	</File>
-	<File name="containers/container.hpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1599" topLine="114" />
-		</Cursor>
-	</File>
-	<File name="abstractions/Keyboard/Keyboard.hpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="0" topLine="44" />
-		</Cursor>
-	</File>
-	<File name="useful/string_loading/string_loading.hpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1157" topLine="46" />
 		</Cursor>
 	</File>
 	<File name="abstractions/Shader/Shader.cpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -187,14 +77,124 @@
 			<Cursor1 position="555" topLine="31" />
 		</Cursor>
 	</File>
+	<File name="abstractions/ModelData/ModelData.hpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="63" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="abstractions/Texture/Texture.cpp" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="976" topLine="33" />
+		</Cursor>
+	</File>
+	<File name="abstractions/include_abstraction.hpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1366" topLine="30" />
+		</Cursor>
+	</File>
+	<File name="abstractions/Init/Init.cpp" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="506" topLine="6" />
+		</Cursor>
+	</File>
 	<File name="useful/Constants/Constants.hpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="169" topLine="25" />
 		</Cursor>
 	</File>
-	<File name="shaders/normal/vertex.shd" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="shaders/light/lightfragment.shd" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="215" topLine="13" />
+			<Cursor1 position="70" topLine="1" />
+		</Cursor>
+	</File>
+	<File name="useful/glState/glState.hpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="178" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="useful/string_loading/string_loading.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="127" />
+		</Cursor>
+	</File>
+	<File name="abstractions/Camera/camera.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="4187" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="abstractions/Camera/camera.hpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1928" topLine="40" />
+		</Cursor>
+	</File>
+	<File name="abstractions/Buffer/Buffer.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="24" topLine="6" />
+		</Cursor>
+	</File>
+	<File name="useful/include_useful.hpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="315" topLine="7" />
+		</Cursor>
+	</File>
+	<File name="abstractions/ModelData/ModelData.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="311" topLine="29" />
+		</Cursor>
+	</File>
+	<File name="abstractions/Texture/Texture_utility.hpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="9" />
+		</Cursor>
+	</File>
+	<File name="shaders/light/lightvertex.shd" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="145" topLine="4" />
+		</Cursor>
+	</File>
+	<File name="abstractions/Uniform/Uniform.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="310" topLine="12" />
+		</Cursor>
+	</File>
+	<File name="containers/TextureContainer/TextureContainer.hpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="646" topLine="5" />
+		</Cursor>
+	</File>
+	<File name="containers/TextureContainer/TextureContainer.cpp" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="132" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="abstractions/Texture/Texture.hpp" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1215" topLine="30" />
+		</Cursor>
+	</File>
+	<File name="abstractions/Buffer/VertexBuffer/vertexbuffer.hpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="5" />
+		</Cursor>
+	</File>
+	<File name="abstractions/Shader/Shader_utility.hpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="641" topLine="13" />
+		</Cursor>
+	</File>
+	<File name="abstractions/Buffer/Model/model.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="288" topLine="8" />
+		</Cursor>
+	</File>
+	<File name="abstractions/Shader/Shader.hpp" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="223" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="shaders/normal/fragment.shd" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="330" topLine="9" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>
