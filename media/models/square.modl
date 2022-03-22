@@ -1,0 +1,19 @@
+#name
+SIMPLE_SQUARE
+#name_end
+
+#vertex_count
+4
+#vertex_count_end
+
+#vertex
+-0.5, -0.5,
+ 0.5, -0.5,
+-0.5,  0.5,
+ 0.5,  0.5,
+#vertex_end
+
+#index
+0, 1, 2,
+0, 3, 2,
+#index_end
