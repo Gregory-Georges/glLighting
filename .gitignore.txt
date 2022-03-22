@@ -1,5 +1,12 @@
-bin
-media
-HistoriqueGIT
-obj
+#ignore these directories
+
+bin/
+media/
+HistoriqueGIT/
+obj/
+
+
+
+#ignore these files
+
 ValgrindOut.xml
