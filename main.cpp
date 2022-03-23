@@ -144,36 +144,20 @@ int main()
 
 
     ///////////////////////////////
-    // Setup color uniforms
-    ///////////////////////////////
-
-    //Get uniforms
-    Uniform objectColorUni(UNIFORM_VEC_4_FV, shd, "objectColor");
-    Uniform lightColorUni(UNIFORM_VEC_4_FV, shd, "lightColor");
-
-    //setup data
-    glm::vec4 objectColor = glm::vec4(1.0, 1.0, 1.0, 1.0);
-    glm::vec4 lightColor = glm::vec4(1.0, 1.0, 1.0, 1.0);
-
-    //Give data to shader
-    objectColorUni.data(glm::value_ptr(objectColor));
-    lightColorUni.data(glm::value_ptr(lightColor));
-
-
-
-
-
-
-
-
-
-    ///////////////////////////////
     // Setup light uniforms
     ///////////////////////////////
 
+    //Get uniforms
+    Uniform lightColorUni(UNIFORM_VEC_4_FV, shd, "lightColor");
+    Uniform lightPosUni(UNIFORM_VEC_3_FV, shd, "lightPos");
+
+    //setup data
+    glm::vec4 lightColor = glm::vec4(1.0, 1.0, 1.0, 1.0);
     glm::vec3 lightPos = light.getPos();
-    //Uniform lightPosUni(UNIFORM_VEC_3_FV, shd, "lightPosition");
-    //lightPosUni.data(glm::value_ptr(lightPos));
+
+    //Give data to shader
+    lightColorUni.data(glm::value_ptr(lightColor));
+    lightPosUni.data(glm::value_ptr(lightPos));
 
 
 
@@ -317,6 +301,8 @@ int main()
         static double x = 0.0;
         light.setPos(glm::vec3(glm::sin(x) * 2, 0.0, glm::cos(x) * 2));
         x += 0.03;
+        lightPos = light.getPos();
+        lightPosUni.data(glm::value_ptr(lightPos));
 
 
 
@@ -353,7 +339,6 @@ int main()
         modlUni.data(glm::value_ptr(modl));
         viewUni.data(glm::value_ptr(view));
         projUni.data(glm::value_ptr(proj));
-        objectColorUni.data(glm::value_ptr(objectColor));
         lightColorUni.data(glm::value_ptr(lightColor));
         //Draw
         glDrawArrays(GL_TRIANGLES, 0, indices);
@@ -367,7 +352,6 @@ int main()
         modlUni.data(glm::value_ptr(modl));
         viewUni.data(glm::value_ptr(view));
         projUni.data(glm::value_ptr(proj));
-        objectColorUni.data(glm::value_ptr(objectColor));
         lightColorUni.data(glm::value_ptr(lightColor));
         //Draw
         glDrawArrays(GL_TRIANGLES, 0, indices);

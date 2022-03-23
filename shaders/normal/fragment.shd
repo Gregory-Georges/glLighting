@@ -1,19 +1,28 @@
-#version 310 es
+#version 400
 precision highp float;
 
 
 
 
 
+
+//Light values
+float ambiantLight;
+float diffuseLight;
+//float specularLight;
+float lightValue;
+uniform vec3 lightPos;
+in vec3 vNormal;
+
+
+
 //Variables from vertex
-in vec2 vTexPos;                            //Position in the texture
-in vec4 vColors;                            //Colors from vertex
-in float vLightValue;                       //Value of the light
+in vec2 vTexPos;                            //Position in the texture on the shape
+in vec3 vWorldPos;                          //Position of the fragment in the world
 
 
 
 //Color uniforms
-uniform vec4 objectColor;                   //Color of the object
 uniform vec4 lightColor;                    //Color of the light
 
 
@@ -32,5 +41,17 @@ out vec4 outColors;                         //Output color
 
 void main()
 {
-    outColors = texture(tex, vTexPos) * objectColor * lightColor * vColors * vLightValue;
+    //Calculate light values
+    ambiantLight = 0.2;
+
+    vec3 lightDir = normalize(lightPos - vWorldPos);
+    diffuseLight = max(dot(lightDir, vNormal), 0.0);
+
+    //Calculate final light value
+    lightValue = ambiantLight + diffuseLight;
+
+
+
+    //Output color
+    outColors = texture(tex, vTexPos) * (lightColor * lightValue);
 }

@@ -1,17 +1,14 @@
-#version 310 es
+#version 400
 precision highp float;
 
 
 
 
 
-//Light values
-float ambiantLight;
-float diffuseLight;
-//float specularLight;
-out float vLightValue;
 
-/*uniform */vec3 lightPosition = vec3(0.0, 0.0, 2.0);
+//Send world position to fragment
+out vec3 vWorldPos;
+out vec3 vNormal;
 
 
 
@@ -31,7 +28,6 @@ uniform mat4 proj;                          //Projection uniform
 
 //Colors
 out vec2 vTexPos;                           //Texture position
-out vec4 vColors;                           //Colors
 
 
 
@@ -39,22 +35,13 @@ out vec4 vColors;                           //Colors
 
 void main()
 {
-    //Set the position of the vertex
-    vec3 worldPos = vec3(modl * vec4(inPos, 1.0));
-    gl_Position = proj * view * vec4(worldPos, 1.0);
-
-
-
-    //Calculate light values
-    ambiantLight = 0.2;
-
-    vec3 lightDir = normalize(worldPos - lightPosition);
-    diffuseLight = max(dot(inNormal, lightDir), 0.0);
-
-
-
     //Send data to fragment
     vTexPos = inTexPos;
-    vColors = vec4(1.0);
-    vLightValue = ambiantLight + diffuseLight;
+    vNormal = inNormal;
+    vWorldPos = vec3(modl * vec4(inPos, 1.0));
+
+
+
+    //Set the position of the vertex on the screen
+    gl_Position = proj * view * vec4(vWorldPos, 1.0);
 }
