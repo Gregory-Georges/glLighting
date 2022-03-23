@@ -87,6 +87,28 @@ int main()
 
 
 
+    ///////////////////////////////
+    // Generate object world data
+    ///////////////////////////////
+
+    ModelData object;
+    ModelData light;
+
+    //Object
+    object.setPos(glm::vec3(0.0, 0.0, 0.0));
+
+    //Light
+    light.setPos(glm::vec3(0.0, 2.0, -2.0));
+    light.setScale(glm::vec3(0.25));
+
+
+
+
+
+
+
+
+
 
 
     ///////////////////////////////
@@ -121,7 +143,7 @@ int main()
 
 
     ///////////////////////////////
-    // Setup light uniforms
+    // Setup color uniforms
     ///////////////////////////////
 
     //Get uniforms
@@ -145,6 +167,22 @@ int main()
 
 
     ///////////////////////////////
+    // Setup light uniforms
+    ///////////////////////////////
+
+    //glm::vec3 lightPos = light.getPos();
+    //Uniform lightPosUni(UNIFORM_VEC_3_FV, shd, "lightPos");
+    //lightPosUni.data(glm::value_ptr(lightPos));
+
+
+
+
+
+
+
+
+
+    ///////////////////////////////
     // Create buffer
     ///////////////////////////////
 
@@ -154,48 +192,48 @@ int main()
     int indices = 2 * 3 * 6;
     float square[] =
     {
-        //Coordinates         //Texture pos
-        -1.0f, -1.0f, -1.0f,  0.0f, 0.0f,     //Face 1
-         1.0f, -1.0f, -1.0f,  1.0f, 0.0f,
-         1.0f,  1.0f, -1.0f,  1.0f, 1.0f,
-        -1.0f, -1.0f, -1.0f,  0.0f, 0.0f,
-        -1.0f,  1.0f, -1.0f,  0.0f, 1.0f,
-         1.0f,  1.0f, -1.0f,  1.0f, 1.0f,
+        //Coordinates         //Texture pos //Normals
+        -1.0f, -1.0f, -1.0f,  0.0f, 0.0f,   0.0f,  0.0f, -1.0f,     //Face 1
+         1.0f, -1.0f, -1.0f,  1.0f, 0.0f,   0.0f,  0.0f, -1.0f,
+         1.0f,  1.0f, -1.0f,  1.0f, 1.0f,   0.0f,  0.0f, -1.0f,
+        -1.0f, -1.0f, -1.0f,  0.0f, 0.0f,   0.0f,  0.0f, -1.0f,
+        -1.0f,  1.0f, -1.0f,  0.0f, 1.0f,   0.0f,  0.0f, -1.0f,
+         1.0f,  1.0f, -1.0f,  1.0f, 1.0f,   0.0f,  0.0f, -1.0f,
 
-        -1.0f, -1.0f,  1.0f,  0.0f, 0.0f,     //Face 2
-         1.0f, -1.0f,  1.0f,  1.0f, 0.0f,
-         1.0f,  1.0f,  1.0f,  1.0f, 1.0f,
-        -1.0f, -1.0f,  1.0f,  0.0f, 0.0f,
-        -1.0f,  1.0f,  1.0f,  0.0f, 1.0f,
-         1.0f,  1.0f,  1.0f,  1.0f, 1.0f,
+        -1.0f, -1.0f,  1.0f,  0.0f, 0.0f,   0.0f,  0.0f,  1.0f,     //Face 2
+         1.0f, -1.0f,  1.0f,  1.0f, 0.0f,   0.0f,  0.0f,  1.0f,
+         1.0f,  1.0f,  1.0f,  1.0f, 1.0f,   0.0f,  0.0f,  1.0f,
+        -1.0f, -1.0f,  1.0f,  0.0f, 0.0f,   0.0f,  0.0f,  1.0f,
+        -1.0f,  1.0f,  1.0f,  0.0f, 1.0f,   0.0f,  0.0f,  1.0f,
+         1.0f,  1.0f,  1.0f,  1.0f, 1.0f,   0.0f,  0.0f,  1.0f,
 
-        -1.0f, -1.0f, -1.0f,  0.0f, 0.0f,     //Face 3
-        -1.0f, -1.0f,  1.0f,  1.0f, 0.0f,
-        -1.0f,  1.0f,  1.0f,  1.0f, 1.0f,
-        -1.0f, -1.0f, -1.0f,  0.0f, 0.0f,
-        -1.0f,  1.0f, -1.0f,  0.0f, 1.0f,
-        -1.0f,  1.0f,  1.0f,  1.0f, 1.0f,
+        -1.0f, -1.0f, -1.0f,  0.0f, 0.0f,  -1.0f,  0.0f,  0.0f,     //Face 3
+        -1.0f, -1.0f,  1.0f,  1.0f, 0.0f,  -1.0f,  0.0f,  0.0f,
+        -1.0f,  1.0f,  1.0f,  1.0f, 1.0f,  -1.0f,  0.0f,  0.0f,
+        -1.0f, -1.0f, -1.0f,  0.0f, 0.0f,  -1.0f,  0.0f,  0.0f,
+        -1.0f,  1.0f, -1.0f,  0.0f, 1.0f,  -1.0f,  0.0f,  0.0f,
+        -1.0f,  1.0f,  1.0f,  1.0f, 1.0f,  -1.0f,  0.0f,  0.0f,
 
-         1.0f, -1.0f, -1.0f,  0.0f, 0.0f,     //Face 4
-         1.0f, -1.0f,  1.0f,  1.0f, 0.0f,
-         1.0f,  1.0f,  1.0f,  1.0f, 1.0f,
-         1.0f, -1.0f, -1.0f,  0.0f, 0.0f,
-         1.0f,  1.0f, -1.0f,  0.0f, 1.0f,
-         1.0f,  1.0f,  1.0f,  1.0f, 1.0f,
+         1.0f, -1.0f, -1.0f,  0.0f, 0.0f,   1.0f,  0.0f,  0.0f,     //Face 4
+         1.0f, -1.0f,  1.0f,  1.0f, 0.0f,   1.0f,  0.0f,  0.0f,
+         1.0f,  1.0f,  1.0f,  1.0f, 1.0f,   1.0f,  0.0f,  0.0f,
+         1.0f, -1.0f, -1.0f,  0.0f, 0.0f,   1.0f,  0.0f,  0.0f,
+         1.0f,  1.0f, -1.0f,  0.0f, 1.0f,   1.0f,  0.0f,  0.0f,
+         1.0f,  1.0f,  1.0f,  1.0f, 1.0f,   1.0f,  0.0f,  0.0f,
 
-        -1.0f,  1.0f, -1.0f,  0.0f, 0.0f,     //Face 5
-        -1.0f,  1.0f,  1.0f,  1.0f, 0.0f,
-         1.0f,  1.0f,  1.0f,  1.0f, 1.0f,
-        -1.0f,  1.0f, -1.0f,  0.0f, 0.0f,
-         1.0f,  1.0f, -1.0f,  0.0f, 1.0f,
-         1.0f,  1.0f,  1.0f,  1.0f, 1.0f,
+        -1.0f,  1.0f, -1.0f,  0.0f, 0.0f,   0.0f,  1.0f,  0.0f,     //Face 5
+        -1.0f,  1.0f,  1.0f,  1.0f, 0.0f,   0.0f,  1.0f,  0.0f,
+         1.0f,  1.0f,  1.0f,  1.0f, 1.0f,   0.0f,  1.0f,  0.0f,
+        -1.0f,  1.0f, -1.0f,  0.0f, 0.0f,   0.0f,  1.0f,  0.0f,
+         1.0f,  1.0f, -1.0f,  0.0f, 1.0f,   0.0f,  1.0f,  0.0f,
+         1.0f,  1.0f,  1.0f,  1.0f, 1.0f,   0.0f,  1.0f,  0.0f,
 
-        -1.0f, -1.0f, -1.0f,  0.0f, 0.0f,     //Face 6
-        -1.0f, -1.0f,  1.0f,  1.0f, 0.0f,
-         1.0f, -1.0f,  1.0f,  1.0f, 1.0f,
-        -1.0f, -1.0f, -1.0f,  0.0f, 0.0f,
-         1.0f, -1.0f, -1.0f,  0.0f, 1.0f,
-         1.0f, -1.0f,  1.0f,  1.0f, 1.0f
+        -1.0f, -1.0f, -1.0f,  0.0f, 0.0f,   0.0f, -1.0f,  0.0f,     //Face 6
+        -1.0f, -1.0f,  1.0f,  1.0f, 0.0f,   0.0f, -1.0f,  0.0f,
+         1.0f, -1.0f,  1.0f,  1.0f, 1.0f,   0.0f, -1.0f,  0.0f,
+        -1.0f, -1.0f, -1.0f,  0.0f, 0.0f,   0.0f, -1.0f,  0.0f,
+         1.0f, -1.0f, -1.0f,  0.0f, 1.0f,   0.0f, -1.0f,  0.0f,
+         1.0f, -1.0f,  1.0f,  1.0f, 1.0f,   0.0f, -1.0f,  0.0f
     };
 
     //Generate vertex buffer
@@ -216,34 +254,13 @@ int main()
 
     //Normal VA
     VertexArray VA;
-    VA.enableAttribute(0, GL_FLOAT, 3, sizeof(float) * 5, 0);
-    VA.enableAttribute(1, GL_FLOAT, 2, sizeof(float) * 5, sizeof(float) * 3);
+    VA.enableAttribute(0, GL_FLOAT, 3, sizeof(float) * 8, 0);
+    VA.enableAttribute(1, GL_FLOAT, 2, sizeof(float) * 8, sizeof(float) * 3);
+    VA.enableAttribute(2, GL_FLOAT, 3, sizeof(float) * 8, sizeof(float) * 5);
 
     //Light VA
     VertexArray lightVA;
-    lightVA.enableAttribute(0, GL_FLOAT, 3, sizeof(float) * 5, 0);
-
-
-
-
-
-
-
-
-
-    ///////////////////////////////
-    // Generate object world data
-    ///////////////////////////////
-
-    ModelData object;
-    ModelData light;
-
-    //Object
-    object.setPos(glm::vec3(0.0, 0.0, -2.5));
-
-    //Light
-    light.setPos(glm::vec3(0.0, 2.0, 0.0));
-    light.setScale(glm::vec3(0.5));
+    lightVA.enableAttribute(0, GL_FLOAT, 3, sizeof(float) * 8, 0);
 
 
 
@@ -286,6 +303,19 @@ int main()
             texMan.get(1).bind();
         if(int(time / interval) % 4 == 3)
             texMan.get(2).bind();
+
+
+
+
+
+
+        ///////////////////////////////
+        // Move light
+        ///////////////////////////////
+
+        static double x = 0.0;
+        light.setPos(glm::vec3(glm::sin(x) * 2, 0.0, glm::cos(x) * 2));
+        x += 0.03;
 
 
 

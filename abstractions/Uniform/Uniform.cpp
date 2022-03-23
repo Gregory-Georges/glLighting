@@ -83,10 +83,16 @@ void Uniform::data(float* uniformValue)
     switch(ut)
     {
     //Float value vectors
-    //vec3 Matrix
+    //vec3 Vector
+    case UNIFORM_VEC_3_FV :
+        glUniform3fv(id, 1, uniformValue);
+        break;
+
+    //vec4 Vector
     case UNIFORM_VEC_4_FV :
         glUniform4fv(id, 1, uniformValue);
         break;
+
 
     //Float value matrices
     //Mat3 Matrix

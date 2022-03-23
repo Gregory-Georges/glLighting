@@ -25,11 +25,14 @@
 enum uniformType
 {
     //Float value uniform vectors
+    UNIFORM_VEC_3_FV,   /**< Uniform 3 element values vector */
     UNIFORM_VEC_4_FV,   /**< Uniform 4 element values vector */
 
     //Float value uniform matrices
     UNIFORM_MAT_3_FV,   /**< Uniform 3D float values matrix */
     UNIFORM_MAT_4_FV,   /**< Uniform 4D float values matrix */
+
+    //Invalid
     UNIFORM_INVALID     /**< Uniform is invalid */
 };
 

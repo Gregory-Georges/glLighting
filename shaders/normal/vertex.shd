@@ -3,14 +3,31 @@ precision highp float;
 
 
 
+
+
+//Light values
+float ambiantLight;
+//float diffuseLight;
+//float specularLight;
+out float vLightValue;
+
+//uniform vec3 lightPos;
+
+
+
 //Retrieve elements from buffer
 layout (location = 0) in vec3 inPos;        //Position in vertex buffer
 layout (location = 1) in vec2 inTexPos;     //Position of the texture
+layout (location = 2) in vec3 inNormal;     //Normal vector
+
+
 
 //Transformation matrices
 uniform mat4 modl;                          //Model uniform
 uniform mat4 view;                          //View uniform
 uniform mat4 proj;                          //Projection uniform
+
+
 
 //Colors
 out vec2 vTexPos;                           //Texture position
@@ -18,12 +35,26 @@ out vec4 vColors;                           //Colors
 
 
 
+
+
 void main()
 {
-    //Sert the position of the vertex
-    gl_Position = proj * view * modl * vec4(inPos, 1.0);
+    //Set the position of the vertex
+    vec3 worldPos = vec3(modl * vec4(inPos, 1.0));
+    gl_Position = proj * view * vec4(worldPos, 1.0);
+
+
+
+    //Calculate light values
+    ambiantLight = 0.2;
+
+    //vec3 lightDir = normalize(worldPos - lightPos);
+    //diffuseLight = max(dot(inNormal, lightDir), 0.0);
+
+
 
     //Send data to fragment
     vTexPos = inTexPos;
     vColors = vec4(1.0);
+    vLightValue = ambiantLight;// + diffuseLight;
 }

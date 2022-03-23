@@ -3,23 +3,34 @@ precision highp float;
 
 
 
+
+
 //Variables from vertex
-in vec2 vTexPos;
-in vec4 vColors;
+in vec2 vTexPos;                            //Position in the texture
+in vec4 vColors;                            //Colors from vertex
+in float vLightValue;                       //Value of the light
+
+
 
 //Color uniforms
-uniform vec4 objectColor;
-uniform vec4 lightColor;
+uniform vec4 objectColor;                   //Color of the object
+uniform vec4 lightColor;                    //Color of the light
+
+
 
 //Texture
-uniform sampler2D tex;
+uniform sampler2D tex;                      //Bound 2D texture
+
+
 
 //Output color
-out vec4 outColors;
+out vec4 outColors;                         //Output color
+
+
 
 
 
 void main()
 {
-    outColors = texture(tex, vTexPos) * objectColor * lightColor * vColors;
+    outColors = texture(tex, vTexPos) * objectColor * lightColor * vColors * vLightValue;
 }
