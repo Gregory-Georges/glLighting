@@ -13,5 +13,5 @@ out vec4 outColors;
 
 void main()
 {
-    outColors = lightColor;
+    outColors = vec4(1.0); //lightColor;
 }

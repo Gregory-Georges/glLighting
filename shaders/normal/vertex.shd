@@ -7,11 +7,11 @@ precision highp float;
 
 //Light values
 float ambiantLight;
-//float diffuseLight;
+float diffuseLight;
 //float specularLight;
 out float vLightValue;
 
-//uniform vec3 lightPos;
+/*uniform */vec3 lightPosition = vec3(0.0, 0.0, 2.0);
 
 
 
@@ -48,13 +48,13 @@ void main()
     //Calculate light values
     ambiantLight = 0.2;
 
-    //vec3 lightDir = normalize(worldPos - lightPos);
-    //diffuseLight = max(dot(inNormal, lightDir), 0.0);
+    vec3 lightDir = normalize(worldPos - lightPosition);
+    diffuseLight = max(dot(inNormal, lightDir), 0.0);
 
 
 
     //Send data to fragment
     vTexPos = inTexPos;
     vColors = vec4(1.0);
-    vLightValue = ambiantLight;// + diffuseLight;
+    vLightValue = ambiantLight + diffuseLight;
 }

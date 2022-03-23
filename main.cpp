@@ -61,6 +61,7 @@ int main()
     ///////////////////////////////
 
     Camera cam;
+    cam.setPosition(glm::vec3(0.0, 0.0, 4.0));
 
 
 
@@ -170,8 +171,8 @@ int main()
     // Setup light uniforms
     ///////////////////////////////
 
-    //glm::vec3 lightPos = light.getPos();
-    //Uniform lightPosUni(UNIFORM_VEC_3_FV, shd, "lightPos");
+    glm::vec3 lightPos = light.getPos();
+    //Uniform lightPosUni(UNIFORM_VEC_3_FV, shd, "lightPosition");
     //lightPosUni.data(glm::value_ptr(lightPos));
 
 
