@@ -165,14 +165,17 @@ int main()
     //Get uniforms
     Uniform lightColorUni(UNIFORM_VEC_4_FV, shd, "lightColor");
     Uniform lightPosUni(UNIFORM_VEC_3_FV, shd, "lightPos");
+    Uniform viewPosUni(UNIFORM_VEC_3_FV, shd, "viewPos");
 
     //setup data
     glm::vec4 lightColor = glm::vec4(1.0, 1.0, 1.0, 1.0);
     glm::vec3 lightPos = light.getPos();
+    glm::vec3 viewPos = cam.getPosition();
 
     //Give data to shader
     lightColorUni.data(glm::value_ptr(lightColor));
     lightPosUni.data(glm::value_ptr(lightPos));
+    viewPosUni.data(glm::value_ptr(viewPos));
 
 
 
@@ -312,7 +315,7 @@ int main()
         ///////////////////////////////
 
         static double x = 0.0;
-        light.setPos(glm::vec3(glm::sin(x) * 2, 0.0, glm::cos(x) * 2));
+        light.setPos(glm::vec3(glm::sin(x) * 2, 1.5, glm::cos(x) * 2));
         x += 0.03;
         lightPos = light.getPos();
 
@@ -328,6 +331,7 @@ int main()
         const double moveSpeed = 0.02;
         const double turnSpeed = 1;
         cam.simpleControl(KB, moveSpeed, turnSpeed);
+        viewPos = cam.getPosition();
         view = cam.genViewMatrix();
 
 
@@ -352,6 +356,7 @@ int main()
         projUni.data(glm::value_ptr(proj));
         lightColorUni.data(glm::value_ptr(lightColor));
         lightPosUni.data(glm::value_ptr(lightPos));
+        viewPosUni.data(glm::value_ptr(viewPos));
         //Draw
         glDrawArrays(GL_TRIANGLES, 0, indices);
 

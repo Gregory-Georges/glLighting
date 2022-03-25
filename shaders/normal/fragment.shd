@@ -9,9 +9,10 @@ precision highp float;
 //Light values
 float ambiantLight;
 float diffuseLight;
-//float specularLight;
+float specularLight;
 float lightValue;
 uniform vec3 lightPos;
+uniform vec3 viewPos;
 in vec3 vNormal;
 
 
@@ -47,8 +48,12 @@ void main()
     vec3 lightDir = normalize(lightPos - vWorldPos);
     diffuseLight = max(dot(lightDir, vNormal), 0.0);
 
+    vec3 viewDir = normalize(viewPos - vWorldPos);
+    vec3 reflectDir = normalize(reflect(-lightDir, vNormal));
+    specularLight = pow(max(dot(viewDir, reflectDir), 0.0), 32);
+
     //Calculate final light value
-    lightValue = ambiantLight + diffuseLight;
+    lightValue = ambiantLight + diffuseLight + specularLight;
 
 
 
