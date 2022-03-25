@@ -7,10 +7,10 @@
 //////////////////////////////////
 
     //Constructs an uniform based in a shader
-    Uniform::Uniform(uniformType ut, Shader &shd, std::string ufName)
+    Uniform::Uniform(GLenum uniformType, Shader &shd, std::string ufName)
     {
         //Assign variables
-        this->ut = ut;
+        this->uniformType = uniformType;
         attachedShader = shd.getID();
         this->ufName = ufName;
         uniformData = nullptr;
@@ -25,10 +25,10 @@
 
 
 
-    Uniform::Uniform(uniformType ut, Shader &shd, std::string ufName, float* data)
+    Uniform::Uniform(GLenum uniformType, Shader &shd, std::string ufName, float* data)
     {
         //Assign variables
-        this->ut = ut;
+        this->uniformType = uniformType;
         attachedShader = shd.getID();
         this->ufName = ufName;
         uniformData = data;
@@ -98,28 +98,28 @@
     {
         uniformData = uniformValue;
 
-        switch(ut)
+        switch(uniformType)
         {
         //Float value vectors
         //vec3 Vector
-        case UNIFORM_VEC_3_FV :
+        case GL_FLOAT_VEC3 :
             glUniform3fv(id, 1, uniformValue);
             break;
 
         //vec4 Vector
-        case UNIFORM_VEC_4_FV :
+        case GL_FLOAT_VEC4 :
             glUniform4fv(id, 1, uniformValue);
             break;
 
 
         //Float value matrices
         //Mat3 Matrix
-        case UNIFORM_MAT_3_FV :
+        case GL_FLOAT_MAT3 :
             glUniformMatrix3fv(id, 1, GL_FALSE, uniformValue);
             break;
 
         //Mat4 Matrix
-        case UNIFORM_MAT_4_FV :
+        case GL_FLOAT_MAT4 :
             glUniformMatrix4fv(id, 1, GL_FALSE, uniformValue);
             break;
 

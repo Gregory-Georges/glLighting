@@ -142,9 +142,9 @@ int main()
 
     //Give data to shader
     //Get uniforms
-    Uniform modlUni(UNIFORM_MAT_4_FV, shd, "modl", glm::value_ptr(modl));
-    Uniform viewUni(UNIFORM_MAT_4_FV, shd, "view", glm::value_ptr(view));
-    Uniform projUni(UNIFORM_MAT_4_FV, shd, "proj", glm::value_ptr(proj));
+    Uniform modlUni(GL_FLOAT_MAT4, shd, "modl", glm::value_ptr(modl));
+    Uniform viewUni(GL_FLOAT_MAT4, shd, "view", glm::value_ptr(view));
+    Uniform projUni(GL_FLOAT_MAT4, shd, "proj", glm::value_ptr(proj));
 
 
 
@@ -164,9 +164,9 @@ int main()
     glm::vec3 viewPos = cam.getPosition();
 
     //Get uniforms
-    Uniform lightColorUni(UNIFORM_VEC_4_FV, shd, "lightColor", glm::value_ptr(lightColor));
-    Uniform lightPosUni(UNIFORM_VEC_3_FV, shd, "lightPos", glm::value_ptr(lightPos));
-    Uniform viewPosUni(UNIFORM_VEC_3_FV, shd, "viewPos", glm::value_ptr(viewPos));
+    Uniform lightColorUni(GL_FLOAT_VEC4, shd, "lightColor", glm::value_ptr(lightColor));
+    Uniform lightPosUni(GL_FLOAT_VEC3, shd, "lightPos", glm::value_ptr(lightPos));
+    Uniform viewPosUni(GL_FLOAT_VEC3, shd, "viewPos", glm::value_ptr(viewPos));
 
 
 
