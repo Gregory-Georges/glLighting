@@ -52,10 +52,7 @@ Shader::Shader(const Shader &shd)
 // Getters
 //////////////////////////////////
 
-unsigned int Shader::getID()
-{
-    return id;
-}
+unsigned int Shader::getID() { return id; }
 
 
 

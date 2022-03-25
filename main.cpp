@@ -331,9 +331,8 @@ int main()
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
         //Bind normal
-        shd.use();
         VA.bind();
-        VB.bind();
+        shd.use();
         //Update uniforms
         modl = object.CalculateMatrix();
         modlUni.data(glm::value_ptr(modl));
@@ -344,9 +343,8 @@ int main()
         glDrawArrays(GL_TRIANGLES, 0, indices);
 
         //Bind light
-        lightshd.use();
         lightVA.bind();
-        VB.bind();
+        lightshd.use();
         //Update uniforms
         modl = light.CalculateMatrix();
         modlUni.data(glm::value_ptr(modl));
@@ -372,6 +370,7 @@ int main()
     // End
     ///////////////////////////////
 
+    pollglErrors();
     Init::endContext(win);
     return 0;
 }

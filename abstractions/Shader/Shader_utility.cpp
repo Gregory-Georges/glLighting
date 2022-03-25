@@ -50,14 +50,10 @@ std::string getSource(std::string path)
 
     //Extract every line
     if(file.is_open())
-    {
         while(std::getline(file, temp))
             out += temp + "\n";
-    }
     else
-    {
         throw std::runtime_error("File " + path + " could not be opened\n");
-    }
 
     //Return
     return out;

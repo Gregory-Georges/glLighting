@@ -14,13 +14,11 @@ void pollglErrors()
 
     //Get all errors
     while(unsigned int error = glGetError())
-    {
         err_str += error + " ";
-    }
 
     //Out
     if(err_str != "")
-        throw std::runtime_error("OpenGL error : " + err_str);
+        throwError("OpenGL error : " + err_str);
 }
 
 

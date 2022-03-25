@@ -2,6 +2,7 @@
 #define UNIFORM_HPP
 
 //Standart headers
+#include <iostream>
 #include <string>
 #include <stdexcept>
 
