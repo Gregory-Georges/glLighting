@@ -131,11 +131,6 @@ int main()
     // Setup matrices uniforms
     ///////////////////////////////
 
-    //Get uniforms
-    Uniform modlUni(UNIFORM_MAT_4_FV, shd, "modl");
-    Uniform viewUni(UNIFORM_MAT_4_FV, shd, "view");
-    Uniform projUni(UNIFORM_MAT_4_FV, shd, "proj");
-
     //Generate matrices
     glm::mat4 modl(1.0);
     glm::mat4 view(1.0);
@@ -146,9 +141,10 @@ int main()
     proj = glm::perspective(45.0, double(win.getWidth()) / double(win.getHeight()), 0.01, 100.0);
 
     //Give data to shader
-    modlUni.data(glm::value_ptr(modl));
-    viewUni.data(glm::value_ptr(view));
-    projUni.data(glm::value_ptr(proj));
+    //Get uniforms
+    Uniform modlUni(UNIFORM_MAT_4_FV, shd, "modl", glm::value_ptr(modl));
+    Uniform viewUni(UNIFORM_MAT_4_FV, shd, "view", glm::value_ptr(view));
+    Uniform projUni(UNIFORM_MAT_4_FV, shd, "proj", glm::value_ptr(proj));
 
 
 
@@ -162,20 +158,15 @@ int main()
     // Setup light uniforms
     ///////////////////////////////
 
-    //Get uniforms
-    Uniform lightColorUni(UNIFORM_VEC_4_FV, shd, "lightColor");
-    Uniform lightPosUni(UNIFORM_VEC_3_FV, shd, "lightPos");
-    Uniform viewPosUni(UNIFORM_VEC_3_FV, shd, "viewPos");
-
     //setup data
     glm::vec4 lightColor = glm::vec4(1.0, 1.0, 1.0, 1.0);
     glm::vec3 lightPos = light.getPos();
     glm::vec3 viewPos = cam.getPosition();
 
-    //Give data to shader
-    lightColorUni.data(glm::value_ptr(lightColor));
-    lightPosUni.data(glm::value_ptr(lightPos));
-    viewPosUni.data(glm::value_ptr(viewPos));
+    //Get uniforms
+    Uniform lightColorUni(UNIFORM_VEC_4_FV, shd, "lightColor", glm::value_ptr(lightColor));
+    Uniform lightPosUni(UNIFORM_VEC_3_FV, shd, "lightPos", glm::value_ptr(lightPos));
+    Uniform viewPosUni(UNIFORM_VEC_3_FV, shd, "viewPos", glm::value_ptr(viewPos));
 
 
 
@@ -351,12 +342,12 @@ int main()
         shd.use();
         //Update uniforms
         modl = object.CalculateMatrix();
-        modlUni.data(glm::value_ptr(modl));
-        viewUni.data(glm::value_ptr(view));
-        projUni.data(glm::value_ptr(proj));
-        lightColorUni.data(glm::value_ptr(lightColor));
-        lightPosUni.data(glm::value_ptr(lightPos));
-        viewPosUni.data(glm::value_ptr(viewPos));
+        modlUni.update();
+        viewUni.update();
+        projUni.update();
+        lightColorUni.update();
+        lightPosUni.update();
+        viewPosUni.update();
         //Draw
         glDrawArrays(GL_TRIANGLES, 0, indices);
 
@@ -365,10 +356,9 @@ int main()
         lightshd.use();
         //Update uniforms
         modl = light.CalculateMatrix();
-        modlUni.data(glm::value_ptr(modl));
-        viewUni.data(glm::value_ptr(view));
-        projUni.data(glm::value_ptr(proj));
-        lightColorUni.data(glm::value_ptr(lightColor));
+        modlUni.update();
+        viewUni.update();
+        projUni.update();
         //Draw
         glDrawArrays(GL_TRIANGLES, 0, indices);
 

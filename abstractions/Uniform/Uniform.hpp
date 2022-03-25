@@ -52,6 +52,8 @@ private :
     uniformType ut;                 /**< Contains the type of the uniform object */
     std::string ufName;             /**< Contains the name of the uniform */
 
+    float* uniformData;             /**< Contains a pointer to the uniform's value */
+
 
 
 
@@ -63,7 +65,8 @@ public:
     // Constructor / destructor
     //////////////////////////////////
 
-    Uniform(uniformType ut, Shader &shd, std::string ufName);   /**< Constructs an uniform of said type */
+    Uniform(uniformType ut, Shader &shd, std::string ufName);               /**< Constructs an uniform of said type */
+    Uniform(uniformType ut, Shader &shd, std::string ufName, float* data);  /**< Constructs an uniform and gives it data */
 
 
 
@@ -97,7 +100,8 @@ public:
     // Data
     //////////////////////////////////
 
-    void data(float* uniformValue);    /**< Gives data to the uniform */
+    void data(float* uniformValue);     /**< Gives data to the uniform */
+    void update();                      /**< Uses predefined pointer to give data */
 };
 
 #endif // UNIFORM_HPP
