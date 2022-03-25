@@ -1,6 +1,9 @@
 #ifndef VERTEXARRAY_HPP
 #define VERTEXARRAY_HPP
 
+//Standart headers
+#include <iostream>
+
 //Graphic headers
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>

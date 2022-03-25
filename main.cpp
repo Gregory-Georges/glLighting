@@ -39,6 +39,21 @@ int main()
 
 
     ///////////////////////////////
+    // Generate vertex arrays
+    ///////////////////////////////
+
+    VertexArray VA;
+    VertexArray lightVA;
+
+
+
+
+
+
+
+
+
+    ///////////////////////////////
     // Compile shaders
     ///////////////////////////////
 
@@ -99,7 +114,7 @@ int main()
     object.setPos(glm::vec3(0.0, 0.0, 0.0));
 
     //Light
-    light.setPos(glm::vec3(0.0, 2.0, -2.0));
+    light.setPos(glm::vec3(-2.0, 0.0, -2.0));
     light.setScale(glm::vec3(0.25));
 
 
@@ -234,17 +249,15 @@ int main()
 
 
     ///////////////////////////////
-    // Generate vertex arrays
+    // Give attributes to VA
     ///////////////////////////////
 
     //Normal VA
-    VertexArray VA;
     VA.enableAttribute(0, GL_FLOAT, 3, sizeof(float) * 8, 0);
     VA.enableAttribute(1, GL_FLOAT, 2, sizeof(float) * 8, sizeof(float) * 3);
     VA.enableAttribute(2, GL_FLOAT, 3, sizeof(float) * 8, sizeof(float) * 5);
 
     //Light VA
-    VertexArray lightVA;
     lightVA.enableAttribute(0, GL_FLOAT, 3, sizeof(float) * 8, 0);
 
 
@@ -302,7 +315,6 @@ int main()
         light.setPos(glm::vec3(glm::sin(x) * 2, 0.0, glm::cos(x) * 2));
         x += 0.03;
         lightPos = light.getPos();
-        lightPosUni.data(glm::value_ptr(lightPos));
 
 
 
@@ -339,6 +351,7 @@ int main()
         viewUni.data(glm::value_ptr(view));
         projUni.data(glm::value_ptr(proj));
         lightColorUni.data(glm::value_ptr(lightColor));
+        lightPosUni.data(glm::value_ptr(lightPos));
         //Draw
         glDrawArrays(GL_TRIANGLES, 0, indices);
 
@@ -370,7 +383,6 @@ int main()
     // End
     ///////////////////////////////
 
-    pollglErrors();
     Init::endContext(win);
     return 0;
 }
