@@ -712,7 +712,7 @@
 1648231496 source:/home/gregory/Desktop/Current_Projects/glLighting/abstractions/Uniform/Uniform.cpp
 	"Uniform.hpp"
 
-1648231512 /home/gregory/Desktop/Current_Projects/glLighting/abstractions/Uniform/Uniform.hpp
+1648480815 /home/gregory/Desktop/Current_Projects/glLighting/abstractions/Uniform/Uniform.hpp
 	<iostream>
 	<string>
 	<stdexcept>
@@ -722,6 +722,7 @@
 	<glm/gtc/type_ptr.hpp>
 	<glm/gtc/matrix_transform.hpp>
 	"Shader/Shader.hpp"
+	"Uniform_utility.hpp"
 
 1648170226 source:/home/gregory/Desktop/Current_Projects/glLighting/abstractions/VertexArray/VertexArray.cpp
 	"VertexArray.hpp"
@@ -748,7 +749,7 @@
 	<stdexcept>
 	<utility>
 
-1648231617 source:/home/gregory/Desktop/Current_Projects/glLighting/main.cpp
+1648232012 source:/home/gregory/Desktop/Current_Projects/glLighting/main.cpp
 	<iostream>
 	<GL/glew.h>
 	<GLFW/glfw3.h>
@@ -792,4 +793,11 @@
 
 1647700649 source:/home/gregory/Desktop/Current_Projects/glLighting/useful/string_loading/string_loading.cpp
 	"string_loading.hpp"
+
+1648480815 /home/gregory/Desktop/Current_Projects/glLighting/abstractions/Uniform/Uniform_utility.hpp
+	<GL/glew.h>
+	<GLFW/glfw3.h>
+
+1648480827 source:/home/gregory/Desktop/Current_Projects/glLighting/abstractions/Uniform/Uniform_utility.cpp
+	"Uniform_utility.hpp"
 

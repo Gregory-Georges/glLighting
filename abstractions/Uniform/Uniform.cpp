@@ -98,35 +98,39 @@
     {
         uniformData = uniformValue;
 
-        switch(uniformType)
-        {
-        //Float value vectors
-        //vec3 Vector
-        case GL_FLOAT_VEC3 :
-            glUniform3fv(id, 1, uniformValue);
-            break;
+        if(isSupportedUniformType(uniformType))
+            switch(uniformType)
+            {
+            //Float value vectors
+            //vec3 Vector
+            case GL_FLOAT_VEC3 :
+                glUniform3fv(id, 1, uniformValue);
+                break;
 
-        //vec4 Vector
-        case GL_FLOAT_VEC4 :
-            glUniform4fv(id, 1, uniformValue);
-            break;
+            //vec4 Vector
+            case GL_FLOAT_VEC4 :
+                glUniform4fv(id, 1, uniformValue);
+                break;
 
 
-        //Float value matrices
-        //Mat3 Matrix
-        case GL_FLOAT_MAT3 :
-            glUniformMatrix3fv(id, 1, GL_FALSE, uniformValue);
-            break;
+            //Float value matrices
+            //Mat3 Matrix
+            case GL_FLOAT_MAT3 :
+                glUniformMatrix3fv(id, 1, GL_FALSE, uniformValue);
+                break;
 
-        //Mat4 Matrix
-        case GL_FLOAT_MAT4 :
-            glUniformMatrix4fv(id, 1, GL_FALSE, uniformValue);
-            break;
+            //Mat4 Matrix
+            case GL_FLOAT_MAT4 :
+                glUniformMatrix4fv(id, 1, GL_FALSE, uniformValue);
+                break;
 
-        //Invalid uniform
-        default :
-            throw std::runtime_error("Uniform type of " + ufName + " is invalid for function data");
-        }
+            //Invalid uniform
+            default :
+                throwError("Uniform type of " + ufName + " is invalid for function data");
+            }
+
+        else
+            throwError("Uniform type of " + ufName + " is invalid for function data");
     }
 
 

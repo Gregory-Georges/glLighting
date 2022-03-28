@@ -18,6 +18,7 @@
 					<Add directory="home/gregory-george/Desktop/glLighting/useful/glState" />
 					<Add directory="home/gregory-george/Desktop/glLighting/useful/errors" />
 					<Add directory="home/gregory-george/Desktop/glLighting/containers/TextureContainer" />
+					<Add directory="gregory/Desktop/Current_Projects/glLighting/abstractions/Uniform" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -31,6 +32,7 @@
 					<Add directory="home/gregory-george/Desktop/glLighting/useful/glState" />
 					<Add directory="home/gregory-george/Desktop/glLighting/useful/errors" />
 					<Add directory="home/gregory-george/Desktop/glLighting/containers/TextureContainer" />
+					<Add directory="gregory/Desktop/Current_Projects/glLighting/abstractions/Uniform" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -147,6 +149,12 @@
 			<Option virtualFolder="Abstractions/Uniform/" />
 		</Unit>
 		<Unit filename="abstractions/Uniform/Uniform.hpp">
+			<Option virtualFolder="Abstractions/Uniform/" />
+		</Unit>
+		<Unit filename="abstractions/Uniform/Uniform_utility.cpp">
+			<Option virtualFolder="Abstractions/Uniform/" />
+		</Unit>
+		<Unit filename="abstractions/Uniform/Uniform_utility.hpp">
 			<Option virtualFolder="Abstractions/Uniform/" />
 		</Unit>
 		<Unit filename="abstractions/VertexArray/VertexArray.cpp">
