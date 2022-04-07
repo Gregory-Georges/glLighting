@@ -59,8 +59,8 @@ int main()
 
     Shader shd(getSource("shaders/normal/vertex.shd"), getSource("shaders/normal/fragment.shd"));
     Shader lightshd(getSource("shaders/light/lightvertex.shd"), getSource("shaders/light/lightfragment.shd"));
-    printShaderUniformList(shd.getID());
-    printShaderUniformList(lightshd.getID());
+    //printShaderUniformList(shd.getID());
+    //printShaderUniformList(lightshd.getID());
 
 
 
@@ -142,9 +142,10 @@ int main()
 
     //Give data to shader
     //Get uniforms
-    Uniform modlUni(GL_FLOAT_MAT4, shd, "modl", glm::value_ptr(modl));
-    Uniform viewUni(GL_FLOAT_MAT4, shd, "view", glm::value_ptr(view));
-    Uniform projUni(GL_FLOAT_MAT4, shd, "proj", glm::value_ptr(proj));
+    shd.getUniform("modl").data(glm::value_ptr(modl));
+    //uc.add(Uniform(GL_FLOAT_MAT4, shd.getID(), "modl", glm::value_ptr(modl)));
+    Uniform viewUni(GL_FLOAT_MAT4, shd.getID(), "view", glm::value_ptr(view));
+    Uniform projUni(GL_FLOAT_MAT4, shd.getID(), "proj", glm::value_ptr(proj));
 
 
 
@@ -164,9 +165,9 @@ int main()
     glm::vec3 viewPos = cam.getPosition();
 
     //Get uniforms
-    Uniform lightColorUni(GL_FLOAT_VEC4, shd, "lightColor", glm::value_ptr(lightColor));
-    Uniform lightPosUni(GL_FLOAT_VEC3, shd, "lightPos", glm::value_ptr(lightPos));
-    Uniform viewPosUni(GL_FLOAT_VEC3, shd, "viewPos", glm::value_ptr(viewPos));
+    Uniform lightColorUni(GL_FLOAT_VEC4, shd.getID(), "lightColor", glm::value_ptr(lightColor));
+    Uniform lightPosUni(GL_FLOAT_VEC3, shd.getID(), "lightPos", glm::value_ptr(lightPos));
+    Uniform viewPosUni(GL_FLOAT_VEC3, shd.getID(), "viewPos", glm::value_ptr(viewPos));
 
 
 
@@ -306,7 +307,7 @@ int main()
         ///////////////////////////////
 
         static double x = 0.0;
-        light.setPos(glm::vec3(glm::sin(x) * 2, 1.5, glm::cos(x) * 2));
+        light.setPos(glm::vec3(glm::sin(x) * 2, glm::sin(x * 1 / 2) * 2, glm::cos(x) * 2));
         x += 0.03;
         lightPos = light.getPos();
 
@@ -342,7 +343,7 @@ int main()
         shd.use();
         //Update uniforms
         modl = object.CalculateMatrix();
-        modlUni.update();
+        shd.getUniform("modl").update();
         viewUni.update();
         projUni.update();
         lightColorUni.update();
@@ -356,7 +357,7 @@ int main()
         lightshd.use();
         //Update uniforms
         modl = light.CalculateMatrix();
-        modlUni.update();
+        shd.getUniform("modl").update();
         viewUni.update();
         projUni.update();
         //Draw

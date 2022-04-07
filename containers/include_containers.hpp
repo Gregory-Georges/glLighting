@@ -8,6 +8,7 @@
 
 //Container implementations
 #include "TextureContainer/TextureContainer.hpp"
+#include "UniformContainer/UniformContainer.hpp"
 
 
 

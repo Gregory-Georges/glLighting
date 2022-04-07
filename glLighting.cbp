@@ -5,7 +5,7 @@
 		<Option title="glLighting" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
-		<Option virtualFolders="shaders/;Abstractions/Buffer/;Abstractions/;Abstractions/Init/;Abstractions/Texture/;Abstractions/Camera/;Abstractions/Keyboard/;Abstractions/Model/;Abstractions/Mouse/;Abstractions/Renderable/;Abstractions/Shader/;Abstractions/Timer/;Abstractions/Buffer/IndexBuffer/;Abstractions/Uniform/;Abstractions/VertexArray/;Abstractions/Buffer/VertexBuffer/;Abstractions/Window/;Abstractions/ModelData/;Useful/Constants/;Useful/String_Loading/;Useful/glState/;Useful/;shaders/normal/;shaders/light/;Useful/Errors/;Containers/;Containers/TextureContainer/" />
+		<Option virtualFolders="shaders/;Abstractions/Buffer/;Abstractions/;Abstractions/Init/;Abstractions/Texture/;Abstractions/Camera/;Abstractions/Keyboard/;Abstractions/Model/;Abstractions/Mouse/;Abstractions/Renderable/;Abstractions/Shader/;Abstractions/Timer/;Abstractions/Buffer/IndexBuffer/;Abstractions/Uniform/;Abstractions/VertexArray/;Abstractions/Buffer/VertexBuffer/;Abstractions/Window/;Abstractions/ModelData/;Useful/Constants/;Useful/String_Loading/;Useful/glState/;Useful/;shaders/normal/;shaders/light/;Useful/Errors/;Containers/;Containers/TextureContainer/;Containers/UniformContainer/" />
 		<Build>
 			<Target title="Debug">
 				<Option output="bin/Debug/glLighting" prefix_auto="1" extension_auto="1" />
@@ -19,6 +19,7 @@
 					<Add directory="home/gregory-george/Desktop/glLighting/useful/errors" />
 					<Add directory="home/gregory-george/Desktop/glLighting/containers/TextureContainer" />
 					<Add directory="gregory/Desktop/Current_Projects/glLighting/abstractions/Uniform" />
+					<Add directory="gregory/Desktop/Current_Projects/glLighting/containers/UniformContainer" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -33,6 +34,7 @@
 					<Add directory="home/gregory-george/Desktop/glLighting/useful/errors" />
 					<Add directory="home/gregory-george/Desktop/glLighting/containers/TextureContainer" />
 					<Add directory="gregory/Desktop/Current_Projects/glLighting/abstractions/Uniform" />
+					<Add directory="gregory/Desktop/Current_Projects/glLighting/containers/UniformContainer" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -177,6 +179,12 @@
 		</Unit>
 		<Unit filename="containers/TextureContainer/TextureContainer.hpp">
 			<Option virtualFolder="Containers/TextureContainer/" />
+		</Unit>
+		<Unit filename="containers/UniformContainer/UniformContainer.cpp">
+			<Option virtualFolder="Containers/UniformContainer/" />
+		</Unit>
+		<Unit filename="containers/UniformContainer/UniformContainer.hpp">
+			<Option virtualFolder="Containers/UniformContainer/" />
 		</Unit>
 		<Unit filename="containers/container.hpp">
 			<Option virtualFolder="Containers/" />

@@ -7,16 +7,13 @@
 //////////////////////////////////
 
     //Constructs an uniform based in a shader
-    Uniform::Uniform(GLenum uniformType, Shader &shd, std::string ufName)
+    Uniform::Uniform(GLenum uniformType, unsigned int shd, std::string ufName)
     {
         //Assign variables
         this->uniformType = uniformType;
-        attachedShader = shd.getID();
+        attachedShader = shd;
         this->ufName = ufName;
         uniformData = nullptr;
-
-        //Bind program
-        shd.use();
 
         //Get uniform
         id = glGetUniformLocation(attachedShader, ufName.c_str());
@@ -25,16 +22,13 @@
 
 
 
-    Uniform::Uniform(GLenum uniformType, Shader &shd, std::string ufName, float* data)
+    Uniform::Uniform(GLenum uniformType, unsigned int shd, std::string ufName, float* data)
     {
         //Assign variables
         this->uniformType = uniformType;
-        attachedShader = shd.getID();
+        attachedShader = shd;
         this->ufName = ufName;
         uniformData = data;
-
-        //Bind program
-        shd.use();
 
         //Get uniform
         id = glGetUniformLocation(attachedShader, ufName.c_str());

@@ -563,7 +563,7 @@
 	<GLFW/glfw3.h>
 	"errors/errors.hpp"
 
-1647700649 /home/gregory/Desktop/Current_Projects/glLighting/useful/errors/errors.hpp
+1649182829 /home/gregory/Desktop/Current_Projects/glLighting/useful/errors/errors.hpp
 	<iostream>
 	<stdexcept>
 	<GL/glew.h>
@@ -662,17 +662,18 @@
 	<glm/gtc/type_ptr.hpp>
 	<ModelData/ModelData.hpp>
 
-1648231130 source:/home/gregory/Desktop/Current_Projects/glLighting/abstractions/Shader/Shader.cpp
+1649296643 source:/home/gregory/Desktop/Current_Projects/glLighting/abstractions/Shader/Shader.cpp
 	"Shader.hpp"
 
-1648231130 /home/gregory/Desktop/Current_Projects/glLighting/abstractions/Shader/Shader.hpp
+1649296643 /home/gregory/Desktop/Current_Projects/glLighting/abstractions/Shader/Shader.hpp
 	<string>
 	<GL/glew.h>
 	<GLFW/glfw3.h>
 	"Shader_utility.hpp"
+	"UniformContainer/UniformContainer.hpp"
 	"errors/errors.hpp"
 
-1648231130 /home/gregory/Desktop/Current_Projects/glLighting/abstractions/Shader/Shader_utility.hpp
+1649199766 /home/gregory/Desktop/Current_Projects/glLighting/abstractions/Shader/Shader_utility.hpp
 	<iostream>
 	<string>
 	<stdexcept>
@@ -680,10 +681,10 @@
 	<GL/glew.h>
 	<GLFW/glfw3.h>
 
-1648231130 source:/home/gregory/Desktop/Current_Projects/glLighting/abstractions/Shader/Shader_utility.cpp
+1649199766 source:/home/gregory/Desktop/Current_Projects/glLighting/abstractions/Shader/Shader_utility.cpp
 	"Shader_utility.hpp"
 
-1647723495 source:/home/gregory/Desktop/Current_Projects/glLighting/abstractions/Texture/Texture.cpp
+1649175495 source:/home/gregory/Desktop/Current_Projects/glLighting/abstractions/Texture/Texture.cpp
 	"Texture.hpp"
 
 1647722899 /home/gregory/Desktop/Current_Projects/glLighting/abstractions/Texture/Texture.hpp
@@ -709,20 +710,19 @@
 	<GL/glew.h>
 	<GLFW/glfw3.h>
 
-1648231496 source:/home/gregory/Desktop/Current_Projects/glLighting/abstractions/Uniform/Uniform.cpp
+1649295700 source:/home/gregory/Desktop/Current_Projects/glLighting/abstractions/Uniform/Uniform.cpp
 	"Uniform.hpp"
 
-1648480815 /home/gregory/Desktop/Current_Projects/glLighting/abstractions/Uniform/Uniform.hpp
+1649295762 /home/gregory/Desktop/Current_Projects/glLighting/abstractions/Uniform/Uniform.hpp
 	<iostream>
 	<string>
-	<stdexcept>
 	<GL/glew.h>
 	<GLFW/glfw3.h>
 	<glm/glm.hpp>
 	<glm/gtc/type_ptr.hpp>
 	<glm/gtc/matrix_transform.hpp>
-	"Shader/Shader.hpp"
 	"Uniform_utility.hpp"
+	"errors/errors.hpp"
 
 1648170226 source:/home/gregory/Desktop/Current_Projects/glLighting/abstractions/VertexArray/VertexArray.cpp
 	"VertexArray.hpp"
@@ -735,21 +735,21 @@
 1647700649 source:/home/gregory/Desktop/Current_Projects/glLighting/abstractions/Window/Window.cpp
 	"Window.hpp"
 
-1648215673 source:/home/gregory/Desktop/Current_Projects/glLighting/containers/TextureContainer/TextureContainer.cpp
+1649177606 source:/home/gregory/Desktop/Current_Projects/glLighting/containers/TextureContainer/TextureContainer.cpp
 	"TextureContainer.hpp"
 
-1648215673 /home/gregory/Desktop/Current_Projects/glLighting/containers/TextureContainer/TextureContainer.hpp
+1649186515 /home/gregory/Desktop/Current_Projects/glLighting/containers/TextureContainer/TextureContainer.hpp
 	<string>
 	<stdexcept>
 	"container.hpp"
 	"Texture/Texture.hpp"
 
-1648231130 /home/gregory/Desktop/Current_Projects/glLighting/containers/container.hpp
+1649186515 /home/gregory/Desktop/Current_Projects/glLighting/containers/container.hpp
 	<vector>
 	<stdexcept>
 	<utility>
 
-1648232012 source:/home/gregory/Desktop/Current_Projects/glLighting/main.cpp
+1649295815 source:/home/gregory/Desktop/Current_Projects/glLighting/main.cpp
 	<iostream>
 	<GL/glew.h>
 	<GLFW/glfw3.h>
@@ -781,11 +781,12 @@
 	"Camera/camera.hpp"
 	"Renderable/Renderable.hpp"
 
-1648215673 /home/gregory/Desktop/Current_Projects/glLighting/containers/include_containers.hpp
+1649294931 /home/gregory/Desktop/Current_Projects/glLighting/containers/include_containers.hpp
 	"container.hpp"
 	"TextureContainer/TextureContainer.hpp"
+	"UniformContainer/UniformContainer.hpp"
 
-1648173519 source:/home/gregory/Desktop/Current_Projects/glLighting/useful/errors/errors.cpp
+1649186515 source:/home/gregory/Desktop/Current_Projects/glLighting/useful/errors/errors.cpp
 	"errors.hpp"
 
 1647700649 source:/home/gregory/Desktop/Current_Projects/glLighting/useful/glState/glState.cpp
@@ -794,10 +795,17 @@
 1647700649 source:/home/gregory/Desktop/Current_Projects/glLighting/useful/string_loading/string_loading.cpp
 	"string_loading.hpp"
 
-1648480815 /home/gregory/Desktop/Current_Projects/glLighting/abstractions/Uniform/Uniform_utility.hpp
+1648481338 /home/gregory/Desktop/Current_Projects/glLighting/abstractions/Uniform/Uniform_utility.hpp
 	<GL/glew.h>
 	<GLFW/glfw3.h>
 
-1648480827 source:/home/gregory/Desktop/Current_Projects/glLighting/abstractions/Uniform/Uniform_utility.cpp
+1648481338 source:/home/gregory/Desktop/Current_Projects/glLighting/abstractions/Uniform/Uniform_utility.cpp
 	"Uniform_utility.hpp"
+
+1649294878 source:/home/gregory/Desktop/Current_Projects/glLighting/containers/UniformContainer/UniformContainer.cpp
+	"UniformContainer.hpp"
+
+1649294812 /home/gregory/Desktop/Current_Projects/glLighting/containers/UniformContainer/UniformContainer.hpp
+	"Uniform/Uniform.hpp"
+	"container.hpp"
 

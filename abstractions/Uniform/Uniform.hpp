@@ -4,7 +4,6 @@
 //Standart headers
 #include <iostream>
 #include <string>
-#include <stdexcept>
 
 //Graphic headers
 #include <GL/glew.h>
@@ -15,11 +14,9 @@
 #include <glm/gtc/type_ptr.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 
-//Abstractions
-#include "Shader/Shader.hpp"
-
 //Utilitu
 #include "Uniform_utility.hpp"
+#include "errors/errors.hpp"
 
 
 
@@ -49,8 +46,8 @@ public:
     // Constructor / destructor
     //////////////////////////////////
 
-    Uniform(GLenum uniformType, Shader &shd, std::string ufName);               /**< Constructs an uniform of said type */
-    Uniform(GLenum uniformType, Shader &shd, std::string ufName, float* data);  /**< Constructs an uniform and gives it data */
+    Uniform(GLenum uniformType, unsigned int shd, std::string ufName);               /**< Constructs an uniform of said type */
+    Uniform(GLenum uniformType, unsigned int shd, std::string ufName, float* data);  /**< Constructs an uniform and gives it data */
 
 
 
