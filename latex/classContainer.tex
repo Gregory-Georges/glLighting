@@ -1,0 +1,153 @@
+\hypertarget{classContainer}{}\doxysection{Container$<$ T $>$ Class Template Reference}
+\label{classContainer}\index{Container$<$ T $>$@{Container$<$ T $>$}}
+
+
+{\ttfamily \#include $<$container.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classContainer_ab17ce1f67243b28abcd4c8113a72524c}{Container}} ()
+\item 
+\mbox{\hyperlink{classContainer_a5b3440c3177017d2d6a190724e7078ec}{$\sim$\+Container}} ()
+\item 
+\mbox{\hyperlink{classContainer_a214411c4d9531764909c83bf0c40733e}{Container}} (const \mbox{\hyperlink{classContainer}{Container}} \&con)
+\item 
+T \& \mbox{\hyperlink{classContainer_a8f17e7b4450d93b58a7cfce30abe24cb}{get}} (int index)
+\item 
+int \mbox{\hyperlink{classContainer_a735571f3cb361bec0f516db45eb4287c}{get\+Size}} (void)
+\item 
+void \mbox{\hyperlink{classContainer_a5b88454c3b513d32103c3d35906be2c8}{add}} (T \&\&obj)
+\item 
+void \mbox{\hyperlink{classContainer_aab0690d44c8e04614cea46935ff49e7a}{clear}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ T $>$ \mbox{\hyperlink{classContainer_a91846324c055de23d7cd03b2080ee8fe}{container}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class T$>$\newline
+class Container$<$ T $>$}
+
+Template class for a container containing objects 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classContainer_ab17ce1f67243b28abcd4c8113a72524c}\label{classContainer_ab17ce1f67243b28abcd4c8113a72524c}} 
+\index{Container$<$ T $>$@{Container$<$ T $>$}!Container@{Container}}
+\index{Container@{Container}!Container$<$ T $>$@{Container$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Container()}{Container()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classContainer}{Container}}$<$ T $>$\+::\mbox{\hyperlink{classContainer}{Container}}}
+
+Build a container 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{78     \{}
+\DoxyCodeLine{79         \mbox{\hyperlink{classContainer_a91846324c055de23d7cd03b2080ee8fe}{container}}.reserve(10);}
+\DoxyCodeLine{80     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classContainer_a5b3440c3177017d2d6a190724e7078ec}\label{classContainer_a5b3440c3177017d2d6a190724e7078ec}} 
+\index{Container$<$ T $>$@{Container$<$ T $>$}!````~Container@{$\sim$Container}}
+\index{````~Container@{$\sim$Container}!Container$<$ T $>$@{Container$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{$\sim$Container()}{~Container()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classContainer}{Container}}$<$ T $>$\+::$\sim$\mbox{\hyperlink{classContainer}{Container}}}
+
+Destroy the container and it\textquotesingle{}s elements 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{84     \{}
+\DoxyCodeLine{85         \mbox{\hyperlink{classContainer_aab0690d44c8e04614cea46935ff49e7a}{clear}}();}
+\DoxyCodeLine{86     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classContainer_a214411c4d9531764909c83bf0c40733e}\label{classContainer_a214411c4d9531764909c83bf0c40733e}} 
+\index{Container$<$ T $>$@{Container$<$ T $>$}!Container@{Container}}
+\index{Container@{Container}!Container$<$ T $>$@{Container$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Container()}{Container()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classContainer}{Container}}$<$ T $>$\+::\mbox{\hyperlink{classContainer}{Container}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classContainer}{Container}}$<$ T $>$ \&}]{con }\end{DoxyParamCaption})}
+
+Call to copy constructor is illegal 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{91     \{}
+\DoxyCodeLine{92         \mbox{\hyperlink{errors_8cpp_a2bd2972bdd57f629af94413984c74455}{throwError}}(\textcolor{stringliteral}{"Copy constructor call is illegal on container class"});}
+\DoxyCodeLine{93     \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classContainer_a5b88454c3b513d32103c3d35906be2c8}\label{classContainer_a5b88454c3b513d32103c3d35906be2c8}} 
+\index{Container$<$ T $>$@{Container$<$ T $>$}!add@{add}}
+\index{add@{add}!Container$<$ T $>$@{Container$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{classContainer}{Container}}$<$ T $>$\+::add (\begin{DoxyParamCaption}\item[{T \&\&}]{obj }\end{DoxyParamCaption})}
+
+Adds r-\/value to the container 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{133     \{}
+\DoxyCodeLine{134         \mbox{\hyperlink{classContainer_a91846324c055de23d7cd03b2080ee8fe}{container}}.push\_back(std::move(obj));}
+\DoxyCodeLine{135     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classContainer_aab0690d44c8e04614cea46935ff49e7a}\label{classContainer_aab0690d44c8e04614cea46935ff49e7a}} 
+\index{Container$<$ T $>$@{Container$<$ T $>$}!clear@{clear}}
+\index{clear@{clear}!Container$<$ T $>$@{Container$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{classContainer}{Container}}$<$ T $>$\+::clear}
+
+Deletes every object in the container 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{150     \{}
+\DoxyCodeLine{151         \mbox{\hyperlink{classContainer_a91846324c055de23d7cd03b2080ee8fe}{container}}.clear();}
+\DoxyCodeLine{152     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classContainer_a8f17e7b4450d93b58a7cfce30abe24cb}\label{classContainer_a8f17e7b4450d93b58a7cfce30abe24cb}} 
+\index{Container$<$ T $>$@{Container$<$ T $>$}!get@{get}}
+\index{get@{get}!Container$<$ T $>$@{Container$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+T \& \mbox{\hyperlink{classContainer}{Container}}$<$ T $>$\+::get (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})}
+
+Returns the element at said index 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{108     \{}
+\DoxyCodeLine{109         \textcolor{keywordflow}{return} \mbox{\hyperlink{classContainer_a91846324c055de23d7cd03b2080ee8fe}{container}}.at(index);}
+\DoxyCodeLine{110     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classContainer_a735571f3cb361bec0f516db45eb4287c}\label{classContainer_a735571f3cb361bec0f516db45eb4287c}} 
+\index{Container$<$ T $>$@{Container$<$ T $>$}!getSize@{getSize}}
+\index{getSize@{getSize}!Container$<$ T $>$@{Container$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getSize()}{getSize()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+int \mbox{\hyperlink{classContainer}{Container}}$<$ T $>$\+::get\+Size (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Returns the size of the container 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{115     \{}
+\DoxyCodeLine{116         \textcolor{keywordflow}{return} \mbox{\hyperlink{classContainer_a91846324c055de23d7cd03b2080ee8fe}{container}}.size();}
+\DoxyCodeLine{117     \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classContainer_a91846324c055de23d7cd03b2080ee8fe}\label{classContainer_a91846324c055de23d7cd03b2080ee8fe}} 
+\index{Container$<$ T $>$@{Container$<$ T $>$}!container@{container}}
+\index{container@{container}!Container$<$ T $>$@{Container$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{container}{container}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+std\+::vector$<$T$>$ \mbox{\hyperlink{classContainer}{Container}}$<$ T $>$\+::container\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+containers/\mbox{\hyperlink{container_8hpp}{container.\+hpp}}\end{DoxyCompactItemize}

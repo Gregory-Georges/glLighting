@@ -24,7 +24,6 @@
 #include "Buffer/Buffer.hpp"            // Buffer
     #include "Buffer/IndexBuffer/indexbuffer.hpp"       // Index buffer
     #include "Buffer/VertexBuffer/vertexbuffer.hpp"     // Vertex buffer
-    #include "Buffer/Model/model.hpp"                   // Contains model info
 #include "Shader/Shader.hpp"            // Shader
 #include "Texture/Texture.hpp"          // Texture
 #include "VertexArray/VertexArray.hpp"  // VertexArray
@@ -39,7 +38,6 @@
 //Models and rendering
 #include "ModelData/ModelData.hpp"      //Model information
 #include "Camera/camera.hpp"            //Camera abstraction
-#include "Renderable/Renderable.hpp"    //Renderble data
 
 
 

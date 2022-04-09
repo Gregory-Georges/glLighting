@@ -1,0 +1,16 @@
+digraph "abstractions/Buffer" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_898d9f057ab0c3f0aea2afe60f29a516 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="abstractions" fontname="Helvetica", fontsize="10", URL="dir_898d9f057ab0c3f0aea2afe60f29a516.html"]
+  subgraph clusterdir_79e691fee84f1aaa49b74a95d7c389a5 {
+    graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_79e691fee84f1aaa49b74a95d7c389a5.html"];
+    dir_79e691fee84f1aaa49b74a95d7c389a5 [shape=plaintext label="Buffer"];
+    dir_2807fd209effad43dceb01c948e83499 [shape=box label="IndexBuffer" color="black" fillcolor="white" style="filled" URL="dir_2807fd209effad43dceb01c948e83499.html"];
+    dir_8269f70cd93013ad8603e6e1028501bf [shape=box label="VertexBuffer" color="black" fillcolor="white" style="filled" URL="dir_8269f70cd93013ad8603e6e1028501bf.html"];
+  }
+  }
+  dir_1a59a3d145870e2ede777001faa583ab [shape=box label="useful" fillcolor="white" style="filled" color="red" URL="dir_1a59a3d145870e2ede777001faa583ab.html"];
+  dir_79e691fee84f1aaa49b74a95d7c389a5->dir_1a59a3d145870e2ede777001faa583ab [headlabel="1", labeldistance=1.5 headhref="dir_000001_000018.html"];
+}

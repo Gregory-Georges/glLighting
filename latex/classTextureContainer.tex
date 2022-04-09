@@ -1,0 +1,78 @@
+\hypertarget{classTextureContainer}{}\doxysection{Texture\+Container Class Reference}
+\label{classTextureContainer}\index{TextureContainer@{TextureContainer}}
+
+
+{\ttfamily \#include $<$Texture\+Container.\+hpp$>$}
+
+
+
+Inheritance diagram for Texture\+Container\+:
+% FIG 0
+
+
+Collaboration diagram for Texture\+Container\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTextureContainer_a982c457f377d452cd4ba5d24461f904f}{Texture\+Container}} (std\+::string default\+Path, int defaul\+Type)
+\item 
+\mbox{\hyperlink{classTexture}{Texture}} \& \mbox{\hyperlink{classTextureContainer_ab8e1972f0af6cfc28b108b8f86846d3a}{get\+Default}} ()
+\item 
+\mbox{\hyperlink{classTexture}{Texture}} \& \mbox{\hyperlink{classTextureContainer_a3a98124592e6cd579cd989cfcc9d8a8e}{find}} (const std\+::string \&Path)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{classContainer}{Container}} containing textures 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classTextureContainer_a982c457f377d452cd4ba5d24461f904f}\label{classTextureContainer_a982c457f377d452cd4ba5d24461f904f}} 
+\index{TextureContainer@{TextureContainer}!TextureContainer@{TextureContainer}}
+\index{TextureContainer@{TextureContainer}!TextureContainer@{TextureContainer}}
+\doxysubsubsection{\texorpdfstring{TextureContainer()}{TextureContainer()}}
+{\footnotesize\ttfamily Texture\+Container\+::\+Texture\+Container (\begin{DoxyParamCaption}\item[{std\+::string}]{default\+Path,  }\item[{int}]{defaul\+Type }\end{DoxyParamCaption})}
+
+Constructs a texture container object 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{9 : defaultTexture(defaultPath, defaultType) \{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classTextureContainer_a3a98124592e6cd579cd989cfcc9d8a8e}\label{classTextureContainer_a3a98124592e6cd579cd989cfcc9d8a8e}} 
+\index{TextureContainer@{TextureContainer}!find@{find}}
+\index{find@{find}!TextureContainer@{TextureContainer}}
+\doxysubsubsection{\texorpdfstring{find()}{find()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTexture}{Texture}} \& Texture\+Container\+::find (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{Path }\end{DoxyParamCaption})}
+
+Returns a loaded texture of the parameter name 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{26     \{}
+\DoxyCodeLine{27         \textcolor{keywordflow}{for}(\mbox{\hyperlink{classTexture}{Texture}} tex : \mbox{\hyperlink{classContainer_a91846324c055de23d7cd03b2080ee8fe}{container}})}
+\DoxyCodeLine{28             \textcolor{keywordflow}{if}(tex.getPath() == Path)}
+\DoxyCodeLine{29                 \textcolor{keywordflow}{return} tex;}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31         \textcolor{keywordflow}{return} defaultTexture;}
+\DoxyCodeLine{32     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classTextureContainer_ab8e1972f0af6cfc28b108b8f86846d3a}\label{classTextureContainer_ab8e1972f0af6cfc28b108b8f86846d3a}} 
+\index{TextureContainer@{TextureContainer}!getDefault@{getDefault}}
+\index{getDefault@{getDefault}!TextureContainer@{TextureContainer}}
+\doxysubsubsection{\texorpdfstring{getDefault()}{getDefault()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTexture}{Texture}} \& Texture\+Container\+::get\+Default (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns the set default texture 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{23 \{ \textcolor{keywordflow}{return} defaultTexture; \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+containers/\+Texture\+Container/\mbox{\hyperlink{TextureContainer_8hpp}{Texture\+Container.\+hpp}}\item 
+containers/\+Texture\+Container/\mbox{\hyperlink{TextureContainer_8cpp}{Texture\+Container.\+cpp}}\end{DoxyCompactItemize}

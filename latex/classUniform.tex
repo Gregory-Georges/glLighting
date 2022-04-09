@@ -1,0 +1,182 @@
+\hypertarget{classUniform}{}\doxysection{Uniform Class Reference}
+\label{classUniform}\index{Uniform@{Uniform}}
+
+
+{\ttfamily \#include $<$Uniform.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUniform_ab3a5e05baee2443a4c63216bdda76ecf}{Uniform}} (G\+Lenum uniform\+Type, unsigned int shd, std\+::string uf\+Name)
+\item 
+\mbox{\hyperlink{classUniform_a45949eb1e1bd1f7f558150521855ce29}{Uniform}} (G\+Lenum uniform\+Type, unsigned int shd, std\+::string uf\+Name, float $\ast$\mbox{\hyperlink{classUniform_a3f98625d4b9a7ea16c819507f07e200d}{data}})
+\item 
+unsigned int \mbox{\hyperlink{classUniform_a21276b82eb1efc4c2f88fd02b7ced8c6}{get\+ID}} ()
+\item 
+std\+::string \mbox{\hyperlink{classUniform_a3529370e59e6de1cdc09b5dfc56bcea8}{get\+Name}} ()
+\item 
+void \mbox{\hyperlink{classUniform_a61b4dccb688608d29ac16a21e2b9e5b9}{validate}} ()
+\item 
+void \mbox{\hyperlink{classUniform_a3f98625d4b9a7ea16c819507f07e200d}{data}} (float $\ast$uniform\+Value)
+\item 
+void \mbox{\hyperlink{classUniform_a8c44bc0950fe307bd32e3e14df8f4121}{update}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Contains a uniform object 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classUniform_ab3a5e05baee2443a4c63216bdda76ecf}\label{classUniform_ab3a5e05baee2443a4c63216bdda76ecf}} 
+\index{Uniform@{Uniform}!Uniform@{Uniform}}
+\index{Uniform@{Uniform}!Uniform@{Uniform}}
+\doxysubsubsection{\texorpdfstring{Uniform()}{Uniform()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Uniform\+::\+Uniform (\begin{DoxyParamCaption}\item[{G\+Lenum}]{uniform\+Type,  }\item[{unsigned int}]{shd,  }\item[{std\+::string}]{uf\+Name }\end{DoxyParamCaption})}
+
+Constructs an uniform of said type 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{11     \{}
+\DoxyCodeLine{12         \textcolor{comment}{//Assign variables}}
+\DoxyCodeLine{13         this-\/>uniformType = uniformType;}
+\DoxyCodeLine{14         attachedShader = shd;}
+\DoxyCodeLine{15         this-\/>ufName = ufName;}
+\DoxyCodeLine{16         uniformData = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18         \textcolor{comment}{//Get uniform}}
+\DoxyCodeLine{19         \textcolor{keywordtype}{id} = glGetUniformLocation(attachedShader, ufName.c\_str());}
+\DoxyCodeLine{20         \mbox{\hyperlink{classUniform_a61b4dccb688608d29ac16a21e2b9e5b9}{validate}}();}
+\DoxyCodeLine{21     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classUniform_a45949eb1e1bd1f7f558150521855ce29}\label{classUniform_a45949eb1e1bd1f7f558150521855ce29}} 
+\index{Uniform@{Uniform}!Uniform@{Uniform}}
+\index{Uniform@{Uniform}!Uniform@{Uniform}}
+\doxysubsubsection{\texorpdfstring{Uniform()}{Uniform()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Uniform\+::\+Uniform (\begin{DoxyParamCaption}\item[{G\+Lenum}]{uniform\+Type,  }\item[{unsigned int}]{shd,  }\item[{std\+::string}]{uf\+Name,  }\item[{float $\ast$}]{data }\end{DoxyParamCaption})}
+
+Constructs an uniform and gives it data 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{26     \{}
+\DoxyCodeLine{27         \textcolor{comment}{//Assign variables}}
+\DoxyCodeLine{28         this-\/>uniformType = uniformType;}
+\DoxyCodeLine{29         attachedShader = shd;}
+\DoxyCodeLine{30         this-\/>ufName = ufName;}
+\DoxyCodeLine{31         uniformData = \mbox{\hyperlink{classUniform_a3f98625d4b9a7ea16c819507f07e200d}{data}};}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33         \textcolor{comment}{//Get uniform}}
+\DoxyCodeLine{34         \textcolor{keywordtype}{id} = glGetUniformLocation(attachedShader, ufName.c\_str());}
+\DoxyCodeLine{35         \mbox{\hyperlink{classUniform_a61b4dccb688608d29ac16a21e2b9e5b9}{validate}}();}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37         \textcolor{comment}{//Give data}}
+\DoxyCodeLine{38         \mbox{\hyperlink{classUniform_a8c44bc0950fe307bd32e3e14df8f4121}{update}}();}
+\DoxyCodeLine{39     \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classUniform_a3f98625d4b9a7ea16c819507f07e200d}\label{classUniform_a3f98625d4b9a7ea16c819507f07e200d}} 
+\index{Uniform@{Uniform}!data@{data}}
+\index{data@{data}!Uniform@{Uniform}}
+\doxysubsubsection{\texorpdfstring{data()}{data()}}
+{\footnotesize\ttfamily void Uniform\+::data (\begin{DoxyParamCaption}\item[{float $\ast$}]{uniform\+Value }\end{DoxyParamCaption})}
+
+Gives data to the uniform 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{92     \{}
+\DoxyCodeLine{93         uniformData = uniformValue;}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95         \textcolor{keywordflow}{if}(\mbox{\hyperlink{Uniform__utility_8cpp_a8e95e9978ce83887fc5bb96df3768f82}{isSupportedUniformType}}(uniformType))}
+\DoxyCodeLine{96             \textcolor{keywordflow}{switch}(uniformType)}
+\DoxyCodeLine{97             \{}
+\DoxyCodeLine{98             \textcolor{comment}{//Float value vectors}}
+\DoxyCodeLine{99             \textcolor{comment}{//vec3 Vector}}
+\DoxyCodeLine{100             \textcolor{keywordflow}{case} GL\_FLOAT\_VEC3 :}
+\DoxyCodeLine{101                 glUniform3fv(\textcolor{keywordtype}{id}, 1, uniformValue);}
+\DoxyCodeLine{102                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104             \textcolor{comment}{//vec4 Vector}}
+\DoxyCodeLine{105             \textcolor{keywordflow}{case} GL\_FLOAT\_VEC4 :}
+\DoxyCodeLine{106                 glUniform4fv(\textcolor{keywordtype}{id}, 1, uniformValue);}
+\DoxyCodeLine{107                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109 }
+\DoxyCodeLine{110             \textcolor{comment}{//Float value matrices}}
+\DoxyCodeLine{111             \textcolor{comment}{//Mat3 Matrix}}
+\DoxyCodeLine{112             \textcolor{keywordflow}{case} GL\_FLOAT\_MAT3 :}
+\DoxyCodeLine{113                 glUniformMatrix3fv(\textcolor{keywordtype}{id}, 1, GL\_FALSE, uniformValue);}
+\DoxyCodeLine{114                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{116             \textcolor{comment}{//Mat4 Matrix}}
+\DoxyCodeLine{117             \textcolor{keywordflow}{case} GL\_FLOAT\_MAT4 :}
+\DoxyCodeLine{118                 glUniformMatrix4fv(\textcolor{keywordtype}{id}, 1, GL\_FALSE, uniformValue);}
+\DoxyCodeLine{119                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{120 }
+\DoxyCodeLine{121             \textcolor{comment}{//Invalid uniform}}
+\DoxyCodeLine{122             default :}
+\DoxyCodeLine{123                 \mbox{\hyperlink{errors_8cpp_a2bd2972bdd57f629af94413984c74455}{throwError}}(\textcolor{stringliteral}{"Uniform type of "} + ufName + \textcolor{stringliteral}{" is invalid for function data"});}
+\DoxyCodeLine{124             \}}
+\DoxyCodeLine{125 }
+\DoxyCodeLine{126         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{127             \mbox{\hyperlink{errors_8cpp_a2bd2972bdd57f629af94413984c74455}{throwError}}(\textcolor{stringliteral}{"Uniform type of "} + ufName + \textcolor{stringliteral}{" is invalid for function data"});}
+\DoxyCodeLine{128     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classUniform_a21276b82eb1efc4c2f88fd02b7ced8c6}\label{classUniform_a21276b82eb1efc4c2f88fd02b7ced8c6}} 
+\index{Uniform@{Uniform}!getID@{getID}}
+\index{getID@{getID}!Uniform@{Uniform}}
+\doxysubsubsection{\texorpdfstring{getID()}{getID()}}
+{\footnotesize\ttfamily unsigned int Uniform\+::get\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns the name of the uniform 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{54 \{ \textcolor{keywordflow}{return} id; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classUniform_a3529370e59e6de1cdc09b5dfc56bcea8}\label{classUniform_a3529370e59e6de1cdc09b5dfc56bcea8}} 
+\index{Uniform@{Uniform}!getName@{getName}}
+\index{getName@{getName}!Uniform@{Uniform}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily std\+::string Uniform\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns the uniform\textquotesingle{}s name 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{57 \{ \textcolor{keywordflow}{return} ufName; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classUniform_a8c44bc0950fe307bd32e3e14df8f4121}\label{classUniform_a8c44bc0950fe307bd32e3e14df8f4121}} 
+\index{Uniform@{Uniform}!update@{update}}
+\index{update@{update}!Uniform@{Uniform}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Uniform\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Uses predefined pointer to give data 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{133     \{}
+\DoxyCodeLine{134         \textcolor{keywordflow}{if}(uniformData != \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{135             \mbox{\hyperlink{classUniform_a3f98625d4b9a7ea16c819507f07e200d}{data}}(uniformData);}
+\DoxyCodeLine{136         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{137             \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"Attempt to update uniform "} + ufName + \textcolor{stringliteral}{" without it being set\(\backslash\)n"});}
+\DoxyCodeLine{138     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classUniform_a61b4dccb688608d29ac16a21e2b9e5b9}\label{classUniform_a61b4dccb688608d29ac16a21e2b9e5b9}} 
+\index{Uniform@{Uniform}!validate@{validate}}
+\index{validate@{validate}!Uniform@{Uniform}}
+\doxysubsubsection{\texorpdfstring{validate()}{validate()}}
+{\footnotesize\ttfamily void Uniform\+::validate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Throws an error if the uniform is invalid 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{73     \{}
+\DoxyCodeLine{74         \textcolor{keywordflow}{if}(\textcolor{keywordtype}{id} == -\/1) \textcolor{comment}{//id is -\/1 when uniform is no instantiated correctly}}
+\DoxyCodeLine{75             \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"Uniform "} + ufName + \textcolor{stringliteral}{" is invalid"});}
+\DoxyCodeLine{76     \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+abstractions/\+Uniform/\mbox{\hyperlink{Uniform_8hpp}{Uniform.\+hpp}}\item 
+abstractions/\+Uniform/\mbox{\hyperlink{Uniform_8cpp}{Uniform.\+cpp}}\end{DoxyCompactItemize}

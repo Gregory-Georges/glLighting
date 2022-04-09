@@ -1,0 +1,71 @@
+\hypertarget{errors_8hpp}{}\doxysection{useful/errors/errors.hpp File Reference}
+\label{errors_8hpp}\index{useful/errors/errors.hpp@{useful/errors/errors.hpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$stdexcept$>$}\newline
+{\ttfamily \#include $<$G\+L/glew.\+h$>$}\newline
+{\ttfamily \#include $<$G\+L\+F\+W/glfw3.\+h$>$}\newline
+Include dependency graph for errors.\+hpp\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{errors_8hpp_afa51bc64e35506f47b8d79bc53a15098}{pollgl\+Errors}} ()
+\item 
+void \mbox{\hyperlink{errors_8hpp_a2bd2972bdd57f629af94413984c74455}{throw\+Error}} (std\+::string error\+Message)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{errors_8hpp_afa51bc64e35506f47b8d79bc53a15098}\label{errors_8hpp_afa51bc64e35506f47b8d79bc53a15098}} 
+\index{errors.hpp@{errors.hpp}!pollglErrors@{pollglErrors}}
+\index{pollglErrors@{pollglErrors}!errors.hpp@{errors.hpp}}
+\doxysubsubsection{\texorpdfstring{pollglErrors()}{pollglErrors()}}
+{\footnotesize\ttfamily void pollgl\+Errors (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Checks if any open\+GL error has been thrown and throws error if yes 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{11     \{}
+\DoxyCodeLine{12         \textcolor{comment}{//Out string}}
+\DoxyCodeLine{13         std::string err\_str = \textcolor{stringliteral}{""};}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15         \textcolor{comment}{//Get all errors and types}}
+\DoxyCodeLine{16         \textcolor{keywordflow}{while}(\textcolor{keywordtype}{int} error = glGetError())}
+\DoxyCodeLine{17         \{}
+\DoxyCodeLine{18             err\_str += \textcolor{stringliteral}{""};}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20             \textcolor{comment}{//Get error type}}
+\DoxyCodeLine{21             \textcolor{keywordflow}{switch}(error)}
+\DoxyCodeLine{22             \{}
+\DoxyCodeLine{23                 \textcolor{keywordflow}{case} GL\_NO\_ERROR :                          err\_str += \textcolor{stringliteral}{"GL\_NO\_ERROR\(\backslash\)n"}; \textcolor{keywordflow}{break};}
+\DoxyCodeLine{24                 \textcolor{keywordflow}{case} GL\_INVALID\_ENUM :                      err\_str += \textcolor{stringliteral}{"INVALID\_ENUM\(\backslash\)n"}; \textcolor{keywordflow}{break};}
+\DoxyCodeLine{25                 \textcolor{keywordflow}{case} GL\_INVALID\_VALUE :                     err\_str += \textcolor{stringliteral}{"GL\_INVALID\_VALUE\(\backslash\)n"}; \textcolor{keywordflow}{break};}
+\DoxyCodeLine{26                 \textcolor{keywordflow}{case} GL\_INVALID\_OPERATION :                 err\_str += \textcolor{stringliteral}{"GL\_INVALID\_OPERATION\(\backslash\)n"}; \textcolor{keywordflow}{break};}
+\DoxyCodeLine{27                 \textcolor{keywordflow}{case} GL\_INVALID\_FRAMEBUFFER\_OPERATION :     err\_str += \textcolor{stringliteral}{"GL\_INVALID\_FRAMEBUFFER\_OPERATION\(\backslash\)n"}; \textcolor{keywordflow}{break};}
+\DoxyCodeLine{28                 \textcolor{keywordflow}{case} GL\_OUT\_OF\_MEMORY :                     err\_str += \textcolor{stringliteral}{"GL\_OUT\_OF\_MEMORY\(\backslash\)n"}; \textcolor{keywordflow}{break};}
+\DoxyCodeLine{29                 \textcolor{keywordflow}{case} GL\_STACK\_UNDERFLOW :                   err\_str += \textcolor{stringliteral}{"GL\_STACK\_UNDERFLOW\(\backslash\)n"}; \textcolor{keywordflow}{break};}
+\DoxyCodeLine{30                 \textcolor{keywordflow}{case} GL\_STACK\_OVERFLOW :                    err\_str += \textcolor{stringliteral}{"GL\_STACK\_OVERFLOW\(\backslash\)n"}; \textcolor{keywordflow}{break};}
+\DoxyCodeLine{31                 default :                                   err\_str += \textcolor{stringliteral}{"UNKNOWN\_ERROR\_TYPE\(\backslash\)n"};}
+\DoxyCodeLine{32             \}}
+\DoxyCodeLine{33         \}}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35         \textcolor{comment}{//Out if there was an error}}
+\DoxyCodeLine{36         \textcolor{keywordflow}{if}(err\_str != \textcolor{stringliteral}{""})}
+\DoxyCodeLine{37             \mbox{\hyperlink{errors_8cpp_a2bd2972bdd57f629af94413984c74455}{throwError}}(\textcolor{stringliteral}{"OpenGL error : "} + err\_str);}
+\DoxyCodeLine{38     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{errors_8hpp_a2bd2972bdd57f629af94413984c74455}\label{errors_8hpp_a2bd2972bdd57f629af94413984c74455}} 
+\index{errors.hpp@{errors.hpp}!throwError@{throwError}}
+\index{throwError@{throwError}!errors.hpp@{errors.hpp}}
+\doxysubsubsection{\texorpdfstring{throwError()}{throwError()}}
+{\footnotesize\ttfamily void throw\+Error (\begin{DoxyParamCaption}\item[{std\+::string}]{error\+Message }\end{DoxyParamCaption})}
+
+Returns a runtime error with the parameter message 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{44     \{}
+\DoxyCodeLine{45         \textcolor{keywordflow}{throw} std::runtime\_error(errorMessage.c\_str());}
+\DoxyCodeLine{46     \}}
+
+\end{DoxyCode}

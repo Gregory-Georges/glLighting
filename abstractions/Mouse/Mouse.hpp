@@ -30,7 +30,7 @@ public:
     // Constructor / destructor
     //////////////////////////////////
 
-    Mouse(Window& win);            /**< Constructs a new keyboard object based on a window */
+    Mouse(Window& win);         /**< Constructs a new keyboard object based on a window */
 
 
 
@@ -41,7 +41,7 @@ public:
     // Initialize
     //////////////////////////////////
 
-    void init(Window& win);     /**< Initializes the keyboard object onto a new window */
+    void init(Window& win);     /**< Initializes the mouse object onto a new window */
     bool isValid();             /**< Checks wether the associated window object still exists */
 
 
@@ -53,11 +53,11 @@ public:
     // Getters
     //////////////////////////////////
 
-    double getMousePosX();
-    double getMousePosY();
+    double getMousePosX();      /**< Returns the position of the mouse on the x axis */
+    double getMousePosY();      /**< Returns the position of the mouse on the y axis */
 
-    bool isLeftPressed();
-    bool isRightPressed();
+    bool isLeftPressed();       /**< Returns if the left mouse button is pressed */
+    bool isRightPressed();      /**< Returns if the right mouse button is pressed */
 };
 
 #endif // MOUSE_HPP

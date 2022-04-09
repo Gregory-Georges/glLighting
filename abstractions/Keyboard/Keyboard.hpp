@@ -11,7 +11,7 @@
 
 
 /**
- * Handles keyboard inputs inside an openned glfw window
+ * Handles keyboard inputs inside a glfw window
  */
 class Keyboard
 {
@@ -41,7 +41,7 @@ public:
     // Initialize
     //////////////////////////////////
 
-    void init(Window& win);      /**< Initializes the keyboard object onto a new window */
+    void init(Window& win);     /**< Initializes the keyboard object onto a new window */
     bool isValid();             /**< Checks wether the associated window object still exists */
 
 

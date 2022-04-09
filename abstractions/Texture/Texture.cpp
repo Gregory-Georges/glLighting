@@ -8,67 +8,67 @@
 
 
 
-//Destroys a texture
-Texture::~Texture()
-{
-    glDeleteTextures(1, &id);
-}
+    //Destroys a texture
+    Texture::~Texture()
+    {
+        glDeleteTextures(1, &id);
+    }
 
 
 
-//Creates a texture
-Texture::Texture(std::string Path, unsigned int textureType)
-{
-    //Create new texture
-    glGenTextures(1, &id);
+    //Creates a texture
+    Texture::Texture(std::string Path, unsigned int textureType)
+    {
+        //Create new texture
+        glGenTextures(1, &id);
 
-    //Load image
-    this->textureType = textureType;
-    texPath = Path;
-    unsigned char* Image = loadImgRgb(Path, &x, &y);
+        //Load image
+        this->textureType = textureType;
+        texPath = Path;
+        unsigned char* Image = loadImgRgb(Path, &x, &y);
 
-    load(Path, textureType);
+        load(Path, textureType);
 
-    //Put image in texture
-    setData(Image, textureType, x, y);
+        //Put image in texture
+        setData(Image, textureType, x, y);
 
-    //Free image
-    freeImgRgb(Image);
-}
-
-
-
-//Copies a texture
-Texture::Texture(const Texture &tex)
-{
-    //Create new texture
-    glGenTextures(1, &id);
-
-    //Retrieve data
-    textureType = tex.textureType;
-    texPath = tex.texPath;
-    unsigned char* Image = loadImgRgb(texPath, &x, &y);
-
-    //Give data
-    setData(Image, textureType, x, y);
-
-    //Free image
-    freeImgRgb(Image);
-}
+        //Free image
+        freeImgRgb(Image);
+    }
 
 
 
-//Move texture
-Texture::Texture(Texture&& tex)
-{
-    this->id = tex.id;
-    this->textureType = tex.textureType;
-    this->texPath = tex.texPath;
-    this->x = tex.x;
-    this->y = tex.y;
+    //Copies a texture
+    Texture::Texture(const Texture &tex)
+    {
+        //Create new texture
+        glGenTextures(1, &id);
 
-    tex.id = 0;
-}
+        //Retrieve data
+        textureType = tex.textureType;
+        texPath = tex.texPath;
+        unsigned char* Image = loadImgRgb(texPath, &x, &y);
+
+        //Give data
+        setData(Image, textureType, x, y);
+
+        //Free image
+        freeImgRgb(Image);
+    }
+
+
+
+    //Move texture
+    Texture::Texture(Texture&& tex)
+    {
+        this->id = tex.id;
+        this->textureType = tex.textureType;
+        this->texPath = tex.texPath;
+        this->x = tex.x;
+        this->y = tex.y;
+
+        tex.id = 0;
+    }
 
 
 
@@ -82,18 +82,18 @@ Texture::Texture(Texture&& tex)
 // Getters
 //////////////////////////////////
 
-//Returns the name of the object
-unsigned int Texture::getID() { return id; }
+    //Returns the name of the object
+    unsigned int Texture::getID() { return id; }
 
-//Returns the type of the texture
-unsigned int Texture::getTextureType() { return textureType; }
+    //Returns the type of the texture
+    unsigned int Texture::getTextureType() { return textureType; }
 
-//Returns the path to the loaded texture image
-const std::string& Texture::getPath() { return texPath; }
+    //Returns the path to the loaded texture image
+    const std::string& Texture::getPath() { return texPath; }
 
-//Returns the coordinates of the texture
-int Texture::getX() { return x; }
-int Texture::getY() { return y; }
+    //Returns the coordinates of the texture
+    int Texture::getX() { return x; }
+    int Texture::getY() { return y; }
 
 
 
@@ -107,45 +107,45 @@ int Texture::getY() { return y; }
 // Data
 //////////////////////////////////
 
-//Binds the texture object
-void Texture::bind() { glBindTexture(textureType, id); }
+    //Binds the texture object
+    void Texture::bind() { glBindTexture(textureType, id); }
 
 
 
-//Gives data to the texture object
-void Texture::setData(unsigned char* data, unsigned int textureType, int x, int y)
-{
-    //Assign
-    this->textureType = textureType;
-    this->x = x;
-    this->y = y;
+    //Gives data to the texture object
+    void Texture::setData(unsigned char* data, unsigned int textureType, int x, int y)
+    {
+        //Assign
+        this->textureType = textureType;
+        this->x = x;
+        this->y = y;
 
-    bind();
-    glTexImage2D(textureType, 0, GL_RGB, x, y, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
+        bind();
+        glTexImage2D(textureType, 0, GL_RGB, x, y, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
 
-    //Set default parameters
-    setDefault();
-}
+        //Set default parameters
+        setDefault();
+    }
 
 
 
-//Loads a texture depensing on a path
-void Texture::load(std::string path, unsigned int textureType)
-{
-    //Bind texture
-    this->textureType = textureType;
-    bind();
+    //Loads a texture depensing on a path
+    void Texture::load(std::string path, unsigned int textureType)
+    {
+        //Bind texture
+        this->textureType = textureType;
+        bind();
 
-    //Load img
-    texPath = path;
-    unsigned char* Image = loadImgRgb(path, &x, &y);
+        //Load img
+        texPath = path;
+        unsigned char* Image = loadImgRgb(path, &x, &y);
 
-    //Give data to texture
-    setData(Image, textureType, x, y);
+        //Give data to texture
+        setData(Image, textureType, x, y);
 
-    //Free image
-    freeImgRgb(Image);
-}
+        //Free image
+        freeImgRgb(Image);
+    }
 
 
 
@@ -159,41 +159,41 @@ void Texture::load(std::string path, unsigned int textureType)
 // Parameterize
 //////////////////////////////////
 
-//Generates the texture's mipmaps
-void Texture::genMipmap()
-{
-    bind();
-    glGenerateMipmap(textureType);
-}
+    //Generates the texture's mipmaps
+    void Texture::genMipmap()
+    {
+        bind();
+        glGenerateMipmap(textureType);
+    }
 
 
 
-//Parameterizes the texture object
-void Texture::parameteri(unsigned int param, unsigned int value)
-{
-    bind();
-    glTexParameteri(textureType, param, value);
-}
+    //Parameterizes the texture object
+    void Texture::parameteri(unsigned int param, unsigned int value)
+    {
+        bind();
+        glTexParameteri(textureType, param, value);
+    }
 
 
 
-//Sets to default the parameters of the texture
-void Texture::setDefault()
-{
-    //Bind texture
-    bind();
+    //Sets to default the parameters of the texture
+    void Texture::setDefault()
+    {
+        //Bind texture
+        bind();
 
-    //Generate mipmaps
-    genMipmap();
+        //Generate mipmaps
+        genMipmap();
 
-    //Clamp to edge
-    parameteri(GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
-    parameteri(GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+        //Clamp to edge
+        parameteri(GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+        parameteri(GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
 
-    //Sampling
-    parameteri(GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-    parameteri(GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+        //Sampling
+        parameteri(GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+        parameteri(GL_TEXTURE_MAG_FILTER, GL_NEAREST);
 
-    //Mipmap
-    parameteri(GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
-}
+        //Mipmap
+        parameteri(GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+    }

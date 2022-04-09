@@ -12,8 +12,9 @@
 #include "../Window/Window.hpp"
 
 
+
 /**
- * Contient les fonctions pour initialiser un contexte
+ * Contains functions to initialize an openGL context
  */
 class Init
 {

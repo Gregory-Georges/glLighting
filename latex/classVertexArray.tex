@@ -1,0 +1,117 @@
+\hypertarget{classVertexArray}{}\doxysection{Vertex\+Array Class Reference}
+\label{classVertexArray}\index{VertexArray@{VertexArray}}
+
+
+{\ttfamily \#include $<$Vertex\+Array.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classVertexArray_ab8a2dcce9698f96dac5f9a19c6979d03}{Vertex\+Array}} ()
+\item 
+\mbox{\hyperlink{classVertexArray_a82597eb9daba5ad66dd3cf898e159a95}{$\sim$\+Vertex\+Array}} ()
+\item 
+unsigned int \mbox{\hyperlink{classVertexArray_abd4c1906ccbf83b3bb2cc5324cbd9d44}{get\+ID}} ()
+\item 
+void \mbox{\hyperlink{classVertexArray_a531af8f1987f7f5ccf2edaf7ed50edfd}{bind}} ()
+\item 
+void \mbox{\hyperlink{classVertexArray_adec9c4de0b446dcfa61cf1b60bdb0070}{enable\+Attribute}} (unsigned int index, int type, int size, int stride, int offset)
+\item 
+void \mbox{\hyperlink{classVertexArray_abff415abb6fd8b8411447a94f85879f3}{disable\+Attribute}} (unsigned int index)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Contains a gl\+Vertex\+Array object 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classVertexArray_ab8a2dcce9698f96dac5f9a19c6979d03}\label{classVertexArray_ab8a2dcce9698f96dac5f9a19c6979d03}} 
+\index{VertexArray@{VertexArray}!VertexArray@{VertexArray}}
+\index{VertexArray@{VertexArray}!VertexArray@{VertexArray}}
+\doxysubsubsection{\texorpdfstring{VertexArray()}{VertexArray()}}
+{\footnotesize\ttfamily Vertex\+Array\+::\+Vertex\+Array (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Constructs a va object 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{9     \{}
+\DoxyCodeLine{10         glGenVertexArrays(1, \&\textcolor{keywordtype}{id});}
+\DoxyCodeLine{11     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classVertexArray_a82597eb9daba5ad66dd3cf898e159a95}\label{classVertexArray_a82597eb9daba5ad66dd3cf898e159a95}} 
+\index{VertexArray@{VertexArray}!````~VertexArray@{$\sim$VertexArray}}
+\index{````~VertexArray@{$\sim$VertexArray}!VertexArray@{VertexArray}}
+\doxysubsubsection{\texorpdfstring{$\sim$VertexArray()}{~VertexArray()}}
+{\footnotesize\ttfamily Vertex\+Array\+::$\sim$\+Vertex\+Array (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Destroys a va object 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{17     \{}
+\DoxyCodeLine{18         glDeleteVertexArrays(1, \&\textcolor{keywordtype}{id});}
+\DoxyCodeLine{19     \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classVertexArray_a531af8f1987f7f5ccf2edaf7ed50edfd}\label{classVertexArray_a531af8f1987f7f5ccf2edaf7ed50edfd}} 
+\index{VertexArray@{VertexArray}!bind@{bind}}
+\index{bind@{bind}!VertexArray@{VertexArray}}
+\doxysubsubsection{\texorpdfstring{bind()}{bind()}}
+{\footnotesize\ttfamily void Vertex\+Array\+::bind (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Binds the va object 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{53     \{}
+\DoxyCodeLine{54         glBindVertexArray(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{55     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classVertexArray_abff415abb6fd8b8411447a94f85879f3}\label{classVertexArray_abff415abb6fd8b8411447a94f85879f3}} 
+\index{VertexArray@{VertexArray}!disableAttribute@{disableAttribute}}
+\index{disableAttribute@{disableAttribute}!VertexArray@{VertexArray}}
+\doxysubsubsection{\texorpdfstring{disableAttribute()}{disableAttribute()}}
+{\footnotesize\ttfamily void Vertex\+Array\+::disable\+Attribute (\begin{DoxyParamCaption}\item[{unsigned int}]{index }\end{DoxyParamCaption})}
+
+Removes a shader attibute from the va object 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{71     \{}
+\DoxyCodeLine{72         \mbox{\hyperlink{classVertexArray_a531af8f1987f7f5ccf2edaf7ed50edfd}{bind}}();}
+\DoxyCodeLine{73         glDisableVertexAttribArray(index);}
+\DoxyCodeLine{74     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classVertexArray_adec9c4de0b446dcfa61cf1b60bdb0070}\label{classVertexArray_adec9c4de0b446dcfa61cf1b60bdb0070}} 
+\index{VertexArray@{VertexArray}!enableAttribute@{enableAttribute}}
+\index{enableAttribute@{enableAttribute}!VertexArray@{VertexArray}}
+\doxysubsubsection{\texorpdfstring{enableAttribute()}{enableAttribute()}}
+{\footnotesize\ttfamily void Vertex\+Array\+::enable\+Attribute (\begin{DoxyParamCaption}\item[{unsigned int}]{index,  }\item[{int}]{type,  }\item[{int}]{size,  }\item[{int}]{stride,  }\item[{int}]{offset }\end{DoxyParamCaption})}
+
+Gives a shader attribute to the va object 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{61     \{}
+\DoxyCodeLine{62         \mbox{\hyperlink{classVertexArray_a531af8f1987f7f5ccf2edaf7ed50edfd}{bind}}();}
+\DoxyCodeLine{63         glVertexAttribPointer(index, size, type, GL\_FALSE, stride, (\textcolor{keywordtype}{void}*)(offset));}
+\DoxyCodeLine{64         glEnableVertexAttribArray(index);}
+\DoxyCodeLine{65     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classVertexArray_abd4c1906ccbf83b3bb2cc5324cbd9d44}\label{classVertexArray_abd4c1906ccbf83b3bb2cc5324cbd9d44}} 
+\index{VertexArray@{VertexArray}!getID@{getID}}
+\index{getID@{getID}!VertexArray@{VertexArray}}
+\doxysubsubsection{\texorpdfstring{getID()}{getID()}}
+{\footnotesize\ttfamily unsigned int Vertex\+Array\+::get\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns the name of the va object 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{35     \{}
+\DoxyCodeLine{36         \textcolor{keywordflow}{return} id;}
+\DoxyCodeLine{37     \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+abstractions/\+Vertex\+Array/\mbox{\hyperlink{VertexArray_8hpp}{Vertex\+Array.\+hpp}}\item 
+abstractions/\+Vertex\+Array/\mbox{\hyperlink{VertexArray_8cpp}{Vertex\+Array.\+cpp}}\end{DoxyCompactItemize}

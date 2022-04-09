@@ -1,0 +1,116 @@
+\hypertarget{Shader__utility_8hpp}{}\doxysection{abstractions/\+Shader/\+Shader\+\_\+utility.hpp File Reference}
+\label{Shader__utility_8hpp}\index{abstractions/Shader/Shader\_utility.hpp@{abstractions/Shader/Shader\_utility.hpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$stdexcept$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$G\+L/glew.\+h$>$}\newline
+{\ttfamily \#include $<$G\+L\+F\+W/glfw3.\+h$>$}\newline
+Include dependency graph for Shader\+\_\+utility.\+hpp\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \mbox{\hyperlink{Shader__utility_8hpp_a5610b8565b6495bdef4d33598b75a689}{compile\+Shader}} (std\+::string shader\+Source, unsigned int shader\+Type)
+\item 
+std\+::string \mbox{\hyperlink{Shader__utility_8hpp_ad6b7bbd88fc53ee63866061314192a6a}{get\+Source}} (std\+::string path)
+\item 
+void \mbox{\hyperlink{Shader__utility_8hpp_a89251eac475c4bc981a76163b37ee326}{print\+Shader\+Uniform\+List}} (unsigned int Shader\+ID)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{Shader__utility_8hpp_a5610b8565b6495bdef4d33598b75a689}\label{Shader__utility_8hpp_a5610b8565b6495bdef4d33598b75a689}} 
+\index{Shader\_utility.hpp@{Shader\_utility.hpp}!compileShader@{compileShader}}
+\index{compileShader@{compileShader}!Shader\_utility.hpp@{Shader\_utility.hpp}}
+\doxysubsubsection{\texorpdfstring{compileShader()}{compileShader()}}
+{\footnotesize\ttfamily unsigned int compile\+Shader (\begin{DoxyParamCaption}\item[{std\+::string}]{shader\+Source,  }\item[{unsigned int}]{shader\+Type }\end{DoxyParamCaption})}
+
+Returns a compiled gl\+Shader object 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{11     \{}
+\DoxyCodeLine{12         \textcolor{comment}{//Create shader}}
+\DoxyCodeLine{13         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} shd = glCreateShader(shaderType);}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15         \textcolor{comment}{//Give source to shader}}
+\DoxyCodeLine{16         \textcolor{keyword}{const} \textcolor{keywordtype}{char}* str = shaderSource.c\_str();}
+\DoxyCodeLine{17         glShaderSource(shd, 1, \&str, NULL);}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19         \textcolor{comment}{//Compile shader}}
+\DoxyCodeLine{20         glCompileShader(shd);}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22         \textcolor{comment}{//Check whether shader is compiled correctly or not}}
+\DoxyCodeLine{23         \textcolor{keywordtype}{int} result = GL\_FALSE;}
+\DoxyCodeLine{24         glGetShaderiv(shd, GL\_COMPILE\_STATUS, \&result);}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26         \textcolor{keywordflow}{if}(result != GL\_TRUE)}
+\DoxyCodeLine{27         \{}
+\DoxyCodeLine{28             \textcolor{comment}{//Get error string}}
+\DoxyCodeLine{29             \textcolor{keywordtype}{int} logLength;}
+\DoxyCodeLine{30             glGetShaderiv(shd, GL\_INFO\_LOG\_LENGTH, \&logLength);}
+\DoxyCodeLine{31             \textcolor{keywordtype}{char} err\_str[logLength];}
+\DoxyCodeLine{32             glGetShaderInfoLog(shd, logLength, \&logLength, err\_str);}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34             \textcolor{comment}{//Throw error}}
+\DoxyCodeLine{35             \textcolor{keywordflow}{throw} std::runtime\_error(err\_str);}
+\DoxyCodeLine{36         \}}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38         \textcolor{keywordflow}{return} shd;}
+\DoxyCodeLine{39     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{Shader__utility_8hpp_ad6b7bbd88fc53ee63866061314192a6a}\label{Shader__utility_8hpp_ad6b7bbd88fc53ee63866061314192a6a}} 
+\index{Shader\_utility.hpp@{Shader\_utility.hpp}!getSource@{getSource}}
+\index{getSource@{getSource}!Shader\_utility.hpp@{Shader\_utility.hpp}}
+\doxysubsubsection{\texorpdfstring{getSource()}{getSource()}}
+{\footnotesize\ttfamily std\+::string get\+Source (\begin{DoxyParamCaption}\item[{std\+::string}]{path }\end{DoxyParamCaption})}
+
+Returns the source of the file specifid at path 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{45     \{}
+\DoxyCodeLine{46         \textcolor{comment}{//Open file}}
+\DoxyCodeLine{47         std::fstream file;}
+\DoxyCodeLine{48         file.open(path);}
+\DoxyCodeLine{49         std::string out = \textcolor{stringliteral}{""}, temp;}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51         \textcolor{comment}{//Extract every line}}
+\DoxyCodeLine{52         \textcolor{keywordflow}{if}(file.is\_open())}
+\DoxyCodeLine{53             \textcolor{keywordflow}{while}(std::getline(file, temp))}
+\DoxyCodeLine{54                 out += temp + \textcolor{stringliteral}{"\(\backslash\)n"};}
+\DoxyCodeLine{55         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{56             \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"File "} + path + \textcolor{stringliteral}{" could not be opened\(\backslash\)n"});}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58         \textcolor{comment}{//Return}}
+\DoxyCodeLine{59         \textcolor{keywordflow}{return} out;}
+\DoxyCodeLine{60     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{Shader__utility_8hpp_a89251eac475c4bc981a76163b37ee326}\label{Shader__utility_8hpp_a89251eac475c4bc981a76163b37ee326}} 
+\index{Shader\_utility.hpp@{Shader\_utility.hpp}!printShaderUniformList@{printShaderUniformList}}
+\index{printShaderUniformList@{printShaderUniformList}!Shader\_utility.hpp@{Shader\_utility.hpp}}
+\doxysubsubsection{\texorpdfstring{printShaderUniformList()}{printShaderUniformList()}}
+{\footnotesize\ttfamily void print\+Shader\+Uniform\+List (\begin{DoxyParamCaption}\item[{unsigned int}]{Shader\+ID }\end{DoxyParamCaption})}
+
+Gets a string and prints the list of uniforms in the program 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{66     \{}
+\DoxyCodeLine{67         \textcolor{keywordtype}{int} i;}
+\DoxyCodeLine{68         \textcolor{keywordtype}{int} count;}
+\DoxyCodeLine{69         \textcolor{keywordtype}{int} size; \textcolor{comment}{// size of the variable}}
+\DoxyCodeLine{70         GLenum type; \textcolor{comment}{// type of the variable (float, vec3 or mat4, etc)}}
+\DoxyCodeLine{71         \textcolor{keyword}{const} GLsizei bufSize = 16; \textcolor{comment}{// maximum name length}}
+\DoxyCodeLine{72         \textcolor{keywordtype}{char} name[bufSize]; \textcolor{comment}{// variable name in GLSL}}
+\DoxyCodeLine{73         \textcolor{keywordtype}{int} length; \textcolor{comment}{// name length}}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75         glGetProgramiv(ShaderID, GL\_ACTIVE\_UNIFORMS, \&count);}
+\DoxyCodeLine{76         std::cout << \textcolor{stringliteral}{"Active Uniforms: "} << count << \textcolor{stringliteral}{"\(\backslash\)n"};}
+\DoxyCodeLine{77         \textcolor{keywordflow}{for} (i = 0; i < count; i++)}
+\DoxyCodeLine{78         \{}
+\DoxyCodeLine{79             glGetActiveUniform(ShaderID, (GLuint)i, bufSize, \&length, \&size, \&type, name);}
+\DoxyCodeLine{80             std::cout << i << \textcolor{stringliteral}{". Uniform type : "} << type << \textcolor{stringliteral}{" Name : "} << name << \textcolor{stringliteral}{"\(\backslash\)n"};}
+\DoxyCodeLine{81         \}}
+\DoxyCodeLine{82     \}}
+
+\end{DoxyCode}

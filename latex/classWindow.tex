@@ -1,0 +1,253 @@
+\hypertarget{classWindow}{}\doxysection{Window Class Reference}
+\label{classWindow}\index{Window@{Window}}
+
+
+{\ttfamily \#include $<$Window.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classWindow_afe2a4bec3164aed697ebed156a984739}{Window}} (int x, int y, std\+::string title)
+\item 
+\mbox{\hyperlink{classWindow_a245d821e6016fa1f6970ccbbedd635f6}{$\sim$\+Window}} ()
+\item 
+G\+L\+F\+Wwindow $\ast$ \mbox{\hyperlink{classWindow_a0a091d94124d3d94a2ce6fc30d9883a8}{get\+Window}} ()
+\item 
+int \mbox{\hyperlink{classWindow_a2d459fe21a48b6a41834a32a6c84fe2e}{get\+Width}} ()
+\item 
+int \mbox{\hyperlink{classWindow_a02acaaf02d8b63d4bd74d99482fe3a78}{get\+Height}} ()
+\item 
+std\+::string \mbox{\hyperlink{classWindow_adb3277cbc3cff0f30dc459181cfc7ba5}{get\+Title}} ()
+\item 
+int \mbox{\hyperlink{classWindow_a77877ceb62bb5c8fc09a6c7dd537b006}{get\+PosX}} ()
+\item 
+int \mbox{\hyperlink{classWindow_a0717dc5e52c2a87dd9394fb23363c510}{get\+PosY}} ()
+\item 
+void \mbox{\hyperlink{classWindow_ae7ab7f16888192a2b090f75a074299ad}{set\+Size}} (unsigned int width, unsigned int height)
+\item 
+void \mbox{\hyperlink{classWindow_a533ead00075f634a6a40cee5dd1ffa6f}{set\+Title}} (std\+::string title)
+\item 
+void \mbox{\hyperlink{classWindow_a841ccaa7da933c4ea49aea0055fab580}{set\+Pos}} (unsigned int x, unsigned int y)
+\item 
+void \mbox{\hyperlink{classWindow_ac185fa511e49b15fbbe84914be095584}{make\+Current\+Context}} ()
+\item 
+void \mbox{\hyperlink{classWindow_af6ffedb8d12d5551bdb4c298de87ed56}{swap\+Buffers}} ()
+\item 
+bool \mbox{\hyperlink{classWindow_ae779be3a5327f62c5e86a3e3d8a37289}{should\+Close}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Contains information for creating and using a window 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classWindow_afe2a4bec3164aed697ebed156a984739}\label{classWindow_afe2a4bec3164aed697ebed156a984739}} 
+\index{Window@{Window}!Window@{Window}}
+\index{Window@{Window}!Window@{Window}}
+\doxysubsubsection{\texorpdfstring{Window()}{Window()}}
+{\footnotesize\ttfamily Window\+::\+Window (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{std\+::string}]{title }\end{DoxyParamCaption})}
+
+Creates a window object 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{11     \{}
+\DoxyCodeLine{12         this-\/>title = title;}
+\DoxyCodeLine{13         wind = glfwCreateWindow(x, y, title.c\_str(), NULL, NULL);}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15         \textcolor{comment}{//Throw an exception if the window is invalid}}
+\DoxyCodeLine{16         \textcolor{keywordflow}{if}(wind == \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{17         \{}
+\DoxyCodeLine{18             std::string error\_string = \textcolor{stringliteral}{"The window ("} + std::to\_string(x) + \textcolor{stringliteral}{", "} + std::to\_string(y) + \textcolor{stringliteral}{", "} + title + \textcolor{stringliteral}{") could not be created\(\backslash\)n"};}
+\DoxyCodeLine{19             \textcolor{keywordflow}{throw} std::runtime\_error(error\_string);}
+\DoxyCodeLine{20         \}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22         \textcolor{comment}{//Make the window's context current by default}}
+\DoxyCodeLine{23         \mbox{\hyperlink{classWindow_ac185fa511e49b15fbbe84914be095584}{makeCurrentContext}}();}
+\DoxyCodeLine{24     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classWindow_a245d821e6016fa1f6970ccbbedd635f6}\label{classWindow_a245d821e6016fa1f6970ccbbedd635f6}} 
+\index{Window@{Window}!````~Window@{$\sim$Window}}
+\index{````~Window@{$\sim$Window}!Window@{Window}}
+\doxysubsubsection{\texorpdfstring{$\sim$Window()}{~Window()}}
+{\footnotesize\ttfamily Window\+::$\sim$\+Window (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Destroys the window object 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{30     \{}
+\DoxyCodeLine{31         glfwDestroyWindow(wind);}
+\DoxyCodeLine{32     \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classWindow_a02acaaf02d8b63d4bd74d99482fe3a78}\label{classWindow_a02acaaf02d8b63d4bd74d99482fe3a78}} 
+\index{Window@{Window}!getHeight@{getHeight}}
+\index{getHeight@{getHeight}!Window@{Window}}
+\doxysubsubsection{\texorpdfstring{getHeight()}{getHeight()}}
+{\footnotesize\ttfamily int Window\+::get\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns the height of the window 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{66     \{}
+\DoxyCodeLine{67         \textcolor{keywordtype}{int} height = 0;}
+\DoxyCodeLine{68         glfwGetWindowSize(wind, \textcolor{keyword}{nullptr}, \&height);}
+\DoxyCodeLine{69         \textcolor{keywordflow}{return} height;}
+\DoxyCodeLine{70     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classWindow_a77877ceb62bb5c8fc09a6c7dd537b006}\label{classWindow_a77877ceb62bb5c8fc09a6c7dd537b006}} 
+\index{Window@{Window}!getPosX@{getPosX}}
+\index{getPosX@{getPosX}!Window@{Window}}
+\doxysubsubsection{\texorpdfstring{getPosX()}{getPosX()}}
+{\footnotesize\ttfamily int Window\+::get\+PosX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns the x-\/axis position of the window 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{84     \{}
+\DoxyCodeLine{85         \textcolor{keywordtype}{int} posX;}
+\DoxyCodeLine{86         glfwGetWindowPos(wind, \&posX, \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{87         \textcolor{keywordflow}{return} posX;}
+\DoxyCodeLine{88     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classWindow_a0717dc5e52c2a87dd9394fb23363c510}\label{classWindow_a0717dc5e52c2a87dd9394fb23363c510}} 
+\index{Window@{Window}!getPosY@{getPosY}}
+\index{getPosY@{getPosY}!Window@{Window}}
+\doxysubsubsection{\texorpdfstring{getPosY()}{getPosY()}}
+{\footnotesize\ttfamily int Window\+::get\+PosY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns the y-\/axis position of the window 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{94     \{}
+\DoxyCodeLine{95         \textcolor{keywordtype}{int} posY;}
+\DoxyCodeLine{96         glfwGetWindowPos(wind, \textcolor{keyword}{nullptr}, \&posY);}
+\DoxyCodeLine{97         \textcolor{keywordflow}{return} posY;}
+\DoxyCodeLine{98     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classWindow_adb3277cbc3cff0f30dc459181cfc7ba5}\label{classWindow_adb3277cbc3cff0f30dc459181cfc7ba5}} 
+\index{Window@{Window}!getTitle@{getTitle}}
+\index{getTitle@{getTitle}!Window@{Window}}
+\doxysubsubsection{\texorpdfstring{getTitle()}{getTitle()}}
+{\footnotesize\ttfamily std\+::string Window\+::get\+Title (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns the title of the window 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{76     \{}
+\DoxyCodeLine{77         \textcolor{keywordflow}{return} title;}
+\DoxyCodeLine{78     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classWindow_a2d459fe21a48b6a41834a32a6c84fe2e}\label{classWindow_a2d459fe21a48b6a41834a32a6c84fe2e}} 
+\index{Window@{Window}!getWidth@{getWidth}}
+\index{getWidth@{getWidth}!Window@{Window}}
+\doxysubsubsection{\texorpdfstring{getWidth()}{getWidth()}}
+{\footnotesize\ttfamily int Window\+::get\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns the width of the window 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{56     \{}
+\DoxyCodeLine{57         \textcolor{keywordtype}{int} width = 0;}
+\DoxyCodeLine{58         glfwGetWindowSize(wind, \&width, \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{59         \textcolor{keywordflow}{return} width;}
+\DoxyCodeLine{60     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classWindow_a0a091d94124d3d94a2ce6fc30d9883a8}\label{classWindow_a0a091d94124d3d94a2ce6fc30d9883a8}} 
+\index{Window@{Window}!getWindow@{getWindow}}
+\index{getWindow@{getWindow}!Window@{Window}}
+\doxysubsubsection{\texorpdfstring{getWindow()}{getWindow()}}
+{\footnotesize\ttfamily G\+L\+F\+Wwindow $\ast$ Window\+::get\+Window (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns the pointer to the G\+L\+F\+Wwindow object 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{48     \{}
+\DoxyCodeLine{49         \textcolor{keywordflow}{return} wind;}
+\DoxyCodeLine{50     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classWindow_ac185fa511e49b15fbbe84914be095584}\label{classWindow_ac185fa511e49b15fbbe84914be095584}} 
+\index{Window@{Window}!makeCurrentContext@{makeCurrentContext}}
+\index{makeCurrentContext@{makeCurrentContext}!Window@{Window}}
+\doxysubsubsection{\texorpdfstring{makeCurrentContext()}{makeCurrentContext()}}
+{\footnotesize\ttfamily void Window\+::make\+Current\+Context (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Makes the window the current target for rendering 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{148     \{}
+\DoxyCodeLine{149         glfwMakeContextCurrent(wind);}
+\DoxyCodeLine{150     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classWindow_a841ccaa7da933c4ea49aea0055fab580}\label{classWindow_a841ccaa7da933c4ea49aea0055fab580}} 
+\index{Window@{Window}!setPos@{setPos}}
+\index{setPos@{setPos}!Window@{Window}}
+\doxysubsubsection{\texorpdfstring{setPos()}{setPos()}}
+{\footnotesize\ttfamily void Window\+::set\+Pos (\begin{DoxyParamCaption}\item[{unsigned int}]{x,  }\item[{unsigned int}]{y }\end{DoxyParamCaption})}
+
+Sets the position of the window 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{130     \{}
+\DoxyCodeLine{131         glfwSetWindowPos(wind, x, y);}
+\DoxyCodeLine{132     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classWindow_ae7ab7f16888192a2b090f75a074299ad}\label{classWindow_ae7ab7f16888192a2b090f75a074299ad}} 
+\index{Window@{Window}!setSize@{setSize}}
+\index{setSize@{setSize}!Window@{Window}}
+\doxysubsubsection{\texorpdfstring{setSize()}{setSize()}}
+{\footnotesize\ttfamily void Window\+::set\+Size (\begin{DoxyParamCaption}\item[{unsigned int}]{width,  }\item[{unsigned int}]{height }\end{DoxyParamCaption})}
+
+Sets the size of the window 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{114     \{}
+\DoxyCodeLine{115         glfwSetWindowSize(wind, width, height);}
+\DoxyCodeLine{116     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classWindow_a533ead00075f634a6a40cee5dd1ffa6f}\label{classWindow_a533ead00075f634a6a40cee5dd1ffa6f}} 
+\index{Window@{Window}!setTitle@{setTitle}}
+\index{setTitle@{setTitle}!Window@{Window}}
+\doxysubsubsection{\texorpdfstring{setTitle()}{setTitle()}}
+{\footnotesize\ttfamily void Window\+::set\+Title (\begin{DoxyParamCaption}\item[{std\+::string}]{title }\end{DoxyParamCaption})}
+
+Sets the title of the window 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{122     \{}
+\DoxyCodeLine{123         glfwSetWindowTitle(wind, title.c\_str());}
+\DoxyCodeLine{124     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classWindow_ae779be3a5327f62c5e86a3e3d8a37289}\label{classWindow_ae779be3a5327f62c5e86a3e3d8a37289}} 
+\index{Window@{Window}!shouldClose@{shouldClose}}
+\index{shouldClose@{shouldClose}!Window@{Window}}
+\doxysubsubsection{\texorpdfstring{shouldClose()}{shouldClose()}}
+{\footnotesize\ttfamily bool Window\+::should\+Close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns if the window should close 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{164     \{}
+\DoxyCodeLine{165         \textcolor{keywordflow}{return} glfwWindowShouldClose(wind);}
+\DoxyCodeLine{166     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classWindow_af6ffedb8d12d5551bdb4c298de87ed56}\label{classWindow_af6ffedb8d12d5551bdb4c298de87ed56}} 
+\index{Window@{Window}!swapBuffers@{swapBuffers}}
+\index{swapBuffers@{swapBuffers}!Window@{Window}}
+\doxysubsubsection{\texorpdfstring{swapBuffers()}{swapBuffers()}}
+{\footnotesize\ttfamily void Window\+::swap\+Buffers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Swaps the window\textquotesingle{}s rendering buffers 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{156     \{}
+\DoxyCodeLine{157         glfwSwapBuffers(wind);}
+\DoxyCodeLine{158     \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+abstractions/\+Window/\mbox{\hyperlink{Window_8hpp}{Window.\+hpp}}\item 
+abstractions/\+Window/\mbox{\hyperlink{Window_8cpp}{Window.\+cpp}}\end{DoxyCompactItemize}

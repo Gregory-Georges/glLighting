@@ -1,0 +1,99 @@
+\hypertarget{classKeyboard}{}\doxysection{Keyboard Class Reference}
+\label{classKeyboard}\index{Keyboard@{Keyboard}}
+
+
+{\ttfamily \#include $<$Keyboard.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classKeyboard_a4d4d39cbff35ac4a4a75418dfa531765}{Keyboard}} (\mbox{\hyperlink{classWindow}{Window}} \&win)
+\item 
+void \mbox{\hyperlink{classKeyboard_a97d2b8274079eae8ab432fdf6a9af3af}{init}} (\mbox{\hyperlink{classWindow}{Window}} \&win)
+\item 
+bool \mbox{\hyperlink{classKeyboard_a20627c79786b290aab1e25a7cdd7c890}{is\+Valid}} ()
+\item 
+int \mbox{\hyperlink{classKeyboard_a11560494c8f70f161abfb715563c68f1}{get\+Key\+State}} (int key\+Code)
+\item 
+bool \mbox{\hyperlink{classKeyboard_a897271591deb8d691ea00ba46c9c4cb8}{is\+Key\+Pressed}} (int key\+Code)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Handles keyboard inputs inside a glfw window 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classKeyboard_a4d4d39cbff35ac4a4a75418dfa531765}\label{classKeyboard_a4d4d39cbff35ac4a4a75418dfa531765}} 
+\index{Keyboard@{Keyboard}!Keyboard@{Keyboard}}
+\index{Keyboard@{Keyboard}!Keyboard@{Keyboard}}
+\doxysubsubsection{\texorpdfstring{Keyboard()}{Keyboard()}}
+{\footnotesize\ttfamily Keyboard\+::\+Keyboard (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classWindow}{Window}} \&}]{win }\end{DoxyParamCaption})}
+
+Constructs a new keyboard object based on a window 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{11     \{}
+\DoxyCodeLine{12         \mbox{\hyperlink{classKeyboard_a97d2b8274079eae8ab432fdf6a9af3af}{init}}(win);}
+\DoxyCodeLine{13     \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classKeyboard_a11560494c8f70f161abfb715563c68f1}\label{classKeyboard_a11560494c8f70f161abfb715563c68f1}} 
+\index{Keyboard@{Keyboard}!getKeyState@{getKeyState}}
+\index{getKeyState@{getKeyState}!Keyboard@{Keyboard}}
+\doxysubsubsection{\texorpdfstring{getKeyState()}{getKeyState()}}
+{\footnotesize\ttfamily int Keyboard\+::get\+Key\+State (\begin{DoxyParamCaption}\item[{int}]{key\+Code }\end{DoxyParamCaption})}
+
+Returns the state of the entered G\+L\+F\+W\+\_\+\+K\+EY 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{55     \{}
+\DoxyCodeLine{56         \textcolor{keywordflow}{return} glfwGetKey(associatedWindow, keyCode);}
+\DoxyCodeLine{57     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classKeyboard_a97d2b8274079eae8ab432fdf6a9af3af}\label{classKeyboard_a97d2b8274079eae8ab432fdf6a9af3af}} 
+\index{Keyboard@{Keyboard}!init@{init}}
+\index{init@{init}!Keyboard@{Keyboard}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily void Keyboard\+::init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classWindow}{Window}} \&}]{win }\end{DoxyParamCaption})}
+
+Initializes the keyboard object onto a new window 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{29     \{}
+\DoxyCodeLine{30         associatedWindow = win.\mbox{\hyperlink{classWindow_a0a091d94124d3d94a2ce6fc30d9883a8}{getWindow}}();}
+\DoxyCodeLine{31     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classKeyboard_a897271591deb8d691ea00ba46c9c4cb8}\label{classKeyboard_a897271591deb8d691ea00ba46c9c4cb8}} 
+\index{Keyboard@{Keyboard}!isKeyPressed@{isKeyPressed}}
+\index{isKeyPressed@{isKeyPressed}!Keyboard@{Keyboard}}
+\doxysubsubsection{\texorpdfstring{isKeyPressed()}{isKeyPressed()}}
+{\footnotesize\ttfamily bool Keyboard\+::is\+Key\+Pressed (\begin{DoxyParamCaption}\item[{int}]{key\+Code }\end{DoxyParamCaption})}
+
+Returns true if the key is pressed, false otherwise 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{63     \{}
+\DoxyCodeLine{64         \textcolor{keywordflow}{return} glfwGetKey(associatedWindow, keyCode) == GLFW\_PRESS;}
+\DoxyCodeLine{65     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classKeyboard_a20627c79786b290aab1e25a7cdd7c890}\label{classKeyboard_a20627c79786b290aab1e25a7cdd7c890}} 
+\index{Keyboard@{Keyboard}!isValid@{isValid}}
+\index{isValid@{isValid}!Keyboard@{Keyboard}}
+\doxysubsubsection{\texorpdfstring{isValid()}{isValid()}}
+{\footnotesize\ttfamily bool Keyboard\+::is\+Valid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Checks wether the associated window object still exists 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{37     \{}
+\DoxyCodeLine{38         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{39     \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+abstractions/\+Keyboard/\mbox{\hyperlink{Keyboard_8hpp}{Keyboard.\+hpp}}\item 
+abstractions/\+Keyboard/\mbox{\hyperlink{Keyboard_8cpp}{Keyboard.\+cpp}}\end{DoxyCompactItemize}

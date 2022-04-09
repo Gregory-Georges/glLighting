@@ -13,21 +13,27 @@
 
 
 
+/**
+ * Container containing textures
+ */
 class TextureContainer : public Container<Texture>
 {
-    private:
+private:
 
-        Texture defaultTexture;
+    Texture defaultTexture;
 
 
 
-    public:
+
+
+
+public:
 
     //////////////////////////////////
     // Constructor / destructor
     //////////////////////////////////
 
-        TextureContainer(std::string defaultPath, int defaulType);
+    TextureContainer(std::string defaultPath, int defaulType);      /**< Constructs a texture container object */
 
 
 
@@ -35,8 +41,8 @@ class TextureContainer : public Container<Texture>
     // Getters
     //////////////////////////////////
 
-        Texture& getDefault();
-        Texture& find(const std::string& Path);
+    Texture& getDefault();                                          /**< Returns the set default texture */
+    Texture& find(const std::string& Path);                         /**< Returns a loaded texture of the parameter name */
 };
 
 #endif // TEXTURECONTAINER_HPP

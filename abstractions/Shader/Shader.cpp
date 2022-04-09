@@ -36,7 +36,7 @@
     Shader::Shader(const Shader &shd)
     {
         std::string errStr = "";
-        errStr += "Error : Shader program copy constructor called. ";
+        errStr += "Error : Shader program copy constructor called.";
         throwError(errStr);
     }
 

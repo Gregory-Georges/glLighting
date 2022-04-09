@@ -1,0 +1,211 @@
+\hypertarget{classBuffer}{}\doxysection{Buffer Class Reference}
+\label{classBuffer}\index{Buffer@{Buffer}}
+
+
+{\ttfamily \#include $<$Buffer.\+hpp$>$}
+
+
+
+Inheritance diagram for Buffer\+:
+% FIG 0
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classBuffer_ae7ef2cd201190fde551dcb902627112b}{Buffer}} ()
+\item 
+virtual \mbox{\hyperlink{classBuffer_a59b8743e4a5f731bdd0c4185c9ef263b}{$\sim$\+Buffer}} ()
+\item 
+\mbox{\hyperlink{classBuffer_ae2e5f1501fe5c6aa1df21ccd0d98494c}{Buffer}} (unsigned int \mbox{\hyperlink{classBuffer_a1fac15861f0d1f19ec4c8d45175234cc}{buffer\+Type}}, void $\ast$Data, unsigned int size, unsigned int usage)
+\item 
+\mbox{\hyperlink{classBuffer_a5ff906704308d2d20e18925eb1ab8572}{Buffer}} (const \mbox{\hyperlink{classBuffer}{Buffer}} \&buf)
+\item 
+\mbox{\hyperlink{classBuffer_ace93af9e7066c98427a68cfd269ca236}{Buffer}} (\mbox{\hyperlink{classBuffer}{Buffer}} \&\&buf)
+\item 
+unsigned int \mbox{\hyperlink{classBuffer_a97af5fc62671b444862c5ffa8b596e70}{get\+ID}} ()
+\item 
+unsigned int \mbox{\hyperlink{classBuffer_aae19386bdb022df14ee5e87dc1ebd0a8}{get\+Buffer\+Type}} ()
+\item 
+void \mbox{\hyperlink{classBuffer_a99258be0831a213bc3d8f3e8a8f68636}{set\+Type}} (unsigned int \mbox{\hyperlink{classBuffer_a1fac15861f0d1f19ec4c8d45175234cc}{buffer\+Type}})
+\item 
+void \mbox{\hyperlink{classBuffer_aa6e6d41bd8f3bdb1ffc22ead99ab18d4}{bind}} ()
+\item 
+void \mbox{\hyperlink{classBuffer_aef6ddbcef7755097eb26fef6e669534a}{set\+Data}} (void $\ast$Data, unsigned int size, unsigned int usage)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \mbox{\hyperlink{classBuffer_a6b1dd0a05b24d4668973df226842326f}{id}}
+\item 
+unsigned int \mbox{\hyperlink{classBuffer_a1fac15861f0d1f19ec4c8d45175234cc}{buffer\+Type}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Contains a gl\+Buffer object 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classBuffer_ae7ef2cd201190fde551dcb902627112b}\label{classBuffer_ae7ef2cd201190fde551dcb902627112b}} 
+\index{Buffer@{Buffer}!Buffer@{Buffer}}
+\index{Buffer@{Buffer}!Buffer@{Buffer}}
+\doxysubsubsection{\texorpdfstring{Buffer()}{Buffer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily Buffer\+::\+Buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Constructs an empty buffer object 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{11     \{}
+\DoxyCodeLine{12         glGenBuffers(1, \&\textcolor{keywordtype}{id});}
+\DoxyCodeLine{13         \mbox{\hyperlink{classBuffer_a1fac15861f0d1f19ec4c8d45175234cc}{bufferType}} = GL\_INVALID\_VALUE;}
+\DoxyCodeLine{14     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classBuffer_a59b8743e4a5f731bdd0c4185c9ef263b}\label{classBuffer_a59b8743e4a5f731bdd0c4185c9ef263b}} 
+\index{Buffer@{Buffer}!````~Buffer@{$\sim$Buffer}}
+\index{````~Buffer@{$\sim$Buffer}!Buffer@{Buffer}}
+\doxysubsubsection{\texorpdfstring{$\sim$Buffer()}{~Buffer()}}
+{\footnotesize\ttfamily Buffer\+::$\sim$\+Buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Destroys a buffer object 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{20     \{}
+\DoxyCodeLine{21         glDeleteBuffers(1, \&\textcolor{keywordtype}{id});}
+\DoxyCodeLine{22     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classBuffer_ae2e5f1501fe5c6aa1df21ccd0d98494c}\label{classBuffer_ae2e5f1501fe5c6aa1df21ccd0d98494c}} 
+\index{Buffer@{Buffer}!Buffer@{Buffer}}
+\index{Buffer@{Buffer}!Buffer@{Buffer}}
+\doxysubsubsection{\texorpdfstring{Buffer()}{Buffer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily Buffer\+::\+Buffer (\begin{DoxyParamCaption}\item[{unsigned int}]{buffer\+Type,  }\item[{void $\ast$}]{Data,  }\item[{unsigned int}]{size,  }\item[{unsigned int}]{usage }\end{DoxyParamCaption})}
+
+Constructs a filled buffer object. Binds the buffer 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{28     \{}
+\DoxyCodeLine{29         glGenBuffers(1, \&\textcolor{keywordtype}{id});}
+\DoxyCodeLine{30         this-\/>\mbox{\hyperlink{classBuffer_a1fac15861f0d1f19ec4c8d45175234cc}{bufferType}} = \mbox{\hyperlink{classBuffer_a1fac15861f0d1f19ec4c8d45175234cc}{bufferType}};}
+\DoxyCodeLine{31         \mbox{\hyperlink{classBuffer_aef6ddbcef7755097eb26fef6e669534a}{setData}}(data, size, usage);}
+\DoxyCodeLine{32     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classBuffer_a5ff906704308d2d20e18925eb1ab8572}\label{classBuffer_a5ff906704308d2d20e18925eb1ab8572}} 
+\index{Buffer@{Buffer}!Buffer@{Buffer}}
+\index{Buffer@{Buffer}!Buffer@{Buffer}}
+\doxysubsubsection{\texorpdfstring{Buffer()}{Buffer()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily Buffer\+::\+Buffer (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classBuffer}{Buffer}} \&}]{buf }\end{DoxyParamCaption})}
+
+Copy constructor 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{38     \{}
+\DoxyCodeLine{39         std::cout << \textcolor{stringliteral}{"Buffer copy constructor called\(\backslash\)n"};}
+\DoxyCodeLine{40         \textcolor{comment}{//Check glVersion before executing, must be at least 3.1 for function copy buffer subdata}}
+\DoxyCodeLine{41         \mbox{\hyperlink{glState_8cpp_a344b79156563a286e0cffd41a6c0f24e}{checkGlVersion}}(3, 1, \textcolor{stringliteral}{"Buffer copy constructor"});}
+\DoxyCodeLine{42         \textcolor{comment}{//Gen new buffer}}
+\DoxyCodeLine{43         glGenBuffers(1, \&\textcolor{keywordtype}{id});}
+\DoxyCodeLine{44         \mbox{\hyperlink{classBuffer_a1fac15861f0d1f19ec4c8d45175234cc}{bufferType}} = buf.\mbox{\hyperlink{classBuffer_a1fac15861f0d1f19ec4c8d45175234cc}{bufferType}};}
+\DoxyCodeLine{45         \textcolor{comment}{//Bind buffers to copy locations}}
+\DoxyCodeLine{46         glBindBuffer(buf.\mbox{\hyperlink{classBuffer_a1fac15861f0d1f19ec4c8d45175234cc}{bufferType}}, buf.\mbox{\hyperlink{classBuffer_a6b1dd0a05b24d4668973df226842326f}{id}});}
+\DoxyCodeLine{47         glBindBuffer(GL\_COPY\_WRITE\_BUFFER, \textcolor{keywordtype}{id});}
+\DoxyCodeLine{48         \textcolor{comment}{//Get copy size}}
+\DoxyCodeLine{49         \textcolor{keywordtype}{int} bufSize;}
+\DoxyCodeLine{50         glGetBufferParameteriv(buf.\mbox{\hyperlink{classBuffer_a1fac15861f0d1f19ec4c8d45175234cc}{bufferType}}, GL\_BUFFER\_SIZE, \&bufSize);}
+\DoxyCodeLine{51         \textcolor{comment}{//Transfer buffer data}}
+\DoxyCodeLine{52         glCopyBufferSubData(buf.\mbox{\hyperlink{classBuffer_a1fac15861f0d1f19ec4c8d45175234cc}{bufferType}}, GL\_COPY\_WRITE\_BUFFER, 0, 0, bufSize);}
+\DoxyCodeLine{53     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classBuffer_ace93af9e7066c98427a68cfd269ca236}\label{classBuffer_ace93af9e7066c98427a68cfd269ca236}} 
+\index{Buffer@{Buffer}!Buffer@{Buffer}}
+\index{Buffer@{Buffer}!Buffer@{Buffer}}
+\doxysubsubsection{\texorpdfstring{Buffer()}{Buffer()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily Buffer\+::\+Buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBuffer}{Buffer}} \&\&}]{buf }\end{DoxyParamCaption})}
+
+Move constructor 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{59     \{}
+\DoxyCodeLine{60         this-\/>\textcolor{keywordtype}{id} = buf.\mbox{\hyperlink{classBuffer_a6b1dd0a05b24d4668973df226842326f}{id}};}
+\DoxyCodeLine{61         this-\/>\mbox{\hyperlink{classBuffer_a1fac15861f0d1f19ec4c8d45175234cc}{bufferType}} = buf.\mbox{\hyperlink{classBuffer_a1fac15861f0d1f19ec4c8d45175234cc}{bufferType}};}
+\DoxyCodeLine{62         buf.\mbox{\hyperlink{classBuffer_a6b1dd0a05b24d4668973df226842326f}{id}} = 0;}
+\DoxyCodeLine{63     \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classBuffer_aa6e6d41bd8f3bdb1ffc22ead99ab18d4}\label{classBuffer_aa6e6d41bd8f3bdb1ffc22ead99ab18d4}} 
+\index{Buffer@{Buffer}!bind@{bind}}
+\index{bind@{bind}!Buffer@{Buffer}}
+\doxysubsubsection{\texorpdfstring{bind()}{bind()}}
+{\footnotesize\ttfamily void Buffer\+::bind (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Binds the buffer object 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{101 \{ glBindBuffer(\mbox{\hyperlink{classBuffer_a1fac15861f0d1f19ec4c8d45175234cc}{bufferType}}, \textcolor{keywordtype}{id}); \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classBuffer_aae19386bdb022df14ee5e87dc1ebd0a8}\label{classBuffer_aae19386bdb022df14ee5e87dc1ebd0a8}} 
+\index{Buffer@{Buffer}!getBufferType@{getBufferType}}
+\index{getBufferType@{getBufferType}!Buffer@{Buffer}}
+\doxysubsubsection{\texorpdfstring{getBufferType()}{getBufferType()}}
+{\footnotesize\ttfamily unsigned int Buffer\+::get\+Buffer\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns the buffer type of the object 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{81 \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classBuffer_a1fac15861f0d1f19ec4c8d45175234cc}{bufferType}}; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classBuffer_a97af5fc62671b444862c5ffa8b596e70}\label{classBuffer_a97af5fc62671b444862c5ffa8b596e70}} 
+\index{Buffer@{Buffer}!getID@{getID}}
+\index{getID@{getID}!Buffer@{Buffer}}
+\doxysubsubsection{\texorpdfstring{getID()}{getID()}}
+{\footnotesize\ttfamily unsigned int Buffer\+::get\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns the name of the buffer object 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{78 \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classBuffer_a6b1dd0a05b24d4668973df226842326f}{id}}; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classBuffer_aef6ddbcef7755097eb26fef6e669534a}\label{classBuffer_aef6ddbcef7755097eb26fef6e669534a}} 
+\index{Buffer@{Buffer}!setData@{setData}}
+\index{setData@{setData}!Buffer@{Buffer}}
+\doxysubsubsection{\texorpdfstring{setData()}{setData()}}
+{\footnotesize\ttfamily void Buffer\+::set\+Data (\begin{DoxyParamCaption}\item[{void $\ast$}]{Data,  }\item[{unsigned int}]{size,  }\item[{unsigned int}]{usage }\end{DoxyParamCaption})}
+
+Gives data to the buffer 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{107     \{}
+\DoxyCodeLine{108         \mbox{\hyperlink{classBuffer_aa6e6d41bd8f3bdb1ffc22ead99ab18d4}{bind}}();}
+\DoxyCodeLine{109         glBufferData(\mbox{\hyperlink{classBuffer_a1fac15861f0d1f19ec4c8d45175234cc}{bufferType}}, size, data, usage);}
+\DoxyCodeLine{110     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classBuffer_a99258be0831a213bc3d8f3e8a8f68636}\label{classBuffer_a99258be0831a213bc3d8f3e8a8f68636}} 
+\index{Buffer@{Buffer}!setType@{setType}}
+\index{setType@{setType}!Buffer@{Buffer}}
+\doxysubsubsection{\texorpdfstring{setType()}{setType()}}
+{\footnotesize\ttfamily void Buffer\+::set\+Type (\begin{DoxyParamCaption}\item[{unsigned int}]{buffer\+Type }\end{DoxyParamCaption})}
+
+Gives a type to the buffer object 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{96 \{ this-\/>\mbox{\hyperlink{classBuffer_a1fac15861f0d1f19ec4c8d45175234cc}{bufferType}} = \mbox{\hyperlink{classBuffer_a1fac15861f0d1f19ec4c8d45175234cc}{bufferType}}; \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classBuffer_a1fac15861f0d1f19ec4c8d45175234cc}\label{classBuffer_a1fac15861f0d1f19ec4c8d45175234cc}} 
+\index{Buffer@{Buffer}!bufferType@{bufferType}}
+\index{bufferType@{bufferType}!Buffer@{Buffer}}
+\doxysubsubsection{\texorpdfstring{bufferType}{bufferType}}
+{\footnotesize\ttfamily unsigned int Buffer\+::buffer\+Type\hspace{0.3cm}{\ttfamily [protected]}}
+
+The type of the buffer object \mbox{\Hypertarget{classBuffer_a6b1dd0a05b24d4668973df226842326f}\label{classBuffer_a6b1dd0a05b24d4668973df226842326f}} 
+\index{Buffer@{Buffer}!id@{id}}
+\index{id@{id}!Buffer@{Buffer}}
+\doxysubsubsection{\texorpdfstring{id}{id}}
+{\footnotesize\ttfamily unsigned int Buffer\+::id\hspace{0.3cm}{\ttfamily [protected]}}
+
+Name of the buffer object 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+abstractions/\+Buffer/\mbox{\hyperlink{Buffer_8hpp}{Buffer.\+hpp}}\item 
+abstractions/\+Buffer/\mbox{\hyperlink{Buffer_8cpp}{Buffer.\+cpp}}\end{DoxyCompactItemize}

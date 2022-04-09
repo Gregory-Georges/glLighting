@@ -17,10 +17,9 @@ class IndexBuffer : public Buffer
     // Constructor / destructor
     //////////////////////////////////
 
-        IndexBuffer();              /**< Constructs an empty index buffer */
-        virtual ~IndexBuffer();     /**< Destroys an index buffer */
+        IndexBuffer();                                                      /**< Constructs an empty IndexBuffer */
 
-        IndexBuffer(void* Data, unsigned int size, unsigned int usage); /**< Constructs a filled index buffer object. Binds the buffer */
+        IndexBuffer(void* Data, unsigned int size, unsigned int usage);     /**< Constructs a filled IndexBuffer. Binds the buffer */
 };
 
 #endif // INDEXBUFFER_HPP

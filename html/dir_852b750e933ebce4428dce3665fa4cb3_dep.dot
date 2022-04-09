@@ -1,0 +1,11 @@
+digraph "containers/TextureContainer" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_5aa2c741d78642de87e50b40b6f339a9 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="containers" fontname="Helvetica", fontsize="10", URL="dir_5aa2c741d78642de87e50b40b6f339a9.html"]
+  dir_852b750e933ebce4428dce3665fa4cb3 [shape=box, label="TextureContainer", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_852b750e933ebce4428dce3665fa4cb3.html"];
+  }
+  dir_898d9f057ab0c3f0aea2afe60f29a516 [shape=box label="abstractions" fillcolor="white" style="filled" color="red" URL="dir_898d9f057ab0c3f0aea2afe60f29a516.html"];
+  dir_852b750e933ebce4428dce3665fa4cb3->dir_898d9f057ab0c3f0aea2afe60f29a516 [headlabel="1", labeldistance=1.5 headhref="dir_000016_000000.html"];
+}

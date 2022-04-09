@@ -3,53 +3,10 @@
 
 //Standard headers
 #include <vector>       //Contain data
-#include <stdexcept>    //Throw errors
 #include <utility>
 
-
-
-
-//
-// Problem :
-// - Trying to put data in a vector without the use of a copy constructor
-// - Avoid copy constructor calls
-//
-//
-//
-// Chosen  solution :
-// - Make derived class for every type that is going to be used in a container
-//      Pros :
-//          - Objects can only be created in the container using the methods of the derived class
-//          - No copies
-//          - Methods can be personnalized to the contained object
-//      Cons :
-//          - Gotta rewrite some stuff every time a new object needs to be contained
-//
-//
-//
-// Potential solutions :
-// - Put pointers in the vector instead of directly putting objects
-//      Pros :
-//          - Objects can be put in a vector and not destroyed
-//      Cons :
-//          - Objects must be destroyed manually when container is destroyed
-//          - If all objects are constructed in vector, then no problem
-//
-//
-//
-// Impossible solutions :
-// - Put references to objects in the vector
-//      Impossible :
-//          - Vector can't contain references
-//
-//  - Pass an element in add only as an l-value reference
-//      Pros :
-//          - Object is located only in vector, nowhere else
-//      Impossible :
-//          - Vector constructs a copy in vector.push_back anyways
-//
-
-
+//Project headers
+#include "errors/errors.hpp"
 
 
 
@@ -57,6 +14,9 @@
 // Class declaration
 ///////////////////////////////////
 
+/**
+ * Template class for a container containing objects
+ */
 template<class T> class Container
 {
     protected:
@@ -114,23 +74,23 @@ template<class T> class Container
 // Constructor and destructor
 ///////////////////////////////////
 
-template<class T> Container<T>::Container()
-{
-    container.reserve(10);
-}
+    template<class T> Container<T>::Container()
+    {
+        container.reserve(10);
+    }
 
 
-template<class T> Container<T>::~Container()
-{
-    clear();
-}
+    template<class T> Container<T>::~Container()
+    {
+        clear();
+    }
 
 
 
-template<class T> Container<T>::Container(const Container &con)
-{
-    throw(std::runtime_error("Copy constructor call is illegal on container class"));
-}
+    template<class T> Container<T>::Container(const Container &con)
+    {
+        throwError("Copy constructor call is illegal on container class");
+    }
 
 
 
@@ -144,17 +104,17 @@ template<class T> Container<T>::Container(const Container &con)
 // Getters
 ///////////////////////////////////
 
-template<class T> T& Container<T>::get(int index)
-{
-    return container.at(index);
-}
+    template<class T> T& Container<T>::get(int index)
+    {
+        return container.at(index);
+    }
 
 
 
-template<class T> int Container<T>::getSize(void)
-{
-    return container.size();
-}
+    template<class T> int Container<T>::getSize(void)
+    {
+        return container.size();
+    }
 
 
 
@@ -168,11 +128,11 @@ template<class T> int Container<T>::getSize(void)
 // Add
 ///////////////////////////////////
 
-//Adding l-values
-template<class T> void Container<T>::add(T&& obj)
-{
-    container.push_back(std::move(obj));
-}
+    //Adding l-values
+    template<class T> void Container<T>::add(T&& obj)
+    {
+        container.push_back(std::move(obj));
+    }
 
 
 
@@ -186,10 +146,10 @@ template<class T> void Container<T>::add(T&& obj)
 // Clear
 ///////////////////////////////////
 
-template<class T> void Container<T>::clear()
-{
-    container.clear();
-}
+    template<class T> void Container<T>::clear()
+    {
+        container.clear();
+    }
 
 
 

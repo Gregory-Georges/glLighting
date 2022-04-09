@@ -1,0 +1,9 @@
+digraph "abstractions/Buffer/VertexBuffer" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_79e691fee84f1aaa49b74a95d7c389a5 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="Buffer" fontname="Helvetica", fontsize="10", URL="dir_79e691fee84f1aaa49b74a95d7c389a5.html"]
+  dir_8269f70cd93013ad8603e6e1028501bf [shape=box, label="VertexBuffer", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_8269f70cd93013ad8603e6e1028501bf.html"];
+  }
+}

@@ -1,0 +1,233 @@
+\hypertarget{classShader}{}\doxysection{Shader Class Reference}
+\label{classShader}\index{Shader@{Shader}}
+
+
+{\ttfamily \#include $<$Shader.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classShader_a0d654ebaca4e0555197c0724c6d30610}{Shader}} ()
+\item 
+\mbox{\hyperlink{classShader_aff01df87e8a102f270b5b135a295e59d}{$\sim$\+Shader}} ()
+\item 
+\mbox{\hyperlink{classShader_a760a7ddd6894006f25629f9be38b8701}{Shader}} (std\+::string vertex\+Shd, std\+::string fragment\+Shd)
+\item 
+\mbox{\hyperlink{classShader_af2bcd6248a4e9f7d6f0fc23f6258b7c1}{Shader}} (const \mbox{\hyperlink{classShader}{Shader}} \&shd)
+\item 
+unsigned int \mbox{\hyperlink{classShader_ac7eb6ad8f9e9b952c1ede6ebcf2c32ec}{get\+ID}} ()
+\item 
+\mbox{\hyperlink{classUniform}{Uniform}} \& \mbox{\hyperlink{classShader_a5eb896b4083c0f38d03b8e76f92f6797}{get\+Uniform}} (std\+::string uniform\+Name)
+\item 
+int \mbox{\hyperlink{classShader_a0b0012584f25bc3b94f4ec88ae6b7bc3}{get\+Valid}} ()
+\item 
+void \mbox{\hyperlink{classShader_a870fa9f13d69e558815d6fd351a469dc}{use}} ()
+\item 
+void \mbox{\hyperlink{classShader_a4c5fec6da43a0964340b5c99ff62218c}{compile}} (std\+::string vertex\+Shd, std\+::string fragment\+Shd)
+\item 
+void \mbox{\hyperlink{classShader_acba492f8c7bb0724d1e116c0e596c349}{gather\+Uniforms}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Contains a gl\+Shader object Allows to manage uniforms 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classShader_a0d654ebaca4e0555197c0724c6d30610}\label{classShader_a0d654ebaca4e0555197c0724c6d30610}} 
+\index{Shader@{Shader}!Shader@{Shader}}
+\index{Shader@{Shader}!Shader@{Shader}}
+\doxysubsubsection{\texorpdfstring{Shader()}{Shader()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Shader\+::\+Shader (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Constructs an empty shader object 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{11     \{}
+\DoxyCodeLine{12         \textcolor{keywordtype}{id} = glCreateProgram();}
+\DoxyCodeLine{13     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classShader_aff01df87e8a102f270b5b135a295e59d}\label{classShader_aff01df87e8a102f270b5b135a295e59d}} 
+\index{Shader@{Shader}!````~Shader@{$\sim$Shader}}
+\index{````~Shader@{$\sim$Shader}!Shader@{Shader}}
+\doxysubsubsection{\texorpdfstring{$\sim$Shader()}{~Shader()}}
+{\footnotesize\ttfamily Shader\+::$\sim$\+Shader (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Destroys the shader object 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{19     \{}
+\DoxyCodeLine{20         glDeleteProgram(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{21     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classShader_a760a7ddd6894006f25629f9be38b8701}\label{classShader_a760a7ddd6894006f25629f9be38b8701}} 
+\index{Shader@{Shader}!Shader@{Shader}}
+\index{Shader@{Shader}!Shader@{Shader}}
+\doxysubsubsection{\texorpdfstring{Shader()}{Shader()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Shader\+::\+Shader (\begin{DoxyParamCaption}\item[{std\+::string}]{vertex\+Shd,  }\item[{std\+::string}]{fragment\+Shd }\end{DoxyParamCaption})}
+
+Constructs a usable shader object 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{27     \{}
+\DoxyCodeLine{28         \textcolor{keywordtype}{id} = glCreateProgram();}
+\DoxyCodeLine{29         \mbox{\hyperlink{classShader_a4c5fec6da43a0964340b5c99ff62218c}{compile}}(vertexShd, fragmentShd);}
+\DoxyCodeLine{30         \mbox{\hyperlink{classShader_a870fa9f13d69e558815d6fd351a469dc}{use}}();}
+\DoxyCodeLine{31     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classShader_af2bcd6248a4e9f7d6f0fc23f6258b7c1}\label{classShader_af2bcd6248a4e9f7d6f0fc23f6258b7c1}} 
+\index{Shader@{Shader}!Shader@{Shader}}
+\index{Shader@{Shader}!Shader@{Shader}}
+\doxysubsubsection{\texorpdfstring{Shader()}{Shader()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Shader\+::\+Shader (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classShader}{Shader}} \&}]{shd }\end{DoxyParamCaption})}
+
+Copies a shader object 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{37     \{}
+\DoxyCodeLine{38         std::string errStr = \textcolor{stringliteral}{""};}
+\DoxyCodeLine{39         errStr += \textcolor{stringliteral}{"Error : Shader program copy constructor called."};}
+\DoxyCodeLine{40         \mbox{\hyperlink{errors_8cpp_a2bd2972bdd57f629af94413984c74455}{throwError}}(errStr);}
+\DoxyCodeLine{41     \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classShader_a4c5fec6da43a0964340b5c99ff62218c}\label{classShader_a4c5fec6da43a0964340b5c99ff62218c}} 
+\index{Shader@{Shader}!compile@{compile}}
+\index{compile@{compile}!Shader@{Shader}}
+\doxysubsubsection{\texorpdfstring{compile()}{compile()}}
+{\footnotesize\ttfamily void Shader\+::compile (\begin{DoxyParamCaption}\item[{std\+::string}]{vertex\+Shd,  }\item[{std\+::string}]{fragment\+Shd }\end{DoxyParamCaption})}
+
+Compiles the shader object 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{110     \{}
+\DoxyCodeLine{111         \textcolor{comment}{//Compile shaders}}
+\DoxyCodeLine{112         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} vert = \mbox{\hyperlink{Shader__utility_8cpp_a5610b8565b6495bdef4d33598b75a689}{compileShader}}(vertexShd, GL\_VERTEX\_SHADER);}
+\DoxyCodeLine{113         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} frag = \mbox{\hyperlink{Shader__utility_8cpp_a5610b8565b6495bdef4d33598b75a689}{compileShader}}(fragmentShd, GL\_FRAGMENT\_SHADER);}
+\DoxyCodeLine{114 }
+\DoxyCodeLine{115         \textcolor{comment}{//Link shaders to program}}
+\DoxyCodeLine{116         glAttachShader(\textcolor{keywordtype}{id}, vert);}
+\DoxyCodeLine{117         glAttachShader(\textcolor{keywordtype}{id}, frag);}
+\DoxyCodeLine{118         glLinkProgram(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{119         glValidateProgram(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{120 }
+\DoxyCodeLine{121         \textcolor{comment}{//Delete shaders}}
+\DoxyCodeLine{122         glDeleteShader(vert);}
+\DoxyCodeLine{123         glDeleteShader(frag);}
+\DoxyCodeLine{124 }
+\DoxyCodeLine{125         \textcolor{comment}{//Validate linkage}}
+\DoxyCodeLine{126         \textcolor{keywordtype}{int} result = 0;}
+\DoxyCodeLine{127         result = \mbox{\hyperlink{classShader_a0b0012584f25bc3b94f4ec88ae6b7bc3}{getValid}}();}
+\DoxyCodeLine{128         \textcolor{keywordflow}{if}(result != GL\_TRUE)}
+\DoxyCodeLine{129         \{}
+\DoxyCodeLine{130             \textcolor{comment}{//Get shader errors}}
+\DoxyCodeLine{131             std::string err = \textcolor{stringliteral}{"Failed to compile shaders : \(\backslash\)n"} + vertexShd + \textcolor{stringliteral}{"\(\backslash\)n"} + fragmentShd;}
+\DoxyCodeLine{132             \textcolor{keywordflow}{throw} std::runtime\_error(err);}
+\DoxyCodeLine{133         \}}
+\DoxyCodeLine{134 }
+\DoxyCodeLine{135         \textcolor{comment}{//Get uniforms}}
+\DoxyCodeLine{136         \mbox{\hyperlink{classShader_acba492f8c7bb0724d1e116c0e596c349}{gatherUniforms}}();}
+\DoxyCodeLine{137     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classShader_acba492f8c7bb0724d1e116c0e596c349}\label{classShader_acba492f8c7bb0724d1e116c0e596c349}} 
+\index{Shader@{Shader}!gatherUniforms@{gatherUniforms}}
+\index{gatherUniforms@{gatherUniforms}!Shader@{Shader}}
+\doxysubsubsection{\texorpdfstring{gatherUniforms()}{gatherUniforms()}}
+{\footnotesize\ttfamily void Shader\+::gather\+Uniforms (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Gets the uniforms in the compiled shader. Is executed upon compilation 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{142     \{}
+\DoxyCodeLine{143         \textcolor{keywordtype}{int} i;}
+\DoxyCodeLine{144         \textcolor{keywordtype}{int} count;}
+\DoxyCodeLine{145         \textcolor{keywordtype}{int} size;                       \textcolor{comment}{// size of the variable}}
+\DoxyCodeLine{146         GLenum type;                    \textcolor{comment}{// type of the variable (float, vec3 or mat4, etc)}}
+\DoxyCodeLine{147         \textcolor{keyword}{const} GLsizei bufSize = 16;     \textcolor{comment}{// maximum name length}}
+\DoxyCodeLine{148         \textcolor{keywordtype}{char} name[bufSize];             \textcolor{comment}{// variable name in GLSL}}
+\DoxyCodeLine{149         \textcolor{keywordtype}{int} length;                     \textcolor{comment}{// name length}}
+\DoxyCodeLine{150 }
+\DoxyCodeLine{151         glGetProgramiv(\textcolor{keywordtype}{id}, GL\_ACTIVE\_UNIFORMS, \&count);}
+\DoxyCodeLine{152         \textcolor{keywordflow}{for} (i = 0; i < count; i++)}
+\DoxyCodeLine{153         \{}
+\DoxyCodeLine{154             glGetActiveUniform(\textcolor{keywordtype}{id}, (GLuint)i, bufSize, \&length, \&size, \&type, name);}
+\DoxyCodeLine{155             uc.\mbox{\hyperlink{classContainer_a5b88454c3b513d32103c3d35906be2c8}{add}}(\mbox{\hyperlink{classUniform}{Uniform}}(type, \textcolor{keywordtype}{id}, name));}
+\DoxyCodeLine{156         \}}
+\DoxyCodeLine{157     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classShader_ac7eb6ad8f9e9b952c1ede6ebcf2c32ec}\label{classShader_ac7eb6ad8f9e9b952c1ede6ebcf2c32ec}} 
+\index{Shader@{Shader}!getID@{getID}}
+\index{getID@{getID}!Shader@{Shader}}
+\doxysubsubsection{\texorpdfstring{getID()}{getID()}}
+{\footnotesize\ttfamily unsigned int Shader\+::get\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns the name of the shader object 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{55 \{ \textcolor{keywordflow}{return} id; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classShader_a5eb896b4083c0f38d03b8e76f92f6797}\label{classShader_a5eb896b4083c0f38d03b8e76f92f6797}} 
+\index{Shader@{Shader}!getUniform@{getUniform}}
+\index{getUniform@{getUniform}!Shader@{Shader}}
+\doxysubsubsection{\texorpdfstring{getUniform()}{getUniform()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classUniform}{Uniform}} \& Shader\+::get\+Uniform (\begin{DoxyParamCaption}\item[{std\+::string}]{uniform\+Name }\end{DoxyParamCaption})}
+
+Returns a uniform of said name 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{60     \{}
+\DoxyCodeLine{61         \textcolor{keywordflow}{return} uc.\mbox{\hyperlink{classUniformContainer_a75e5c1a93df91cc23a102bbae91d3e0e}{find}}(uniformName);}
+\DoxyCodeLine{62     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classShader_a0b0012584f25bc3b94f4ec88ae6b7bc3}\label{classShader_a0b0012584f25bc3b94f4ec88ae6b7bc3}} 
+\index{Shader@{Shader}!getValid@{getValid}}
+\index{getValid@{getValid}!Shader@{Shader}}
+\doxysubsubsection{\texorpdfstring{getValid()}{getValid()}}
+{\footnotesize\ttfamily int Shader\+::get\+Valid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns if the shader is valid 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{67     \{}
+\DoxyCodeLine{68         \textcolor{comment}{//Get if shader program is valid}}
+\DoxyCodeLine{69         \textcolor{keywordtype}{int} result;}
+\DoxyCodeLine{70         glGetProgramiv(\textcolor{keywordtype}{id}, GL\_VALIDATE\_STATUS, \&result);}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72         \textcolor{comment}{//If shader is invalid, get error log}}
+\DoxyCodeLine{73         \textcolor{keywordflow}{if}(result != GL\_TRUE)}
+\DoxyCodeLine{74         \{}
+\DoxyCodeLine{75             \textcolor{comment}{//Get error string}}
+\DoxyCodeLine{76             \textcolor{keywordtype}{int} logLength;}
+\DoxyCodeLine{77             glGetProgramiv(\textcolor{keywordtype}{id}, GL\_INFO\_LOG\_LENGTH, \&logLength);}
+\DoxyCodeLine{78             \textcolor{keywordtype}{char} err\_str[logLength];}
+\DoxyCodeLine{79             glGetProgramInfoLog(\textcolor{keywordtype}{id}, logLength, \&logLength, err\_str);}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81             \textcolor{comment}{//Throw error}}
+\DoxyCodeLine{82             \textcolor{keywordflow}{throw} std::runtime\_error(err\_str);}
+\DoxyCodeLine{83         \}}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85         \textcolor{comment}{//Return if valid}}
+\DoxyCodeLine{86         \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{87     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classShader_a870fa9f13d69e558815d6fd351a469dc}\label{classShader_a870fa9f13d69e558815d6fd351a469dc}} 
+\index{Shader@{Shader}!use@{use}}
+\index{use@{use}!Shader@{Shader}}
+\doxysubsubsection{\texorpdfstring{use()}{use()}}
+{\footnotesize\ttfamily void Shader\+::use (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Binds the shader object 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{102     \{}
+\DoxyCodeLine{103         \textcolor{keywordflow}{if}(\mbox{\hyperlink{classShader_a0b0012584f25bc3b94f4ec88ae6b7bc3}{getValid}}() == GL\_TRUE)}
+\DoxyCodeLine{104             glUseProgram(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{105     \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+abstractions/\+Shader/\mbox{\hyperlink{Shader_8hpp}{Shader.\+hpp}}\item 
+abstractions/\+Shader/\mbox{\hyperlink{Shader_8cpp}{Shader.\+cpp}}\end{DoxyCompactItemize}

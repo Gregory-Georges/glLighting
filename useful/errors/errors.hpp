@@ -11,8 +11,8 @@
 
 
 
-void pollglErrors();                            //Checks if any openGL error has been thrown and throws error if yes
-void throwError(std::string errorMessage);      //Returns a runtime error with the message
+void pollglErrors();                            /**< Checks if any openGL error has been thrown and throws error if yes */
+void throwError(std::string errorMessage);      /**< Returns a runtime error with the parameter message */
 
 
 

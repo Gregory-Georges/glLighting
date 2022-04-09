@@ -18,7 +18,7 @@
 
 
 /**
- * Contains a glTexture object
+ * Contains a Texture object
  */
 class Texture
 {
@@ -43,7 +43,7 @@ public:
 
     ~Texture();                                                             /**< Destroys a texture object */
     Texture(std::string Path, unsigned int textureType);                    /**< Loads said image into texture */
-    Texture(const Texture &tex);                                            /**< Copy constructor */
+    Texture(const Texture& tex);                                            /**< Copy constructor */
     Texture(Texture&& tex0);                                                /**< Move constructor */
 
 

@@ -59,8 +59,6 @@ int main()
 
     Shader shd(getSource("shaders/normal/vertex.shd"), getSource("shaders/normal/fragment.shd"));
     Shader lightshd(getSource("shaders/light/lightvertex.shd"), getSource("shaders/light/lightfragment.shd"));
-    //printShaderUniformList(shd.getID());
-    //printShaderUniformList(lightshd.getID());
 
 
 
@@ -143,7 +141,6 @@ int main()
     //Give data to shader
     //Get uniforms
     shd.getUniform("modl").data(glm::value_ptr(modl));
-    //uc.add(Uniform(GL_FLOAT_MAT4, shd.getID(), "modl", glm::value_ptr(modl)));
     Uniform viewUni(GL_FLOAT_MAT4, shd.getID(), "view", glm::value_ptr(view));
     Uniform projUni(GL_FLOAT_MAT4, shd.getID(), "proj", glm::value_ptr(proj));
 

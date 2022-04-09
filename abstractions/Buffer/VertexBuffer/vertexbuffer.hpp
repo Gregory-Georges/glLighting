@@ -7,15 +7,19 @@
 
 
 /**
- * Contains an vertex buffer
+ * Contains a VertexBuffer
  */
 class VertexBuffer : public Buffer
 {
     public:
-        VertexBuffer();
-        virtual ~VertexBuffer();
 
-        VertexBuffer(void* Data, unsigned int size, unsigned int usage);
+    //////////////////////////////////
+    // Constructor / destructor
+    //////////////////////////////////
+
+        VertexBuffer();                                                     /**< Constructs an empty VertexBuffer */
+
+        VertexBuffer(void* Data, unsigned int size, unsigned int usage);    /**< Constructs a filled VertexBuffer. Binds the buff4er */
 };
 
 #endif // VERTEXBUFFER_HPP

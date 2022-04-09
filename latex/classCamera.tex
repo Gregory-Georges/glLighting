@@ -1,0 +1,538 @@
+\hypertarget{classCamera}{}\doxysection{Camera Class Reference}
+\label{classCamera}\index{Camera@{Camera}}
+
+
+{\ttfamily \#include $<$camera.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCamera_a01f94c3543f56ede7af49dc778f19331}{Camera}} ()
+\item 
+void \mbox{\hyperlink{classCamera_abe8633adb8475cb7c62e1a12743a1025}{set\+Position}} (glm\+::vec3 position)
+\item 
+void \mbox{\hyperlink{classCamera_a8ce77e1883be5d0d9ce519b6b1529ba0}{setX}} (double x)
+\item 
+void \mbox{\hyperlink{classCamera_a0643160ac86b60abdb817247a7f052a7}{setY}} (double y)
+\item 
+void \mbox{\hyperlink{classCamera_abc9c6f0a6c96fb0799371489f24f604f}{setZ}} (double z)
+\item 
+void \mbox{\hyperlink{classCamera_a502d794ca46e91d188e9e754938e8b7c}{add\+Position}} (glm\+::vec3 position)
+\item 
+void \mbox{\hyperlink{classCamera_afc1d9e5d72f8916388634fce4bc1ca04}{addX}} (double X)
+\item 
+void \mbox{\hyperlink{classCamera_af58db5f34309f0d64379ab52648479b1}{addY}} (double Y)
+\item 
+void \mbox{\hyperlink{classCamera_ac88adad8fefec4d3922a47766c133533}{addZ}} (double Z)
+\item 
+void \mbox{\hyperlink{classCamera_a65b7d73a52ac1dfdb2ed4b5f885b84e5}{add\+Pitch}} (double deg)
+\item 
+void \mbox{\hyperlink{classCamera_a1421e1c3be170a2ece7e3a9297b265db}{add\+Yaw}} (double deg)
+\item 
+void \mbox{\hyperlink{classCamera_a94d5c628e7a408747c1ff86de01a11d0}{add\+Roll}} (double deg)
+\item 
+void \mbox{\hyperlink{classCamera_a22afaf4aeb3022f5902fc87a8770190c}{add\+FoV}} (float v\+FoV)
+\item 
+void \mbox{\hyperlink{classCamera_ae28f9798422483f33171413073f3e6a6}{move\+Front}} (double distance)
+\item 
+void \mbox{\hyperlink{classCamera_a5f6d674840211b212b70f963f7f38ec8}{move\+Forward}} (double distance)
+\item 
+void \mbox{\hyperlink{classCamera_a82c473d067982f5f7115af6f97e59f48}{move\+Right}} (double distance)
+\item 
+void \mbox{\hyperlink{classCamera_a45f4c40657e22349d5cbcfe797b9e281}{move\+World\+Up}} (double distance)
+\item 
+glm\+::vec3 \mbox{\hyperlink{classCamera_a520c5a7413b3e704f2f442288db17bcf}{get\+Position}} ()
+\item 
+double \mbox{\hyperlink{classCamera_a1af03aa27aafc84436078eb11e16c0e3}{getX}} ()
+\item 
+double \mbox{\hyperlink{classCamera_a1a99eaab2127fcc0af20e8e06e9a7eb0}{getY}} ()
+\item 
+double \mbox{\hyperlink{classCamera_aead34062d4bdb7fca1241a480d3f563f}{getZ}} ()
+\item 
+glm\+::vec3 \mbox{\hyperlink{classCamera_a243de834ff92410f9f2cc6e88fdb079c}{get\+Angle}} ()
+\item 
+double \mbox{\hyperlink{classCamera_ae613ba566683724008901f3c0dc603dc}{get\+AngleX}} ()
+\item 
+double \mbox{\hyperlink{classCamera_aba1a55287d69f8a8e9381e9a9fb120f5}{get\+AngleY}} ()
+\item 
+double \mbox{\hyperlink{classCamera_aaf9972b74bafd37ea0b7e63924a43447}{get\+AngleZ}} ()
+\item 
+double \mbox{\hyperlink{classCamera_a5f3eccd6e4c444e7a311d22680ac34a8}{get\+Pitch}} ()
+\item 
+double \mbox{\hyperlink{classCamera_a86f92ac0aec33b2a84f954503a706553}{get\+Yaw}} ()
+\item 
+double \mbox{\hyperlink{classCamera_a684359adb6950efdefc017fba54b4f4a}{get\+Roll}} ()
+\item 
+float \mbox{\hyperlink{classCamera_aef7933e312710e4ed87329dbabb15a99}{get\+FoV}} ()
+\item 
+void \mbox{\hyperlink{classCamera_ae40d98f7aef38446f56565cad4f51848}{calculate\+Direction}} ()
+\item 
+void \mbox{\hyperlink{classCamera_aab9ae814e3cf1a097d0fa68fc069273c}{regen\+Up\+Right}} ()
+\item 
+glm\+::mat4 \mbox{\hyperlink{classCamera_ac75b2599123893041a7ced3aafe4d44e}{gen\+View\+Matrix}} ()
+\item 
+void \mbox{\hyperlink{classCamera_ac97c7f9cfe6214467235ee6a882ba0c8}{simple\+Control}} (\mbox{\hyperlink{classKeyboard}{Keyboard}} KB, float move\+Speed, float turn\+Speed)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Contains a camera. Allows to calculate view matrix 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classCamera_a01f94c3543f56ede7af49dc778f19331}\label{classCamera_a01f94c3543f56ede7af49dc778f19331}} 
+\index{Camera@{Camera}!Camera@{Camera}}
+\index{Camera@{Camera}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{Camera()}{Camera()}}
+{\footnotesize\ttfamily Camera\+::\+Camera (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{10     \{}
+\DoxyCodeLine{11         pitch = 0.0;}
+\DoxyCodeLine{12         yaw = 0.0;}
+\DoxyCodeLine{13         roll = 0.0;}
+\DoxyCodeLine{14         camPos = glm::vec3(0.0);}
+\DoxyCodeLine{15         FoV = 45.0f;}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17         \mbox{\hyperlink{classCamera_ae40d98f7aef38446f56565cad4f51848}{calculateDirection}}();}
+\DoxyCodeLine{18         \mbox{\hyperlink{classCamera_aab9ae814e3cf1a097d0fa68fc069273c}{regenUpRight}}();}
+\DoxyCodeLine{19     \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classCamera_a22afaf4aeb3022f5902fc87a8770190c}\label{classCamera_a22afaf4aeb3022f5902fc87a8770190c}} 
+\index{Camera@{Camera}!addFoV@{addFoV}}
+\index{addFoV@{addFoV}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{addFoV()}{addFoV()}}
+{\footnotesize\ttfamily void Camera\+::add\+FoV (\begin{DoxyParamCaption}\item[{float}]{v\+FoV }\end{DoxyParamCaption})}
+
+Adds to the field of view value 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{75     \{}
+\DoxyCodeLine{76         FoV += vFoV;}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78         \textcolor{comment}{//Protect FOV from getting too high or too low}}
+\DoxyCodeLine{79         \textcolor{keywordflow}{if}(FoV > 45.0)}
+\DoxyCodeLine{80             FoV = 45.0;}
+\DoxyCodeLine{81         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(FoV < 1.0)}
+\DoxyCodeLine{82             FoV = 1.0;}
+\DoxyCodeLine{83     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCamera_a65b7d73a52ac1dfdb2ed4b5f885b84e5}\label{classCamera_a65b7d73a52ac1dfdb2ed4b5f885b84e5}} 
+\index{Camera@{Camera}!addPitch@{addPitch}}
+\index{addPitch@{addPitch}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{addPitch()}{addPitch()}}
+{\footnotesize\ttfamily void Camera\+::add\+Pitch (\begin{DoxyParamCaption}\item[{double}]{deg }\end{DoxyParamCaption})}
+
+Adds to the pitch value 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{46     \{}
+\DoxyCodeLine{47         pitch += deg;}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49         \textcolor{comment}{//Protect pitch from going too high or too low}}
+\DoxyCodeLine{50         \textcolor{keywordflow}{if}(pitch >= 90.0)}
+\DoxyCodeLine{51             pitch = 89.99;}
+\DoxyCodeLine{52         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(pitch < -\/89.99)}
+\DoxyCodeLine{53             pitch = -\/89.99;}
+\DoxyCodeLine{54     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCamera_a502d794ca46e91d188e9e754938e8b7c}\label{classCamera_a502d794ca46e91d188e9e754938e8b7c}} 
+\index{Camera@{Camera}!addPosition@{addPosition}}
+\index{addPosition@{addPosition}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{addPosition()}{addPosition()}}
+{\footnotesize\ttfamily void Camera\+::add\+Position (\begin{DoxyParamCaption}\item[{glm\+::vec3}]{position }\end{DoxyParamCaption})}
+
+Adds to the position of the camera 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{39 \{ camPos += position; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCamera_a94d5c628e7a408747c1ff86de01a11d0}\label{classCamera_a94d5c628e7a408747c1ff86de01a11d0}} 
+\index{Camera@{Camera}!addRoll@{addRoll}}
+\index{addRoll@{addRoll}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{addRoll()}{addRoll()}}
+{\footnotesize\ttfamily void Camera\+::add\+Roll (\begin{DoxyParamCaption}\item[{double}]{deg }\end{DoxyParamCaption})}
+
+Adds to the roll value 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{66     \{}
+\DoxyCodeLine{67         roll += deg;}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69         \textcolor{comment}{//Reset roll value if too high or too low}}
+\DoxyCodeLine{70         \textcolor{keywordflow}{if}(roll > 360.0 || roll < 0.0)}
+\DoxyCodeLine{71             roll = fmod(roll, 360.0);}
+\DoxyCodeLine{72     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCamera_afc1d9e5d72f8916388634fce4bc1ca04}\label{classCamera_afc1d9e5d72f8916388634fce4bc1ca04}} 
+\index{Camera@{Camera}!addX@{addX}}
+\index{addX@{addX}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{addX()}{addX()}}
+{\footnotesize\ttfamily void Camera\+::addX (\begin{DoxyParamCaption}\item[{double}]{X }\end{DoxyParamCaption})}
+
+Adds to the position of the camera 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{40 \{ camPos.x += x; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCamera_af58db5f34309f0d64379ab52648479b1}\label{classCamera_af58db5f34309f0d64379ab52648479b1}} 
+\index{Camera@{Camera}!addY@{addY}}
+\index{addY@{addY}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{addY()}{addY()}}
+{\footnotesize\ttfamily void Camera\+::addY (\begin{DoxyParamCaption}\item[{double}]{Y }\end{DoxyParamCaption})}
+
+Adds to the position of the camera 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{41 \{ camPos.y += y; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCamera_a1421e1c3be170a2ece7e3a9297b265db}\label{classCamera_a1421e1c3be170a2ece7e3a9297b265db}} 
+\index{Camera@{Camera}!addYaw@{addYaw}}
+\index{addYaw@{addYaw}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{addYaw()}{addYaw()}}
+{\footnotesize\ttfamily void Camera\+::add\+Yaw (\begin{DoxyParamCaption}\item[{double}]{deg }\end{DoxyParamCaption})}
+
+Adds to the yaw value 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{57     \{}
+\DoxyCodeLine{58         yaw += deg;}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60         \textcolor{comment}{//Reset yaw value if too high or to low}}
+\DoxyCodeLine{61         \textcolor{keywordflow}{if}(yaw > 360.0 || yaw < 0.0)}
+\DoxyCodeLine{62             yaw = fmod(yaw, 360.0);}
+\DoxyCodeLine{63     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCamera_ac88adad8fefec4d3922a47766c133533}\label{classCamera_ac88adad8fefec4d3922a47766c133533}} 
+\index{Camera@{Camera}!addZ@{addZ}}
+\index{addZ@{addZ}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{addZ()}{addZ()}}
+{\footnotesize\ttfamily void Camera\+::addZ (\begin{DoxyParamCaption}\item[{double}]{Z }\end{DoxyParamCaption})}
+
+Adds to the position of the camera 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{42 \{ camPos.z += z; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCamera_ae40d98f7aef38446f56565cad4f51848}\label{classCamera_ae40d98f7aef38446f56565cad4f51848}} 
+\index{Camera@{Camera}!calculateDirection@{calculateDirection}}
+\index{calculateDirection@{calculateDirection}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{calculateDirection()}{calculateDirection()}}
+{\footnotesize\ttfamily void Camera\+::calculate\+Direction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Calculate the direction vector based on pitch, yaw and roll values 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{153     \{}
+\DoxyCodeLine{154         \textcolor{comment}{//Generates a direction vector based on pitch, yaw and roll}}
+\DoxyCodeLine{155         camDirection.x = glm::cos(glm::radians(pitch)) * glm::sin(glm::radians(yaw));}
+\DoxyCodeLine{156         camDirection.y = glm::sin(glm::radians(pitch));}
+\DoxyCodeLine{157         camDirection.z = -\/glm::cos(glm::radians(pitch)) * glm::cos(glm::radians(yaw));}
+\DoxyCodeLine{158     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCamera_ac75b2599123893041a7ced3aafe4d44e}\label{classCamera_ac75b2599123893041a7ced3aafe4d44e}} 
+\index{Camera@{Camera}!genViewMatrix@{genViewMatrix}}
+\index{genViewMatrix@{genViewMatrix}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{genViewMatrix()}{genViewMatrix()}}
+{\footnotesize\ttfamily glm\+::mat4 Camera\+::gen\+View\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Calculates a view matrix based on the camera object\textquotesingle{}s data 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{168     \{}
+\DoxyCodeLine{169         \mbox{\hyperlink{classCamera_ae40d98f7aef38446f56565cad4f51848}{calculateDirection}}();}
+\DoxyCodeLine{170         \mbox{\hyperlink{classCamera_aab9ae814e3cf1a097d0fa68fc069273c}{regenUpRight}}();}
+\DoxyCodeLine{171         \textcolor{keywordflow}{return} glm::lookAt(camPos, camPos + camDirection, camUp);}
+\DoxyCodeLine{172     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCamera_a243de834ff92410f9f2cc6e88fdb079c}\label{classCamera_a243de834ff92410f9f2cc6e88fdb079c}} 
+\index{Camera@{Camera}!getAngle@{getAngle}}
+\index{getAngle@{getAngle}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{getAngle()}{getAngle()}}
+{\footnotesize\ttfamily glm\+::vec3 Camera\+::get\+Angle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns the camera\textquotesingle{}s direction 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{129 \{ \textcolor{keywordflow}{return} camDirection; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCamera_ae613ba566683724008901f3c0dc603dc}\label{classCamera_ae613ba566683724008901f3c0dc603dc}} 
+\index{Camera@{Camera}!getAngleX@{getAngleX}}
+\index{getAngleX@{getAngleX}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{getAngleX()}{getAngleX()}}
+{\footnotesize\ttfamily double Camera\+::get\+AngleX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns the camera\textquotesingle{}s direction\textquotesingle{}s x component 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{130 \{ \textcolor{keywordflow}{return} camDirection.x; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCamera_aba1a55287d69f8a8e9381e9a9fb120f5}\label{classCamera_aba1a55287d69f8a8e9381e9a9fb120f5}} 
+\index{Camera@{Camera}!getAngleY@{getAngleY}}
+\index{getAngleY@{getAngleY}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{getAngleY()}{getAngleY()}}
+{\footnotesize\ttfamily double Camera\+::get\+AngleY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns the camera\textquotesingle{}s direction\textquotesingle{}s y component 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{131 \{ \textcolor{keywordflow}{return} camDirection.y; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCamera_aaf9972b74bafd37ea0b7e63924a43447}\label{classCamera_aaf9972b74bafd37ea0b7e63924a43447}} 
+\index{Camera@{Camera}!getAngleZ@{getAngleZ}}
+\index{getAngleZ@{getAngleZ}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{getAngleZ()}{getAngleZ()}}
+{\footnotesize\ttfamily double Camera\+::get\+AngleZ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns the camera\textquotesingle{}s direction\textquotesingle{}s z component 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{132 \{ \textcolor{keywordflow}{return} camDirection.z; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCamera_aef7933e312710e4ed87329dbabb15a99}\label{classCamera_aef7933e312710e4ed87329dbabb15a99}} 
+\index{Camera@{Camera}!getFoV@{getFoV}}
+\index{getFoV@{getFoV}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{getFoV()}{getFoV()}}
+{\footnotesize\ttfamily float Camera\+::get\+FoV (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns the field of view of the camera 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{138 \{ \textcolor{keywordflow}{return} FoV; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCamera_a5f3eccd6e4c444e7a311d22680ac34a8}\label{classCamera_a5f3eccd6e4c444e7a311d22680ac34a8}} 
+\index{Camera@{Camera}!getPitch@{getPitch}}
+\index{getPitch@{getPitch}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{getPitch()}{getPitch()}}
+{\footnotesize\ttfamily double Camera\+::get\+Pitch (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns the pitch 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{134 \{ \textcolor{keywordflow}{return} pitch; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCamera_a520c5a7413b3e704f2f442288db17bcf}\label{classCamera_a520c5a7413b3e704f2f442288db17bcf}} 
+\index{Camera@{Camera}!getPosition@{getPosition}}
+\index{getPosition@{getPosition}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{getPosition()}{getPosition()}}
+{\footnotesize\ttfamily glm\+::vec3 Camera\+::get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns the camera\textquotesingle{}s position 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{124 \{ \textcolor{keywordflow}{return} camPos; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCamera_a684359adb6950efdefc017fba54b4f4a}\label{classCamera_a684359adb6950efdefc017fba54b4f4a}} 
+\index{Camera@{Camera}!getRoll@{getRoll}}
+\index{getRoll@{getRoll}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{getRoll()}{getRoll()}}
+{\footnotesize\ttfamily double Camera\+::get\+Roll (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns the roll 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{136 \{ \textcolor{keywordflow}{return} roll; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCamera_a1af03aa27aafc84436078eb11e16c0e3}\label{classCamera_a1af03aa27aafc84436078eb11e16c0e3}} 
+\index{Camera@{Camera}!getX@{getX}}
+\index{getX@{getX}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{getX()}{getX()}}
+{\footnotesize\ttfamily double Camera\+::getX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns the camera\textquotesingle{}s X position 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{125 \{ \textcolor{keywordflow}{return} camPos.x; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCamera_a1a99eaab2127fcc0af20e8e06e9a7eb0}\label{classCamera_a1a99eaab2127fcc0af20e8e06e9a7eb0}} 
+\index{Camera@{Camera}!getY@{getY}}
+\index{getY@{getY}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{getY()}{getY()}}
+{\footnotesize\ttfamily double Camera\+::getY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns the camera\textquotesingle{}s Y position 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{126 \{ \textcolor{keywordflow}{return} camPos.y; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCamera_a86f92ac0aec33b2a84f954503a706553}\label{classCamera_a86f92ac0aec33b2a84f954503a706553}} 
+\index{Camera@{Camera}!getYaw@{getYaw}}
+\index{getYaw@{getYaw}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{getYaw()}{getYaw()}}
+{\footnotesize\ttfamily double Camera\+::get\+Yaw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns the yaw 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{135 \{ \textcolor{keywordflow}{return} yaw; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCamera_aead34062d4bdb7fca1241a480d3f563f}\label{classCamera_aead34062d4bdb7fca1241a480d3f563f}} 
+\index{Camera@{Camera}!getZ@{getZ}}
+\index{getZ@{getZ}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{getZ()}{getZ()}}
+{\footnotesize\ttfamily double Camera\+::getZ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns the camera\textquotesingle{}s Z position 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{127 \{ \textcolor{keywordflow}{return} camPos.z; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCamera_a5f6d674840211b212b70f963f7f38ec8}\label{classCamera_a5f6d674840211b212b70f963f7f38ec8}} 
+\index{Camera@{Camera}!moveForward@{moveForward}}
+\index{moveForward@{moveForward}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{moveForward()}{moveForward()}}
+{\footnotesize\ttfamily void Camera\+::move\+Forward (\begin{DoxyParamCaption}\item[{double}]{distance }\end{DoxyParamCaption})}
+
+Moves the camera forwards along the x and z axis 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{94     \{}
+\DoxyCodeLine{95         \mbox{\hyperlink{classCamera_afc1d9e5d72f8916388634fce4bc1ca04}{addX}}(-\/glm::sin(-\/glm::radians(yaw)) * distance);}
+\DoxyCodeLine{96         \mbox{\hyperlink{classCamera_ac88adad8fefec4d3922a47766c133533}{addZ}}(-\/glm::cos(-\/glm::radians(yaw)) * distance);}
+\DoxyCodeLine{97     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCamera_ae28f9798422483f33171413073f3e6a6}\label{classCamera_ae28f9798422483f33171413073f3e6a6}} 
+\index{Camera@{Camera}!moveFront@{moveFront}}
+\index{moveFront@{moveFront}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{moveFront()}{moveFront()}}
+{\footnotesize\ttfamily void Camera\+::move\+Front (\begin{DoxyParamCaption}\item[{double}]{distance }\end{DoxyParamCaption})}
+
+Moves the camera to it\textquotesingle{}s front vector 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{87     \{}
+\DoxyCodeLine{88         \mbox{\hyperlink{classCamera_afc1d9e5d72f8916388634fce4bc1ca04}{addX}}(camDirection.x * distance);}
+\DoxyCodeLine{89         \mbox{\hyperlink{classCamera_af58db5f34309f0d64379ab52648479b1}{addY}}(camDirection.y * distance);}
+\DoxyCodeLine{90         \mbox{\hyperlink{classCamera_ac88adad8fefec4d3922a47766c133533}{addZ}}(camDirection.z * distance);}
+\DoxyCodeLine{91     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCamera_a82c473d067982f5f7115af6f97e59f48}\label{classCamera_a82c473d067982f5f7115af6f97e59f48}} 
+\index{Camera@{Camera}!moveRight@{moveRight}}
+\index{moveRight@{moveRight}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{moveRight()}{moveRight()}}
+{\footnotesize\ttfamily void Camera\+::move\+Right (\begin{DoxyParamCaption}\item[{double}]{distance }\end{DoxyParamCaption})}
+
+Moves the camera right along the x and z axis 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{100     \{}
+\DoxyCodeLine{101         \mbox{\hyperlink{classCamera_aab9ae814e3cf1a097d0fa68fc069273c}{regenUpRight}}();}
+\DoxyCodeLine{102         \mbox{\hyperlink{classCamera_afc1d9e5d72f8916388634fce4bc1ca04}{addX}}(camRight.x * distance);}
+\DoxyCodeLine{103         \mbox{\hyperlink{classCamera_af58db5f34309f0d64379ab52648479b1}{addY}}(camRight.y * distance);}
+\DoxyCodeLine{104         \mbox{\hyperlink{classCamera_ac88adad8fefec4d3922a47766c133533}{addZ}}(camRight.z * distance);}
+\DoxyCodeLine{105     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCamera_a45f4c40657e22349d5cbcfe797b9e281}\label{classCamera_a45f4c40657e22349d5cbcfe797b9e281}} 
+\index{Camera@{Camera}!moveWorldUp@{moveWorldUp}}
+\index{moveWorldUp@{moveWorldUp}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{moveWorldUp()}{moveWorldUp()}}
+{\footnotesize\ttfamily void Camera\+::move\+World\+Up (\begin{DoxyParamCaption}\item[{double}]{distance }\end{DoxyParamCaption})}
+
+Moves the camera along the y axis 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{108     \{}
+\DoxyCodeLine{109         \mbox{\hyperlink{classCamera_af58db5f34309f0d64379ab52648479b1}{addY}}(distance);}
+\DoxyCodeLine{110     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCamera_aab9ae814e3cf1a097d0fa68fc069273c}\label{classCamera_aab9ae814e3cf1a097d0fa68fc069273c}} 
+\index{Camera@{Camera}!regenUpRight@{regenUpRight}}
+\index{regenUpRight@{regenUpRight}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{regenUpRight()}{regenUpRight()}}
+{\footnotesize\ttfamily void Camera\+::regen\+Up\+Right (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Re-\/calculates the up and right vectors based on the direction 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{161     \{}
+\DoxyCodeLine{162         \textcolor{comment}{//Generates the Camera's right and up vector for matrix gen}}
+\DoxyCodeLine{163         camRight = glm::normalize(glm::cross(-\/glm::vec3(0.0, 1.0, 0.0), camDirection));}
+\DoxyCodeLine{164         camUp = glm::cross(camRight, camDirection);}
+\DoxyCodeLine{165     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCamera_abe8633adb8475cb7c62e1a12743a1025}\label{classCamera_abe8633adb8475cb7c62e1a12743a1025}} 
+\index{Camera@{Camera}!setPosition@{setPosition}}
+\index{setPosition@{setPosition}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{setPosition()}{setPosition()}}
+{\footnotesize\ttfamily void Camera\+::set\+Position (\begin{DoxyParamCaption}\item[{glm\+::vec3}]{position }\end{DoxyParamCaption})}
+
+Sets the position of the camera 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{33 \{ camPos = position; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCamera_a8ce77e1883be5d0d9ce519b6b1529ba0}\label{classCamera_a8ce77e1883be5d0d9ce519b6b1529ba0}} 
+\index{Camera@{Camera}!setX@{setX}}
+\index{setX@{setX}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{setX()}{setX()}}
+{\footnotesize\ttfamily void Camera\+::setX (\begin{DoxyParamCaption}\item[{double}]{x }\end{DoxyParamCaption})}
+
+Sets the position of the camera 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{34 \{ camPos.x = x; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCamera_a0643160ac86b60abdb817247a7f052a7}\label{classCamera_a0643160ac86b60abdb817247a7f052a7}} 
+\index{Camera@{Camera}!setY@{setY}}
+\index{setY@{setY}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{setY()}{setY()}}
+{\footnotesize\ttfamily void Camera\+::setY (\begin{DoxyParamCaption}\item[{double}]{y }\end{DoxyParamCaption})}
+
+Sets the position of the camera 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{35 \{ camPos.y = y; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCamera_abc9c6f0a6c96fb0799371489f24f604f}\label{classCamera_abc9c6f0a6c96fb0799371489f24f604f}} 
+\index{Camera@{Camera}!setZ@{setZ}}
+\index{setZ@{setZ}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{setZ()}{setZ()}}
+{\footnotesize\ttfamily void Camera\+::setZ (\begin{DoxyParamCaption}\item[{double}]{z }\end{DoxyParamCaption})}
+
+Sets the position of the camera 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{36 \{ camPos.z = z; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCamera_ac97c7f9cfe6214467235ee6a882ba0c8}\label{classCamera_ac97c7f9cfe6214467235ee6a882ba0c8}} 
+\index{Camera@{Camera}!simpleControl@{simpleControl}}
+\index{simpleControl@{simpleControl}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{simpleControl()}{simpleControl()}}
+{\footnotesize\ttfamily void Camera\+::simple\+Control (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classKeyboard}{Keyboard}}}]{KB,  }\item[{float}]{move\+Speed,  }\item[{float}]{turn\+Speed }\end{DoxyParamCaption})}
+
+Controls the camera 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{175     \{}
+\DoxyCodeLine{176         \textcolor{keywordflow}{if}(KB.\mbox{\hyperlink{classKeyboard_a897271591deb8d691ea00ba46c9c4cb8}{isKeyPressed}}(GLFW\_KEY\_W))             \textcolor{comment}{//WASD movement}}
+\DoxyCodeLine{177             \mbox{\hyperlink{classCamera_a5f6d674840211b212b70f963f7f38ec8}{moveForward}}(moveSpeed);}
+\DoxyCodeLine{178         \textcolor{keywordflow}{if}(KB.\mbox{\hyperlink{classKeyboard_a897271591deb8d691ea00ba46c9c4cb8}{isKeyPressed}}(GLFW\_KEY\_S))}
+\DoxyCodeLine{179             \mbox{\hyperlink{classCamera_a5f6d674840211b212b70f963f7f38ec8}{moveForward}}(-\/moveSpeed);}
+\DoxyCodeLine{180         \textcolor{keywordflow}{if}(KB.\mbox{\hyperlink{classKeyboard_a897271591deb8d691ea00ba46c9c4cb8}{isKeyPressed}}(GLFW\_KEY\_A))}
+\DoxyCodeLine{181             \mbox{\hyperlink{classCamera_a82c473d067982f5f7115af6f97e59f48}{moveRight}}(-\/moveSpeed);}
+\DoxyCodeLine{182         \textcolor{keywordflow}{if}(KB.\mbox{\hyperlink{classKeyboard_a897271591deb8d691ea00ba46c9c4cb8}{isKeyPressed}}(GLFW\_KEY\_D))}
+\DoxyCodeLine{183             \mbox{\hyperlink{classCamera_a82c473d067982f5f7115af6f97e59f48}{moveRight}}(moveSpeed);}
+\DoxyCodeLine{184         \textcolor{keywordflow}{if}(KB.\mbox{\hyperlink{classKeyboard_a897271591deb8d691ea00ba46c9c4cb8}{isKeyPressed}}(GLFW\_KEY\_I))             \textcolor{comment}{//IJKL turn movement}}
+\DoxyCodeLine{185             \mbox{\hyperlink{classCamera_a65b7d73a52ac1dfdb2ed4b5f885b84e5}{addPitch}}(turnSpeed);}
+\DoxyCodeLine{186         \textcolor{keywordflow}{if}(KB.\mbox{\hyperlink{classKeyboard_a897271591deb8d691ea00ba46c9c4cb8}{isKeyPressed}}(GLFW\_KEY\_K))}
+\DoxyCodeLine{187             \mbox{\hyperlink{classCamera_a65b7d73a52ac1dfdb2ed4b5f885b84e5}{addPitch}}(-\/turnSpeed);}
+\DoxyCodeLine{188         \textcolor{keywordflow}{if}(KB.\mbox{\hyperlink{classKeyboard_a897271591deb8d691ea00ba46c9c4cb8}{isKeyPressed}}(GLFW\_KEY\_J))}
+\DoxyCodeLine{189             \mbox{\hyperlink{classCamera_a1421e1c3be170a2ece7e3a9297b265db}{addYaw}}(-\/turnSpeed);}
+\DoxyCodeLine{190         \textcolor{keywordflow}{if}(KB.\mbox{\hyperlink{classKeyboard_a897271591deb8d691ea00ba46c9c4cb8}{isKeyPressed}}(GLFW\_KEY\_L))}
+\DoxyCodeLine{191             \mbox{\hyperlink{classCamera_a1421e1c3be170a2ece7e3a9297b265db}{addYaw}}(turnSpeed);}
+\DoxyCodeLine{192         \textcolor{keywordflow}{if}(KB.\mbox{\hyperlink{classKeyboard_a897271591deb8d691ea00ba46c9c4cb8}{isKeyPressed}}(GLFW\_KEY\_SPACE))         \textcolor{comment}{//Up down movement}}
+\DoxyCodeLine{193             \mbox{\hyperlink{classCamera_a45f4c40657e22349d5cbcfe797b9e281}{moveWorldUp}}(moveSpeed);}
+\DoxyCodeLine{194         \textcolor{keywordflow}{if}(KB.\mbox{\hyperlink{classKeyboard_a897271591deb8d691ea00ba46c9c4cb8}{isKeyPressed}}(GLFW\_KEY\_LEFT\_SHIFT))}
+\DoxyCodeLine{195             \mbox{\hyperlink{classCamera_a45f4c40657e22349d5cbcfe797b9e281}{moveWorldUp}}(-\/moveSpeed);}
+\DoxyCodeLine{196     \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+abstractions/\+Camera/\mbox{\hyperlink{camera_8hpp}{camera.\+hpp}}\item 
+abstractions/\+Camera/\mbox{\hyperlink{camera_8cpp}{camera.\+cpp}}\end{DoxyCompactItemize}

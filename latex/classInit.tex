@@ -1,0 +1,99 @@
+\hypertarget{classInit}{}\doxysection{Init Class Reference}
+\label{classInit}\index{Init@{Init}}
+
+
+{\ttfamily \#include $<$Init.\+hpp$>$}
+
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classWindow}{Window}} \mbox{\hyperlink{classInit_adb9d1abf8ca4a1e58d06d11661bdaeb0}{init\+Context}} (int x, int y, std\+::string title)
+\item 
+static void \mbox{\hyperlink{classInit_aff71db501b76b1b0316ebea3f8c93593}{init\+G\+L\+EW}} ()
+\item 
+static void \mbox{\hyperlink{classInit_afdf128e4489c06a1e0d46ed98df24f2c}{init\+G\+L\+FW}} ()
+\item 
+static void \mbox{\hyperlink{classInit_added47cb9a957a177fe8eee89d9c3b88}{end\+Context}} (\mbox{\hyperlink{classWindow}{Window}} win)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Contains functions to initialize an open\+GL context 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classInit_added47cb9a957a177fe8eee89d9c3b88}\label{classInit_added47cb9a957a177fe8eee89d9c3b88}} 
+\index{Init@{Init}!endContext@{endContext}}
+\index{endContext@{endContext}!Init@{Init}}
+\doxysubsubsection{\texorpdfstring{endContext()}{endContext()}}
+{\footnotesize\ttfamily void Init\+::end\+Context (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classWindow}{Window}}}]{win }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Ends an active context 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{62     \{}
+\DoxyCodeLine{63         glfwDestroyWindow(win.\mbox{\hyperlink{classWindow_a0a091d94124d3d94a2ce6fc30d9883a8}{getWindow}}());}
+\DoxyCodeLine{64         glfwTerminate();}
+\DoxyCodeLine{65     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classInit_adb9d1abf8ca4a1e58d06d11661bdaeb0}\label{classInit_adb9d1abf8ca4a1e58d06d11661bdaeb0}} 
+\index{Init@{Init}!initContext@{initContext}}
+\index{initContext@{initContext}!Init@{Init}}
+\doxysubsubsection{\texorpdfstring{initContext()}{initContext()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classWindow}{Window}} Init\+::init\+Context (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{std\+::string}]{title }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Initializes a valid context 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{11     \{}
+\DoxyCodeLine{12         \textcolor{comment}{//Start windowed context}}
+\DoxyCodeLine{13         \mbox{\hyperlink{classInit_afdf128e4489c06a1e0d46ed98df24f2c}{initGLFW}}();}
+\DoxyCodeLine{14         \mbox{\hyperlink{classWindow}{Window}} wind(x, y, title);}
+\DoxyCodeLine{15         \mbox{\hyperlink{classInit_aff71db501b76b1b0316ebea3f8c93593}{initGLEW}}();}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17         \textcolor{comment}{//Init other components}}
+\DoxyCodeLine{18         glEnable(GL\_DEPTH\_TEST);    \textcolor{comment}{//Depth, for rendering with depth}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20         \textcolor{comment}{//Return context}}
+\DoxyCodeLine{21         \textcolor{keywordflow}{return} wind;}
+\DoxyCodeLine{22     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classInit_aff71db501b76b1b0316ebea3f8c93593}\label{classInit_aff71db501b76b1b0316ebea3f8c93593}} 
+\index{Init@{Init}!initGLEW@{initGLEW}}
+\index{initGLEW@{initGLEW}!Init@{Init}}
+\doxysubsubsection{\texorpdfstring{initGLEW()}{initGLEW()}}
+{\footnotesize\ttfamily void Init\+::init\+G\+L\+EW (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Initializes G\+L\+EW 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{28     \{}
+\DoxyCodeLine{29         \textcolor{keywordflow}{if}(glewInit() != GLEW\_OK)}
+\DoxyCodeLine{30         \{}
+\DoxyCodeLine{31             std::string err\_string = \textcolor{stringliteral}{"GLEW could not be initialized\(\backslash\)n"};}
+\DoxyCodeLine{32             \textcolor{keywordflow}{throw} std::runtime\_error(err\_string);}
+\DoxyCodeLine{33         \}}
+\DoxyCodeLine{34     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classInit_afdf128e4489c06a1e0d46ed98df24f2c}\label{classInit_afdf128e4489c06a1e0d46ed98df24f2c}} 
+\index{Init@{Init}!initGLFW@{initGLFW}}
+\index{initGLFW@{initGLFW}!Init@{Init}}
+\doxysubsubsection{\texorpdfstring{initGLFW()}{initGLFW()}}
+{\footnotesize\ttfamily void Init\+::init\+G\+L\+FW (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Initializes G\+L\+FW 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{40     \{}
+\DoxyCodeLine{41         \textcolor{keywordflow}{if}(glfwInit() != GLFW\_TRUE)}
+\DoxyCodeLine{42         \{}
+\DoxyCodeLine{43             std::string err\_string = \textcolor{stringliteral}{"GLFW could not be initialized\(\backslash\)n"};}
+\DoxyCodeLine{44             \textcolor{keywordflow}{throw} std::runtime\_error(err\_string);}
+\DoxyCodeLine{45         \}}
+\DoxyCodeLine{46     \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+abstractions/\+Init/\mbox{\hyperlink{Init_8hpp}{Init.\+hpp}}\item 
+abstractions/\+Init/\mbox{\hyperlink{Init_8cpp}{Init.\+cpp}}\end{DoxyCompactItemize}

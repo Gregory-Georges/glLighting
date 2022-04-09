@@ -1,0 +1,11 @@
+digraph "abstractions/ModelData" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_898d9f057ab0c3f0aea2afe60f29a516 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="abstractions" fontname="Helvetica", fontsize="10", URL="dir_898d9f057ab0c3f0aea2afe60f29a516.html"]
+  dir_ff87dc29466d201cca6866a5a3e2217c [shape=box, label="ModelData", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_ff87dc29466d201cca6866a5a3e2217c.html"];
+  }
+  dir_1a59a3d145870e2ede777001faa583ab [shape=box label="useful" fillcolor="white" style="filled" color="red" URL="dir_1a59a3d145870e2ede777001faa583ab.html"];
+  dir_ff87dc29466d201cca6866a5a3e2217c->dir_1a59a3d145870e2ede777001faa583ab [headlabel="1", labeldistance=1.5 headhref="dir_000007_000018.html"];
+}

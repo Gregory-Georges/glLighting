@@ -1,0 +1,35 @@
+\hypertarget{Uniform__utility_8cpp}{}\doxysection{abstractions/\+Uniform/\+Uniform\+\_\+utility.cpp File Reference}
+\label{Uniform__utility_8cpp}\index{abstractions/Uniform/Uniform\_utility.cpp@{abstractions/Uniform/Uniform\_utility.cpp}}
+{\ttfamily \#include \char`\"{}Uniform\+\_\+utility.\+hpp\char`\"{}}\newline
+Include dependency graph for Uniform\+\_\+utility.\+cpp\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{Uniform__utility_8cpp_a8e95e9978ce83887fc5bb96df3768f82}{is\+Supported\+Uniform\+Type}} (G\+Lenum Uniform\+Type)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{Uniform__utility_8cpp_a8e95e9978ce83887fc5bb96df3768f82}\label{Uniform__utility_8cpp_a8e95e9978ce83887fc5bb96df3768f82}} 
+\index{Uniform\_utility.cpp@{Uniform\_utility.cpp}!isSupportedUniformType@{isSupportedUniformType}}
+\index{isSupportedUniformType@{isSupportedUniformType}!Uniform\_utility.cpp@{Uniform\_utility.cpp}}
+\doxysubsubsection{\texorpdfstring{isSupportedUniformType()}{isSupportedUniformType()}}
+{\footnotesize\ttfamily bool is\+Supported\+Uniform\+Type (\begin{DoxyParamCaption}\item[{G\+Lenum}]{Uniform\+Type }\end{DoxyParamCaption})}
+
+Returns true if the uniform is supported by the Uniform\+::\+Data function 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{10     \{}
+\DoxyCodeLine{11         \textcolor{keywordflow}{return}}
+\DoxyCodeLine{12         (}
+\DoxyCodeLine{13             \textcolor{comment}{//Vectors}}
+\DoxyCodeLine{14             UniformType == GL\_FLOAT\_VEC3 ||}
+\DoxyCodeLine{15             UniformType == GL\_FLOAT\_VEC4 ||}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17             \textcolor{comment}{//Matrices}}
+\DoxyCodeLine{18             UniformType == GL\_FLOAT\_MAT3 ||}
+\DoxyCodeLine{19             UniformType == GL\_FLOAT\_MAT4}
+\DoxyCodeLine{20         );}
+\DoxyCodeLine{21     \}}
+
+\end{DoxyCode}

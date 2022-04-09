@@ -41,6 +41,7 @@ public:
 
     Buffer(unsigned int bufferType, void* Data, unsigned int size, unsigned int usage);    /**< Constructs a filled buffer object. Binds the buffer */
     Buffer(const Buffer &buf);      /**< Copy constructor */
+    Buffer(Buffer &&buf);           /**< Move constructor */
 
 
 

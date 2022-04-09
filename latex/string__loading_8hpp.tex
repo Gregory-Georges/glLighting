@@ -1,0 +1,180 @@
+\hypertarget{string__loading_8hpp}{}\doxysection{useful/string\+\_\+loading/string\+\_\+loading.hpp File Reference}
+\label{string__loading_8hpp}\index{useful/string\_loading/string\_loading.hpp@{useful/string\_loading/string\_loading.hpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+Include dependency graph for string\+\_\+loading.\+hpp\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{string__loading_8hpp_acc1343e77a961d4139b3e2c727c8b50a}{check\+Extension}} (std\+::string filename, std\+::string extension)
+\item 
+std\+::string \mbox{\hyperlink{string__loading_8hpp_a91f4c2423b41bd247f81876c0db6bb0d}{get\+Extension}} (std\+::string filename)
+\item 
+bool \mbox{\hyperlink{string__loading_8hpp_a1e35f1137e3505d9169ce53795a7abfc}{exists}} (std\+::string filename)
+\item 
+std\+::string \mbox{\hyperlink{string__loading_8hpp_a496c260cae531e11994940f148833e95}{load\+File}} (std\+::string path)
+\item 
+std\+::vector$<$ int $>$ \mbox{\hyperlink{string__loading_8hpp_a9d02984fc1602318bf4f18d7bf9bd1c6}{get\+Int\+Values}} (std\+::string str)
+\item 
+std\+::vector$<$ float $>$ \mbox{\hyperlink{string__loading_8hpp_a0d4743039809cc2b1b5c6f3a38dda05b}{get\+Float\+Values}} (std\+::string str)
+\item 
+std\+::string \mbox{\hyperlink{string__loading_8hpp_ac0c6ccaeeae84e447a11fcab06c9659c}{divide\+String}} (std\+::string str, std\+::string start, std\+::string end)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{string__loading_8hpp_acc1343e77a961d4139b3e2c727c8b50a}\label{string__loading_8hpp_acc1343e77a961d4139b3e2c727c8b50a}} 
+\index{string\_loading.hpp@{string\_loading.hpp}!checkExtension@{checkExtension}}
+\index{checkExtension@{checkExtension}!string\_loading.hpp@{string\_loading.hpp}}
+\doxysubsubsection{\texorpdfstring{checkExtension()}{checkExtension()}}
+{\footnotesize\ttfamily bool check\+Extension (\begin{DoxyParamCaption}\item[{std\+::string}]{filename,  }\item[{std\+::string}]{extension }\end{DoxyParamCaption})}
+
+Returns true if extension is the same 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{10 \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{string__loading_8cpp_a91f4c2423b41bd247f81876c0db6bb0d}{getExtension}}(filename) == extension; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{string__loading_8hpp_ac0c6ccaeeae84e447a11fcab06c9659c}\label{string__loading_8hpp_ac0c6ccaeeae84e447a11fcab06c9659c}} 
+\index{string\_loading.hpp@{string\_loading.hpp}!divideString@{divideString}}
+\index{divideString@{divideString}!string\_loading.hpp@{string\_loading.hpp}}
+\doxysubsubsection{\texorpdfstring{divideString()}{divideString()}}
+{\footnotesize\ttfamily std\+::string divide\+String (\begin{DoxyParamCaption}\item[{std\+::string}]{str,  }\item[{std\+::string}]{start,  }\item[{std\+::string}]{end }\end{DoxyParamCaption})}
+
+Returns a substring from limits 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{137     \{}
+\DoxyCodeLine{138         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} START = str.find(start);}
+\DoxyCodeLine{139         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} END = str.find(end);}
+\DoxyCodeLine{140 }
+\DoxyCodeLine{141         \textcolor{comment}{//Return substring in between}}
+\DoxyCodeLine{142         \textcolor{keywordflow}{return} str.substr(START + start.size(), END -\/ START -\/ 6); \textcolor{comment}{//-\/6 for some reason dunno why}}
+\DoxyCodeLine{143     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{string__loading_8hpp_a1e35f1137e3505d9169ce53795a7abfc}\label{string__loading_8hpp_a1e35f1137e3505d9169ce53795a7abfc}} 
+\index{string\_loading.hpp@{string\_loading.hpp}!exists@{exists}}
+\index{exists@{exists}!string\_loading.hpp@{string\_loading.hpp}}
+\doxysubsubsection{\texorpdfstring{exists()}{exists()}}
+{\footnotesize\ttfamily bool exists (\begin{DoxyParamCaption}\item[{std\+::string}]{filename }\end{DoxyParamCaption})}
+
+Returns true if the file exists 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{17     \{}
+\DoxyCodeLine{18         std::fstream file;}
+\DoxyCodeLine{19         file.open(filename);}
+\DoxyCodeLine{20         \textcolor{keywordflow}{return} file.is\_open();}
+\DoxyCodeLine{21     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{string__loading_8hpp_a91f4c2423b41bd247f81876c0db6bb0d}\label{string__loading_8hpp_a91f4c2423b41bd247f81876c0db6bb0d}} 
+\index{string\_loading.hpp@{string\_loading.hpp}!getExtension@{getExtension}}
+\index{getExtension@{getExtension}!string\_loading.hpp@{string\_loading.hpp}}
+\doxysubsubsection{\texorpdfstring{getExtension()}{getExtension()}}
+{\footnotesize\ttfamily std\+::string get\+Extension (\begin{DoxyParamCaption}\item[{std\+::string}]{filename }\end{DoxyParamCaption})}
+
+Returns the extension type if present 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{13 \{ \textcolor{keywordflow}{return} filename.substr(filename.find\_last\_of(\textcolor{stringliteral}{"."}) + 1); \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{string__loading_8hpp_a0d4743039809cc2b1b5c6f3a38dda05b}\label{string__loading_8hpp_a0d4743039809cc2b1b5c6f3a38dda05b}} 
+\index{string\_loading.hpp@{string\_loading.hpp}!getFloatValues@{getFloatValues}}
+\index{getFloatValues@{getFloatValues}!string\_loading.hpp@{string\_loading.hpp}}
+\doxysubsubsection{\texorpdfstring{getFloatValues()}{getFloatValues()}}
+{\footnotesize\ttfamily std\+::vector$<$float$>$ get\+Float\+Values (\begin{DoxyParamCaption}\item[{std\+::string}]{str }\end{DoxyParamCaption})}
+
+Returns an array of float values 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{99     \{}
+\DoxyCodeLine{100         \textcolor{comment}{//Return}}
+\DoxyCodeLine{101         std::vector<float> values;}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103         \textcolor{comment}{//Temporary value}}
+\DoxyCodeLine{104         std::string temp;}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{106         \textcolor{comment}{//Scan through every character}}
+\DoxyCodeLine{107         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} n = 0; n < int(str.size()); ++n)}
+\DoxyCodeLine{108         \{}
+\DoxyCodeLine{109             \textcolor{comment}{//Check if is a number or a point}}
+\DoxyCodeLine{110             \textcolor{keywordflow}{if}((str.at(n) <= \textcolor{charliteral}{'9'} \&\& str.at(n) >= \textcolor{charliteral}{'0'}) || str.at(n) == \textcolor{charliteral}{'.'} || str.at(n) == \textcolor{charliteral}{'-\/'}) \{ temp += str.at(n); \}}
+\DoxyCodeLine{111 }
+\DoxyCodeLine{112             \textcolor{comment}{//If not a number and string is not empty, convert and add to array}}
+\DoxyCodeLine{113             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(temp != \textcolor{stringliteral}{""})}
+\DoxyCodeLine{114             \{}
+\DoxyCodeLine{115                 values.push\_back(std::stof(temp));}
+\DoxyCodeLine{116                 temp = \textcolor{stringliteral}{""};}
+\DoxyCodeLine{117             \}}
+\DoxyCodeLine{118         \}}
+\DoxyCodeLine{119 }
+\DoxyCodeLine{120         \textcolor{comment}{//Return}}
+\DoxyCodeLine{121         \textcolor{keywordflow}{return} values;}
+\DoxyCodeLine{122     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{string__loading_8hpp_a9d02984fc1602318bf4f18d7bf9bd1c6}\label{string__loading_8hpp_a9d02984fc1602318bf4f18d7bf9bd1c6}} 
+\index{string\_loading.hpp@{string\_loading.hpp}!getIntValues@{getIntValues}}
+\index{getIntValues@{getIntValues}!string\_loading.hpp@{string\_loading.hpp}}
+\doxysubsubsection{\texorpdfstring{getIntValues()}{getIntValues()}}
+{\footnotesize\ttfamily std\+::vector$<$int$>$ get\+Int\+Values (\begin{DoxyParamCaption}\item[{std\+::string}]{str }\end{DoxyParamCaption})}
+
+Returns an array of int values 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{70     \{}
+\DoxyCodeLine{71         \textcolor{comment}{//Return}}
+\DoxyCodeLine{72         std::vector<int> values;}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74         \textcolor{comment}{//Temporary value}}
+\DoxyCodeLine{75         std::string temp;}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77         \textcolor{comment}{//Scan through every character}}
+\DoxyCodeLine{78         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} n = 0; n < int(str.size()); ++n)}
+\DoxyCodeLine{79         \{}
+\DoxyCodeLine{80             \textcolor{comment}{//Check if is a number}}
+\DoxyCodeLine{81             \textcolor{keywordflow}{if}((str.at(n) <= \textcolor{charliteral}{'9'} \&\& str.at(n) >= \textcolor{charliteral}{'0'}) || str.at(n) == \textcolor{charliteral}{'-\/'}) \{ temp += str.at(n); \}}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83             \textcolor{comment}{//If not a number and string is not empty, convert and add to array}}
+\DoxyCodeLine{84             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(temp != \textcolor{stringliteral}{""})}
+\DoxyCodeLine{85             \{}
+\DoxyCodeLine{86                 values.push\_back(std::stoi(temp));}
+\DoxyCodeLine{87                 temp = \textcolor{stringliteral}{""};}
+\DoxyCodeLine{88             \}}
+\DoxyCodeLine{89         \}}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91         \textcolor{comment}{//Return}}
+\DoxyCodeLine{92         \textcolor{keywordflow}{return} values;}
+\DoxyCodeLine{93     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{string__loading_8hpp_a496c260cae531e11994940f148833e95}\label{string__loading_8hpp_a496c260cae531e11994940f148833e95}} 
+\index{string\_loading.hpp@{string\_loading.hpp}!loadFile@{loadFile}}
+\index{loadFile@{loadFile}!string\_loading.hpp@{string\_loading.hpp}}
+\doxysubsubsection{\texorpdfstring{loadFile()}{loadFile()}}
+{\footnotesize\ttfamily std\+::string load\+File (\begin{DoxyParamCaption}\item[{std\+::string}]{path }\end{DoxyParamCaption})}
+
+Returns the contents of the file 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{37     \{}
+\DoxyCodeLine{38         std::string out = \textcolor{stringliteral}{""};}
+\DoxyCodeLine{39         std::string temp;}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41         \textcolor{keywordflow}{if}(\mbox{\hyperlink{string__loading_8cpp_a1e35f1137e3505d9169ce53795a7abfc}{exists}}(filename))}
+\DoxyCodeLine{42         \{}
+\DoxyCodeLine{43             \textcolor{comment}{//Open file}}
+\DoxyCodeLine{44             std::fstream file;}
+\DoxyCodeLine{45             file.open(filename);}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47             \textcolor{comment}{//Extract file}}
+\DoxyCodeLine{48             \textcolor{keywordflow}{while}(std::getline(file, temp))}
+\DoxyCodeLine{49                 out += temp + \textcolor{stringliteral}{"\(\backslash\)n"};}
+\DoxyCodeLine{50         \}}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52         \textcolor{comment}{//Return}}
+\DoxyCodeLine{53         \textcolor{keywordflow}{return} out;}
+\DoxyCodeLine{54     \}}
+
+\end{DoxyCode}

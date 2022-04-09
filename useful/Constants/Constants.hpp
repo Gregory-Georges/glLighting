@@ -20,7 +20,7 @@
 // Directional vectors
 //////////////////////////////////
 
-#define UP glm::vec3(0.0, 1.0, 0.0)
+#define UP glm::vec3(0.0, 1.0, 0.0)     /**< Up vector; Points directly in the y axis up */
 
 
 
@@ -31,7 +31,7 @@
 // Mathematical values
 //////////////////////////////////
 
-#define PI 3.14159265359
+#define PI 3.14159265359                /**< PI : Defines the mathematical constant */
 
 
 

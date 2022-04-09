@@ -8,7 +8,7 @@
 
 
 /**
- * Timer class
+ * Timer class. Allows to control and be aware of time in the program
  */
 class Timer
 {

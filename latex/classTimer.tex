@@ -1,0 +1,88 @@
+\hypertarget{classTimer}{}\doxysection{Timer Class Reference}
+\label{classTimer}\index{Timer@{Timer}}
+
+
+{\ttfamily \#include $<$timer.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTimer_a5f16e8da27d2a5a5242dead46de05d97}{Timer}} ()
+\item 
+double \mbox{\hyperlink{classTimer_a490604efc23a4ff9bef8d1f9f418ecb2}{get\+Time}} ()
+\item 
+void \mbox{\hyperlink{classTimer_a61a8ac9c4b7b21bba0a0e699eb85ab44}{set\+Interval}} ()
+\item 
+double \mbox{\hyperlink{classTimer_acc31fb22efa01b47983f47a9236d05d3}{get\+Interval}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{classTimer}{Timer}} class. Allows to control and be aware of time in the program 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classTimer_a5f16e8da27d2a5a5242dead46de05d97}\label{classTimer_a5f16e8da27d2a5a5242dead46de05d97}} 
+\index{Timer@{Timer}!Timer@{Timer}}
+\index{Timer@{Timer}!Timer@{Timer}}
+\doxysubsubsection{\texorpdfstring{Timer()}{Timer()}}
+{\footnotesize\ttfamily Timer\+::\+Timer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{10     \{}
+\DoxyCodeLine{11         lastTime = glfwGetTime();}
+\DoxyCodeLine{12     \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classTimer_acc31fb22efa01b47983f47a9236d05d3}\label{classTimer_acc31fb22efa01b47983f47a9236d05d3}} 
+\index{Timer@{Timer}!getInterval@{getInterval}}
+\index{getInterval@{getInterval}!Timer@{Timer}}
+\doxysubsubsection{\texorpdfstring{getInterval()}{getInterval()}}
+{\footnotesize\ttfamily double Timer\+::get\+Interval (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns the time passed since last call to set\+Interval 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{48     \{}
+\DoxyCodeLine{49         \textcolor{keywordtype}{double} currentTime = glfwGetTime();}
+\DoxyCodeLine{50         \textcolor{keywordtype}{double} returnTime = currentTime -\/ lastTime;}
+\DoxyCodeLine{51         lastTime = currentTime;}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53         \textcolor{keywordflow}{return} returnTime;}
+\DoxyCodeLine{54     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classTimer_a490604efc23a4ff9bef8d1f9f418ecb2}\label{classTimer_a490604efc23a4ff9bef8d1f9f418ecb2}} 
+\index{Timer@{Timer}!getTime@{getTime}}
+\index{getTime@{getTime}!Timer@{Timer}}
+\doxysubsubsection{\texorpdfstring{getTime()}{getTime()}}
+{\footnotesize\ttfamily double Timer\+::get\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns the time 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{27     \{}
+\DoxyCodeLine{28         \textcolor{keywordflow}{return} glfwGetTime();}
+\DoxyCodeLine{29     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classTimer_a61a8ac9c4b7b21bba0a0e699eb85ab44}\label{classTimer_a61a8ac9c4b7b21bba0a0e699eb85ab44}} 
+\index{Timer@{Timer}!setInterval@{setInterval}}
+\index{setInterval@{setInterval}!Timer@{Timer}}
+\doxysubsubsection{\texorpdfstring{setInterval()}{setInterval()}}
+{\footnotesize\ttfamily void Timer\+::set\+Interval (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Sets the interval time 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{41     \{}
+\DoxyCodeLine{42         lastTime = glfwGetTime();}
+\DoxyCodeLine{43     \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+abstractions/\+Timer/\mbox{\hyperlink{timer_8hpp}{timer.\+hpp}}\item 
+abstractions/\+Timer/\mbox{\hyperlink{timer_8cpp}{timer.\+cpp}}\end{DoxyCompactItemize}

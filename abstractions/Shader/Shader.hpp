@@ -41,8 +41,8 @@ public:
     // Constructor / destructor
     //////////////////////////////////
 
-    Shader();       /**< Constructs an empty shader object */
-    ~Shader();      /**< Destroys the shader object */
+    Shader();                                                   /**< Constructs an empty shader object */
+    ~Shader();                                                  /**< Destroys the shader object */
 
     Shader(std::string vertexShd, std::string fragmentShd);     /**< Constructs a usable shader object */
     Shader(const Shader& shd);                                  /**< Copies a shader object */
@@ -56,9 +56,9 @@ public:
     // Getters
     //////////////////////////////////
 
-    unsigned int getID();                           /**< Returns the name of the shader object */
-    Uniform& getUniform(std::string uniformName);    /**< Returns a uniform of said name */
-    int getValid();                                 /**< Returns if the shader is valid */
+    unsigned int getID();                                       /**< Returns the name of the shader object */
+    Uniform& getUniform(std::string uniformName);               /**< Returns a uniform of said name */
+    int getValid();                                             /**< Returns if the shader is valid */
 
 
 
@@ -71,7 +71,7 @@ public:
 
     void use();                                                         /**< Binds the shader object */
     void compile(std::string vertexShd, std::string fragmentShd);       /**< Compiles the shader object */
-    void gatherUniforms();                                              /**< Gets the uniforms in the compiled shader */
+    void gatherUniforms();                                              /**< Gets the uniforms in the compiled shader. Is executed upon compilation */
 };
 
 #endif // SHADER_HPP

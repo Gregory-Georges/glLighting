@@ -1,0 +1,20 @@
+digraph "containers" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_5aa2c741d78642de87e50b40b6f339a9 {
+    graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_5aa2c741d78642de87e50b40b6f339a9.html"];
+    dir_5aa2c741d78642de87e50b40b6f339a9 [shape=plaintext label="containers"];
+    dir_852b750e933ebce4428dce3665fa4cb3 [shape=box label="TextureContainer" color="black" fillcolor="white" style="filled" URL="dir_852b750e933ebce4428dce3665fa4cb3.html"];
+    dir_3eea72ebfe6d013c282c5cfe30158a15 [shape=box label="UniformContainer" color="black" fillcolor="white" style="filled" URL="dir_3eea72ebfe6d013c282c5cfe30158a15.html"];
+  }
+  dir_898d9f057ab0c3f0aea2afe60f29a516 [shape=box label="abstractions" fillcolor="white" style="filled" color="red" URL="dir_898d9f057ab0c3f0aea2afe60f29a516.html"];
+  dir_1a59a3d145870e2ede777001faa583ab [shape=box label="useful" fillcolor="white" style="filled" color="red" URL="dir_1a59a3d145870e2ede777001faa583ab.html"];
+  dir_5aa2c741d78642de87e50b40b6f339a9->dir_1a59a3d145870e2ede777001faa583ab [headlabel="1", labeldistance=1.5 headhref="dir_000015_000018.html"];
+  dir_5aa2c741d78642de87e50b40b6f339a9->dir_852b750e933ebce4428dce3665fa4cb3 [headlabel="1", labeldistance=1.5 headhref="dir_000015_000016.html"];
+  dir_5aa2c741d78642de87e50b40b6f339a9->dir_3eea72ebfe6d013c282c5cfe30158a15 [headlabel="1", labeldistance=1.5 headhref="dir_000015_000017.html"];
+  dir_898d9f057ab0c3f0aea2afe60f29a516->dir_1a59a3d145870e2ede777001faa583ab [headlabel="5", labeldistance=1.5 headhref="dir_000000_000018.html"];
+  dir_898d9f057ab0c3f0aea2afe60f29a516->dir_3eea72ebfe6d013c282c5cfe30158a15 [headlabel="1", labeldistance=1.5 headhref="dir_000000_000017.html"];
+  dir_852b750e933ebce4428dce3665fa4cb3->dir_898d9f057ab0c3f0aea2afe60f29a516 [headlabel="1", labeldistance=1.5 headhref="dir_000016_000000.html"];
+  dir_3eea72ebfe6d013c282c5cfe30158a15->dir_898d9f057ab0c3f0aea2afe60f29a516 [headlabel="1", labeldistance=1.5 headhref="dir_000017_000000.html"];
+}

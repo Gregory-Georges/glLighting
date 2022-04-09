@@ -5,7 +5,7 @@
 		<Option title="glLighting" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
-		<Option virtualFolders="shaders/;Abstractions/Buffer/;Abstractions/;Abstractions/Init/;Abstractions/Texture/;Abstractions/Camera/;Abstractions/Keyboard/;Abstractions/Model/;Abstractions/Mouse/;Abstractions/Renderable/;Abstractions/Shader/;Abstractions/Timer/;Abstractions/Buffer/IndexBuffer/;Abstractions/Uniform/;Abstractions/VertexArray/;Abstractions/Buffer/VertexBuffer/;Abstractions/Window/;Abstractions/ModelData/;Useful/Constants/;Useful/String_Loading/;Useful/glState/;Useful/;shaders/normal/;shaders/light/;Useful/Errors/;Containers/;Containers/TextureContainer/;Containers/UniformContainer/" />
+		<Option virtualFolders="shaders/;Abstractions/Buffer/;Abstractions/;Abstractions/Init/;Abstractions/Texture/;Abstractions/Camera/;Abstractions/Keyboard/;Abstractions/Mouse/;Abstractions/Shader/;Abstractions/Timer/;Abstractions/Buffer/IndexBuffer/;Abstractions/Uniform/;Abstractions/VertexArray/;Abstractions/Buffer/VertexBuffer/;Abstractions/Window/;Abstractions/ModelData/;Useful/Constants/;Useful/String_Loading/;Useful/glState/;Useful/;shaders/normal/;shaders/light/;Useful/Errors/;Containers/;Containers/TextureContainer/;Containers/UniformContainer/" />
 		<Build>
 			<Target title="Debug">
 				<Option output="bin/Debug/glLighting" prefix_auto="1" extension_auto="1" />
@@ -69,12 +69,6 @@
 		<Unit filename="abstractions/Buffer/IndexBuffer/indexbuffer.hpp">
 			<Option virtualFolder="Abstractions/Buffer/IndexBuffer/" />
 		</Unit>
-		<Unit filename="abstractions/Buffer/Model/model.cpp">
-			<Option virtualFolder="Abstractions/Model/" />
-		</Unit>
-		<Unit filename="abstractions/Buffer/Model/model.hpp">
-			<Option virtualFolder="Abstractions/Model/" />
-		</Unit>
 		<Unit filename="abstractions/Buffer/VertexBuffer/vertexbuffer.cpp">
 			<Option virtualFolder="Abstractions/Buffer/VertexBuffer/" />
 		</Unit>
@@ -110,12 +104,6 @@
 		</Unit>
 		<Unit filename="abstractions/Mouse/Mouse.hpp">
 			<Option virtualFolder="Abstractions/Mouse/" />
-		</Unit>
-		<Unit filename="abstractions/Renderable/Renderable.cpp">
-			<Option virtualFolder="Abstractions/Renderable/" />
-		</Unit>
-		<Unit filename="abstractions/Renderable/Renderable.hpp">
-			<Option virtualFolder="Abstractions/Renderable/" />
 		</Unit>
 		<Unit filename="abstractions/Shader/Shader.cpp">
 			<Option virtualFolder="Abstractions/Shader/" />

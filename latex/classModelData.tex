@@ -1,0 +1,330 @@
+\hypertarget{classModelData}{}\doxysection{Model\+Data Class Reference}
+\label{classModelData}\index{ModelData@{ModelData}}
+
+
+{\ttfamily \#include $<$Model\+Data.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classModelData_a7412b0ec776c43cd3803b7cc12d99297}{Model\+Data}} ()
+\item 
+virtual glm\+::mat4 \mbox{\hyperlink{classModelData_a0c57ac87113ac8e59d7795c9b1bc0ddb}{Calculate\+Matrix}} ()
+\item 
+virtual void \mbox{\hyperlink{classModelData_a3095d556d18fbe2c27fbc2f9eeb30f78}{add\+Rotate}} (glm\+::vec3 rotate)
+\item 
+virtual void \mbox{\hyperlink{classModelData_a4b14093f94596082ca2116ce24e8b75d}{add\+RotateX}} (float angle)
+\item 
+void \mbox{\hyperlink{classModelData_a23667e5f724dda96d12e81823cdd510b}{add\+RotateY}} (float angle)
+\item 
+void \mbox{\hyperlink{classModelData_a6f06a476a887a3111b91e7d07c4158a6}{add\+RotateZ}} (float angle)
+\item 
+void \mbox{\hyperlink{classModelData_a82b9a885f1c530ea7a99c7963f6e09af}{add\+Scale}} (glm\+::vec3 scale)
+\item 
+void \mbox{\hyperlink{classModelData_a9eed063dff59cc3ab70f4a80519e7b1b}{set\+Rotate}} (glm\+::vec3 rotate)
+\item 
+void \mbox{\hyperlink{classModelData_a35bf6e63ca95c993cbcb52558912eafe}{Set\+RotateX}} (float angle)
+\item 
+void \mbox{\hyperlink{classModelData_a3d8256e1201a5166082cfc5e41b3882f}{Set\+RotateY}} (float angle)
+\item 
+void \mbox{\hyperlink{classModelData_a1efc629047fa5a714de43e32d7529b84}{Set\+RotateZ}} (float angle)
+\item 
+void \mbox{\hyperlink{classModelData_a93a57d93c1704ba1f90cc30601fe324b}{set\+Scale}} (glm\+::vec3 scale)
+\item 
+void \mbox{\hyperlink{classModelData_a729ccfdc56a591162e7a6c9d4d746e69}{set\+Pos}} (glm\+::vec3 vpos)
+\item 
+void \mbox{\hyperlink{classModelData_a8604441ef8a33b44789c05049a3ac4f1}{add\+Pos}} (glm\+::vec3 vpos)
+\item 
+glm\+::vec3 \mbox{\hyperlink{classModelData_a705b276ebbfcc8ea80fcdca01b25b408}{get\+Scale}} ()
+\item 
+glm\+::vec3 \mbox{\hyperlink{classModelData_aa49d79721a3031e7947d6f6e6db84276}{get\+Rotation}} ()
+\item 
+glm\+::vec3 \mbox{\hyperlink{classModelData_a0308539804d9e9b7f53f26ca2b3851c2}{get\+Pos}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+glm\+::mat4 \mbox{\hyperlink{classModelData_a99f3bee29e209cf848af40071a74115e}{modl}}
+\item 
+glm\+::vec3 \mbox{\hyperlink{classModelData_a3c91ef7450f1762f7659147fe2d83b26}{pos}}
+\item 
+glm\+::vec3 \mbox{\hyperlink{classModelData_a5aa498d2fca2690bdb89c70365245129}{angl}}
+\item 
+glm\+::vec3 \mbox{\hyperlink{classModelData_aa1aab0278cb08f58520d2a452e2e3397}{scl}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Contains the data necessary for generating a matrix on screen
+\begin{DoxyItemize}
+\item Position
+\item Rotation
+\item Scale 
+\end{DoxyItemize}
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classModelData_a7412b0ec776c43cd3803b7cc12d99297}\label{classModelData_a7412b0ec776c43cd3803b7cc12d99297}} 
+\index{ModelData@{ModelData}!ModelData@{ModelData}}
+\index{ModelData@{ModelData}!ModelData@{ModelData}}
+\doxysubsubsection{\texorpdfstring{ModelData()}{ModelData()}}
+{\footnotesize\ttfamily Model\+Data\+::\+Model\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Constructs an object to position 0 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{11     \{}
+\DoxyCodeLine{12         \mbox{\hyperlink{classModelData_a3c91ef7450f1762f7659147fe2d83b26}{pos}} = glm::vec3(0.0);   \textcolor{comment}{//Default values for a generic spawned-\/in attribute}}
+\DoxyCodeLine{13         \mbox{\hyperlink{classModelData_aa1aab0278cb08f58520d2a452e2e3397}{scl}} = glm::vec3(1.0);}
+\DoxyCodeLine{14         \mbox{\hyperlink{classModelData_a5aa498d2fca2690bdb89c70365245129}{angl}} = glm::vec3(0.0);}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16         \mbox{\hyperlink{classModelData_a0c57ac87113ac8e59d7795c9b1bc0ddb}{CalculateMatrix}}();}
+\DoxyCodeLine{17     \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classModelData_a8604441ef8a33b44789c05049a3ac4f1}\label{classModelData_a8604441ef8a33b44789c05049a3ac4f1}} 
+\index{ModelData@{ModelData}!addPos@{addPos}}
+\index{addPos@{addPos}!ModelData@{ModelData}}
+\doxysubsubsection{\texorpdfstring{addPos()}{addPos()}}
+{\footnotesize\ttfamily void Model\+Data\+::add\+Pos (\begin{DoxyParamCaption}\item[{glm\+::vec3}]{vpos }\end{DoxyParamCaption})}
+
+Adds to the position of the object 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{92 \{ \mbox{\hyperlink{classModelData_a3c91ef7450f1762f7659147fe2d83b26}{pos}} += vpos; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classModelData_a3095d556d18fbe2c27fbc2f9eeb30f78}\label{classModelData_a3095d556d18fbe2c27fbc2f9eeb30f78}} 
+\index{ModelData@{ModelData}!addRotate@{addRotate}}
+\index{addRotate@{addRotate}!ModelData@{ModelData}}
+\doxysubsubsection{\texorpdfstring{addRotate()}{addRotate()}}
+{\footnotesize\ttfamily void Model\+Data\+::add\+Rotate (\begin{DoxyParamCaption}\item[{glm\+::vec3}]{rotate }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Adds to the rotation of the object 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{66     \{}
+\DoxyCodeLine{67         \mbox{\hyperlink{classModelData_a4b14093f94596082ca2116ce24e8b75d}{addRotateX}}(rotate.x);}
+\DoxyCodeLine{68         \mbox{\hyperlink{classModelData_a4b14093f94596082ca2116ce24e8b75d}{addRotateX}}(rotate.y);}
+\DoxyCodeLine{69         \mbox{\hyperlink{classModelData_a4b14093f94596082ca2116ce24e8b75d}{addRotateX}}(rotate.z);}
+\DoxyCodeLine{70     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classModelData_a4b14093f94596082ca2116ce24e8b75d}\label{classModelData_a4b14093f94596082ca2116ce24e8b75d}} 
+\index{ModelData@{ModelData}!addRotateX@{addRotateX}}
+\index{addRotateX@{addRotateX}!ModelData@{ModelData}}
+\doxysubsubsection{\texorpdfstring{addRotateX()}{addRotateX()}}
+{\footnotesize\ttfamily void Model\+Data\+::add\+RotateX (\begin{DoxyParamCaption}\item[{float}]{angle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Pitch control 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{74     \{}
+\DoxyCodeLine{75         \mbox{\hyperlink{classModelData_a5aa498d2fca2690bdb89c70365245129}{angl}}.x += angle;}
+\DoxyCodeLine{76         \mbox{\hyperlink{classModelData_a5aa498d2fca2690bdb89c70365245129}{angl}}.x = fmod(\mbox{\hyperlink{classModelData_a5aa498d2fca2690bdb89c70365245129}{angl}}.x, 2 * \mbox{\hyperlink{Constants_8hpp_a598a3330b3c21701223ee0ca14316eca}{PI}});}
+\DoxyCodeLine{77     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classModelData_a23667e5f724dda96d12e81823cdd510b}\label{classModelData_a23667e5f724dda96d12e81823cdd510b}} 
+\index{ModelData@{ModelData}!addRotateY@{addRotateY}}
+\index{addRotateY@{addRotateY}!ModelData@{ModelData}}
+\doxysubsubsection{\texorpdfstring{addRotateY()}{addRotateY()}}
+{\footnotesize\ttfamily void Model\+Data\+::add\+RotateY (\begin{DoxyParamCaption}\item[{float}]{angle }\end{DoxyParamCaption})}
+
+Yaw conttrol 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{80     \{}
+\DoxyCodeLine{81         \mbox{\hyperlink{classModelData_a5aa498d2fca2690bdb89c70365245129}{angl}}.y += angle;}
+\DoxyCodeLine{82         \mbox{\hyperlink{classModelData_a5aa498d2fca2690bdb89c70365245129}{angl}}.y = fmod(\mbox{\hyperlink{classModelData_a5aa498d2fca2690bdb89c70365245129}{angl}}.y, 2 * \mbox{\hyperlink{Constants_8hpp_a598a3330b3c21701223ee0ca14316eca}{PI}});}
+\DoxyCodeLine{83     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classModelData_a6f06a476a887a3111b91e7d07c4158a6}\label{classModelData_a6f06a476a887a3111b91e7d07c4158a6}} 
+\index{ModelData@{ModelData}!addRotateZ@{addRotateZ}}
+\index{addRotateZ@{addRotateZ}!ModelData@{ModelData}}
+\doxysubsubsection{\texorpdfstring{addRotateZ()}{addRotateZ()}}
+{\footnotesize\ttfamily void Model\+Data\+::add\+RotateZ (\begin{DoxyParamCaption}\item[{float}]{angle }\end{DoxyParamCaption})}
+
+Roll control 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{86     \{}
+\DoxyCodeLine{87         \mbox{\hyperlink{classModelData_a5aa498d2fca2690bdb89c70365245129}{angl}}.z += angle;}
+\DoxyCodeLine{88         \mbox{\hyperlink{classModelData_a5aa498d2fca2690bdb89c70365245129}{angl}}.z = fmod(\mbox{\hyperlink{classModelData_a5aa498d2fca2690bdb89c70365245129}{angl}}.z, 2 * \mbox{\hyperlink{Constants_8hpp_a598a3330b3c21701223ee0ca14316eca}{PI}});}
+\DoxyCodeLine{89     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classModelData_a82b9a885f1c530ea7a99c7963f6e09af}\label{classModelData_a82b9a885f1c530ea7a99c7963f6e09af}} 
+\index{ModelData@{ModelData}!addScale@{addScale}}
+\index{addScale@{addScale}!ModelData@{ModelData}}
+\doxysubsubsection{\texorpdfstring{addScale()}{addScale()}}
+{\footnotesize\ttfamily void Model\+Data\+::add\+Scale (\begin{DoxyParamCaption}\item[{glm\+::vec3}]{scale }\end{DoxyParamCaption})}
+
+Adds to the scale of the objects 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{91 \{ \mbox{\hyperlink{classModelData_aa1aab0278cb08f58520d2a452e2e3397}{scl}} += scale; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classModelData_a0c57ac87113ac8e59d7795c9b1bc0ddb}\label{classModelData_a0c57ac87113ac8e59d7795c9b1bc0ddb}} 
+\index{ModelData@{ModelData}!CalculateMatrix@{CalculateMatrix}}
+\index{CalculateMatrix@{CalculateMatrix}!ModelData@{ModelData}}
+\doxysubsubsection{\texorpdfstring{CalculateMatrix()}{CalculateMatrix()}}
+{\footnotesize\ttfamily glm\+::mat4 Model\+Data\+::\+Calculate\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Calculates a model matrix based on the model\textquotesingle{}s position 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{32     \{}
+\DoxyCodeLine{33         \textcolor{comment}{//Reset matrix}}
+\DoxyCodeLine{34         \mbox{\hyperlink{classModelData_a99f3bee29e209cf848af40071a74115e}{modl}} = glm::mat4(1.0);}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37         \textcolor{comment}{//Calculate translation}}
+\DoxyCodeLine{38         \mbox{\hyperlink{classModelData_a99f3bee29e209cf848af40071a74115e}{modl}} = glm::translate(\mbox{\hyperlink{classModelData_a99f3bee29e209cf848af40071a74115e}{modl}}, \mbox{\hyperlink{classModelData_a3c91ef7450f1762f7659147fe2d83b26}{pos}});}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40         \textcolor{comment}{//Calculate rotation on all axis}}
+\DoxyCodeLine{41         \mbox{\hyperlink{classModelData_a99f3bee29e209cf848af40071a74115e}{modl}} = glm::rotate(\mbox{\hyperlink{classModelData_a99f3bee29e209cf848af40071a74115e}{modl}}, \mbox{\hyperlink{classModelData_a5aa498d2fca2690bdb89c70365245129}{angl}}.x, glm::vec3(1.0, 0.0, 0.0));     \textcolor{comment}{//Pitch}}
+\DoxyCodeLine{42         \mbox{\hyperlink{classModelData_a99f3bee29e209cf848af40071a74115e}{modl}} = glm::rotate(\mbox{\hyperlink{classModelData_a99f3bee29e209cf848af40071a74115e}{modl}}, \mbox{\hyperlink{classModelData_a5aa498d2fca2690bdb89c70365245129}{angl}}.y, glm::vec3(0.0, 1.0, 0.0));     \textcolor{comment}{//Yaw}}
+\DoxyCodeLine{43         \mbox{\hyperlink{classModelData_a99f3bee29e209cf848af40071a74115e}{modl}} = glm::rotate(\mbox{\hyperlink{classModelData_a99f3bee29e209cf848af40071a74115e}{modl}}, \mbox{\hyperlink{classModelData_a5aa498d2fca2690bdb89c70365245129}{angl}}.z, glm::vec3(0.0, 0.0, 1.0));     \textcolor{comment}{//Roll}}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45         \textcolor{comment}{//Calculate scale}}
+\DoxyCodeLine{46         \mbox{\hyperlink{classModelData_a99f3bee29e209cf848af40071a74115e}{modl}} = glm::scale(\mbox{\hyperlink{classModelData_a99f3bee29e209cf848af40071a74115e}{modl}}, \mbox{\hyperlink{classModelData_aa1aab0278cb08f58520d2a452e2e3397}{scl}});}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49         \textcolor{comment}{//Return matrix}}
+\DoxyCodeLine{50         \textcolor{keywordflow}{return} \mbox{\hyperlink{classModelData_a99f3bee29e209cf848af40071a74115e}{modl}};}
+\DoxyCodeLine{51     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classModelData_a0308539804d9e9b7f53f26ca2b3851c2}\label{classModelData_a0308539804d9e9b7f53f26ca2b3851c2}} 
+\index{ModelData@{ModelData}!getPos@{getPos}}
+\index{getPos@{getPos}!ModelData@{ModelData}}
+\doxysubsubsection{\texorpdfstring{getPos()}{getPos()}}
+{\footnotesize\ttfamily glm\+::vec3 Model\+Data\+::get\+Pos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns the position of the object 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{124 \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classModelData_a3c91ef7450f1762f7659147fe2d83b26}{pos}}; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classModelData_aa49d79721a3031e7947d6f6e6db84276}\label{classModelData_aa49d79721a3031e7947d6f6e6db84276}} 
+\index{ModelData@{ModelData}!getRotation@{getRotation}}
+\index{getRotation@{getRotation}!ModelData@{ModelData}}
+\doxysubsubsection{\texorpdfstring{getRotation()}{getRotation()}}
+{\footnotesize\ttfamily glm\+::vec3 Model\+Data\+::get\+Rotation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns rhe vector containing the rotation angles of the object 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{125 \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classModelData_a5aa498d2fca2690bdb89c70365245129}{angl}}; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classModelData_a705b276ebbfcc8ea80fcdca01b25b408}\label{classModelData_a705b276ebbfcc8ea80fcdca01b25b408}} 
+\index{ModelData@{ModelData}!getScale@{getScale}}
+\index{getScale@{getScale}!ModelData@{ModelData}}
+\doxysubsubsection{\texorpdfstring{getScale()}{getScale()}}
+{\footnotesize\ttfamily glm\+::vec3 Model\+Data\+::get\+Scale (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns the scale of the object 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{126 \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classModelData_aa1aab0278cb08f58520d2a452e2e3397}{scl}}; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classModelData_a729ccfdc56a591162e7a6c9d4d746e69}\label{classModelData_a729ccfdc56a591162e7a6c9d4d746e69}} 
+\index{ModelData@{ModelData}!setPos@{setPos}}
+\index{setPos@{setPos}!ModelData@{ModelData}}
+\doxysubsubsection{\texorpdfstring{setPos()}{setPos()}}
+{\footnotesize\ttfamily void Model\+Data\+::set\+Pos (\begin{DoxyParamCaption}\item[{glm\+::vec3}]{vpos }\end{DoxyParamCaption})}
+
+Sets the position of the object 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{110 \{ \mbox{\hyperlink{classModelData_a3c91ef7450f1762f7659147fe2d83b26}{pos}} = vpos; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classModelData_a9eed063dff59cc3ab70f4a80519e7b1b}\label{classModelData_a9eed063dff59cc3ab70f4a80519e7b1b}} 
+\index{ModelData@{ModelData}!setRotate@{setRotate}}
+\index{setRotate@{setRotate}!ModelData@{ModelData}}
+\doxysubsubsection{\texorpdfstring{setRotate()}{setRotate()}}
+{\footnotesize\ttfamily void Model\+Data\+::set\+Rotate (\begin{DoxyParamCaption}\item[{glm\+::vec3}]{rotate }\end{DoxyParamCaption})}
+
+Sets the rotation of the object 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{97     \{}
+\DoxyCodeLine{98         \mbox{\hyperlink{classModelData_a5aa498d2fca2690bdb89c70365245129}{angl}}.x = fmod(rotate.x, 2 * \mbox{\hyperlink{Constants_8hpp_a598a3330b3c21701223ee0ca14316eca}{PI}});}
+\DoxyCodeLine{99         \mbox{\hyperlink{classModelData_a5aa498d2fca2690bdb89c70365245129}{angl}}.y = fmod(rotate.y, 2 * \mbox{\hyperlink{Constants_8hpp_a598a3330b3c21701223ee0ca14316eca}{PI}});}
+\DoxyCodeLine{100         \mbox{\hyperlink{classModelData_a5aa498d2fca2690bdb89c70365245129}{angl}}.z = fmod(rotate.z, 2 * \mbox{\hyperlink{Constants_8hpp_a598a3330b3c21701223ee0ca14316eca}{PI}});}
+\DoxyCodeLine{101     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classModelData_a35bf6e63ca95c993cbcb52558912eafe}\label{classModelData_a35bf6e63ca95c993cbcb52558912eafe}} 
+\index{ModelData@{ModelData}!SetRotateX@{SetRotateX}}
+\index{SetRotateX@{SetRotateX}!ModelData@{ModelData}}
+\doxysubsubsection{\texorpdfstring{SetRotateX()}{SetRotateX()}}
+{\footnotesize\ttfamily void Model\+Data\+::\+Set\+RotateX (\begin{DoxyParamCaption}\item[{float}]{angle }\end{DoxyParamCaption})}
+
+Pitch control 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{103 \{ \mbox{\hyperlink{classModelData_a5aa498d2fca2690bdb89c70365245129}{angl}}.x = fmod(angle, 2 * \mbox{\hyperlink{Constants_8hpp_a598a3330b3c21701223ee0ca14316eca}{PI}}); \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classModelData_a3d8256e1201a5166082cfc5e41b3882f}\label{classModelData_a3d8256e1201a5166082cfc5e41b3882f}} 
+\index{ModelData@{ModelData}!SetRotateY@{SetRotateY}}
+\index{SetRotateY@{SetRotateY}!ModelData@{ModelData}}
+\doxysubsubsection{\texorpdfstring{SetRotateY()}{SetRotateY()}}
+{\footnotesize\ttfamily void Model\+Data\+::\+Set\+RotateY (\begin{DoxyParamCaption}\item[{float}]{angle }\end{DoxyParamCaption})}
+
+Yaw control 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{104 \{ \mbox{\hyperlink{classModelData_a5aa498d2fca2690bdb89c70365245129}{angl}}.y = fmod(angle, 2 * \mbox{\hyperlink{Constants_8hpp_a598a3330b3c21701223ee0ca14316eca}{PI}}); \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classModelData_a1efc629047fa5a714de43e32d7529b84}\label{classModelData_a1efc629047fa5a714de43e32d7529b84}} 
+\index{ModelData@{ModelData}!SetRotateZ@{SetRotateZ}}
+\index{SetRotateZ@{SetRotateZ}!ModelData@{ModelData}}
+\doxysubsubsection{\texorpdfstring{SetRotateZ()}{SetRotateZ()}}
+{\footnotesize\ttfamily void Model\+Data\+::\+Set\+RotateZ (\begin{DoxyParamCaption}\item[{float}]{angle }\end{DoxyParamCaption})}
+
+Roll control 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{105 \{ \mbox{\hyperlink{classModelData_a5aa498d2fca2690bdb89c70365245129}{angl}}.z = fmod(angle, 2 * \mbox{\hyperlink{Constants_8hpp_a598a3330b3c21701223ee0ca14316eca}{PI}}); \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classModelData_a93a57d93c1704ba1f90cc30601fe324b}\label{classModelData_a93a57d93c1704ba1f90cc30601fe324b}} 
+\index{ModelData@{ModelData}!setScale@{setScale}}
+\index{setScale@{setScale}!ModelData@{ModelData}}
+\doxysubsubsection{\texorpdfstring{setScale()}{setScale()}}
+{\footnotesize\ttfamily void Model\+Data\+::set\+Scale (\begin{DoxyParamCaption}\item[{glm\+::vec3}]{scale }\end{DoxyParamCaption})}
+
+Sets the scale of the object 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{109 \{ \mbox{\hyperlink{classModelData_aa1aab0278cb08f58520d2a452e2e3397}{scl}} = scale; \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classModelData_a5aa498d2fca2690bdb89c70365245129}\label{classModelData_a5aa498d2fca2690bdb89c70365245129}} 
+\index{ModelData@{ModelData}!angl@{angl}}
+\index{angl@{angl}!ModelData@{ModelData}}
+\doxysubsubsection{\texorpdfstring{angl}{angl}}
+{\footnotesize\ttfamily glm\+::vec3 Model\+Data\+::angl\hspace{0.3cm}{\ttfamily [protected]}}
+
+The object\textquotesingle{}s rotation in each of the axis in radians \mbox{\Hypertarget{classModelData_a99f3bee29e209cf848af40071a74115e}\label{classModelData_a99f3bee29e209cf848af40071a74115e}} 
+\index{ModelData@{ModelData}!modl@{modl}}
+\index{modl@{modl}!ModelData@{ModelData}}
+\doxysubsubsection{\texorpdfstring{modl}{modl}}
+{\footnotesize\ttfamily glm\+::mat4 Model\+Data\+::modl\hspace{0.3cm}{\ttfamily [protected]}}
+
+Renderable\textquotesingle{}s model matrix \mbox{\Hypertarget{classModelData_a3c91ef7450f1762f7659147fe2d83b26}\label{classModelData_a3c91ef7450f1762f7659147fe2d83b26}} 
+\index{ModelData@{ModelData}!pos@{pos}}
+\index{pos@{pos}!ModelData@{ModelData}}
+\doxysubsubsection{\texorpdfstring{pos}{pos}}
+{\footnotesize\ttfamily glm\+::vec3 Model\+Data\+::pos\hspace{0.3cm}{\ttfamily [protected]}}
+
+The position of the object \mbox{\Hypertarget{classModelData_aa1aab0278cb08f58520d2a452e2e3397}\label{classModelData_aa1aab0278cb08f58520d2a452e2e3397}} 
+\index{ModelData@{ModelData}!scl@{scl}}
+\index{scl@{scl}!ModelData@{ModelData}}
+\doxysubsubsection{\texorpdfstring{scl}{scl}}
+{\footnotesize\ttfamily glm\+::vec3 Model\+Data\+::scl\hspace{0.3cm}{\ttfamily [protected]}}
+
+The scale of the object 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+abstractions/\+Model\+Data/\mbox{\hyperlink{ModelData_8hpp}{Model\+Data.\+hpp}}\item 
+abstractions/\+Model\+Data/\mbox{\hyperlink{ModelData_8cpp}{Model\+Data.\+cpp}}\end{DoxyCompactItemize}

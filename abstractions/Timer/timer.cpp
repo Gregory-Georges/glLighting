@@ -6,10 +6,13 @@
 // Constructor / destructor
 //////////////////////////////////
 
-Timer::Timer()
-{
-    lastTime = glfwGetTime();
-}
+    Timer::Timer()
+    {
+        lastTime = glfwGetTime();
+    }
+
+
+
 
 
 
@@ -20,10 +23,10 @@ Timer::Timer()
 // Getters
 //////////////////////////////////
 
-double Timer::getTime()
-{
-    return glfwGetTime();
-}
+    double Timer::getTime()
+    {
+        return glfwGetTime();
+    }
 
 
 
@@ -34,18 +37,18 @@ double Timer::getTime()
 // Interval
 //////////////////////////////////
 
-void Timer::setInterval()
-{
-    lastTime = glfwGetTime();
-}
+    void Timer::setInterval()
+    {
+        lastTime = glfwGetTime();
+    }
 
 
 
-double Timer::getInterval()
-{
-    double currentTime = glfwGetTime();
-    double returnTime = currentTime - lastTime;
-    lastTime = currentTime;
+    double Timer::getInterval()
+    {
+        double currentTime = glfwGetTime();
+        double returnTime = currentTime - lastTime;
+        lastTime = currentTime;
 
-    return returnTime;
-}
+        return returnTime;
+    }

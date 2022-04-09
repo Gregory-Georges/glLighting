@@ -1,0 +1,307 @@
+\hypertarget{classTexture}{}\doxysection{Texture Class Reference}
+\label{classTexture}\index{Texture@{Texture}}
+
+
+{\ttfamily \#include $<$Texture.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTexture_a09c4bcb7462f64c1d20fa69dba3cee8a}{$\sim$\+Texture}} ()
+\item 
+\mbox{\hyperlink{classTexture_acc9dc0fb1316b6f6a16a1e90f4afb176}{Texture}} (std\+::string Path, unsigned int texture\+Type)
+\item 
+\mbox{\hyperlink{classTexture_aa86a821e91fa5be3d28a6b0952b043f9}{Texture}} (const \mbox{\hyperlink{classTexture}{Texture}} \&tex)
+\item 
+\mbox{\hyperlink{classTexture_a5114ff06ead169a29bb5e3f51456b3d9}{Texture}} (\mbox{\hyperlink{classTexture}{Texture}} \&\&tex0)
+\item 
+unsigned int \mbox{\hyperlink{classTexture_a76c482f48cff149afc8cc59cdc8a4f9c}{get\+ID}} ()
+\item 
+unsigned int \mbox{\hyperlink{classTexture_a9fd17c1c0ccc398283d2ed8da6e4c296}{get\+Texture\+Type}} ()
+\item 
+const std\+::string \& \mbox{\hyperlink{classTexture_aa046c3a612d8dd80b13b7430841ea369}{get\+Path}} ()
+\item 
+int \mbox{\hyperlink{classTexture_ae01b2742026e80e5713ed9ac0aead9d2}{getX}} ()
+\item 
+int \mbox{\hyperlink{classTexture_a9d33faa7ad6f3960f8fb785dd2bf5d41}{getY}} ()
+\item 
+void \mbox{\hyperlink{classTexture_a3840dc7429982ffaddeafc8d62345b5d}{bind}} ()
+\item 
+void \mbox{\hyperlink{classTexture_a2bb069310baeb859bb4a818932a98adf}{set\+Data}} (unsigned char $\ast$data, unsigned int texture\+Type, int x, int y)
+\item 
+void \mbox{\hyperlink{classTexture_a9cca20d915a1cb3d5ab5e521f4fb5d72}{load}} (std\+::string path, unsigned int texture\+Type)
+\item 
+void \mbox{\hyperlink{classTexture_a89df42259d964556c1174df4be5ae119}{gen\+Mipmap}} ()
+\item 
+void \mbox{\hyperlink{classTexture_ae0754ed614be08aded0aa5cc4376cedd}{parameteri}} (unsigned int param, unsigned int value)
+\item 
+void \mbox{\hyperlink{classTexture_a3edfb663887d556e437536480012aa2a}{set\+Default}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Contains a \mbox{\hyperlink{classTexture}{Texture}} object 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classTexture_a09c4bcb7462f64c1d20fa69dba3cee8a}\label{classTexture_a09c4bcb7462f64c1d20fa69dba3cee8a}} 
+\index{Texture@{Texture}!````~Texture@{$\sim$Texture}}
+\index{````~Texture@{$\sim$Texture}!Texture@{Texture}}
+\doxysubsubsection{\texorpdfstring{$\sim$Texture()}{~Texture()}}
+{\footnotesize\ttfamily Texture\+::$\sim$\+Texture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Destroys a texture object 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{13     \{}
+\DoxyCodeLine{14         glDeleteTextures(1, \&\textcolor{keywordtype}{id});}
+\DoxyCodeLine{15     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classTexture_acc9dc0fb1316b6f6a16a1e90f4afb176}\label{classTexture_acc9dc0fb1316b6f6a16a1e90f4afb176}} 
+\index{Texture@{Texture}!Texture@{Texture}}
+\index{Texture@{Texture}!Texture@{Texture}}
+\doxysubsubsection{\texorpdfstring{Texture()}{Texture()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Texture\+::\+Texture (\begin{DoxyParamCaption}\item[{std\+::string}]{Path,  }\item[{unsigned int}]{texture\+Type }\end{DoxyParamCaption})}
+
+Loads said image into texture 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{21     \{}
+\DoxyCodeLine{22         \textcolor{comment}{//Create new texture}}
+\DoxyCodeLine{23         glGenTextures(1, \&\textcolor{keywordtype}{id});}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25         \textcolor{comment}{//Load image}}
+\DoxyCodeLine{26         this-\/>textureType = textureType;}
+\DoxyCodeLine{27         texPath = Path;}
+\DoxyCodeLine{28         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char}* Image = \mbox{\hyperlink{Texture__utility_8cpp_a88b316d040b00b0595fb66309f314766}{loadImgRgb}}(Path, \&x, \&y);}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30         \mbox{\hyperlink{classTexture_a9cca20d915a1cb3d5ab5e521f4fb5d72}{load}}(Path, textureType);}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32         \textcolor{comment}{//Put image in texture}}
+\DoxyCodeLine{33         \mbox{\hyperlink{classTexture_a2bb069310baeb859bb4a818932a98adf}{setData}}(Image, textureType, x, y);}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35         \textcolor{comment}{//Free image}}
+\DoxyCodeLine{36         \mbox{\hyperlink{Texture__utility_8cpp_a3434ccf962e33f7e8d23fae9ffb03540}{freeImgRgb}}(Image);}
+\DoxyCodeLine{37     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classTexture_aa86a821e91fa5be3d28a6b0952b043f9}\label{classTexture_aa86a821e91fa5be3d28a6b0952b043f9}} 
+\index{Texture@{Texture}!Texture@{Texture}}
+\index{Texture@{Texture}!Texture@{Texture}}
+\doxysubsubsection{\texorpdfstring{Texture()}{Texture()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Texture\+::\+Texture (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classTexture}{Texture}} \&}]{tex }\end{DoxyParamCaption})}
+
+Copy constructor 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{43     \{}
+\DoxyCodeLine{44         \textcolor{comment}{//Create new texture}}
+\DoxyCodeLine{45         glGenTextures(1, \&\textcolor{keywordtype}{id});}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47         \textcolor{comment}{//Retrieve data}}
+\DoxyCodeLine{48         textureType = tex.textureType;}
+\DoxyCodeLine{49         texPath = tex.texPath;}
+\DoxyCodeLine{50         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char}* Image = \mbox{\hyperlink{Texture__utility_8cpp_a88b316d040b00b0595fb66309f314766}{loadImgRgb}}(texPath, \&x, \&y);}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52         \textcolor{comment}{//Give data}}
+\DoxyCodeLine{53         \mbox{\hyperlink{classTexture_a2bb069310baeb859bb4a818932a98adf}{setData}}(Image, textureType, x, y);}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55         \textcolor{comment}{//Free image}}
+\DoxyCodeLine{56         \mbox{\hyperlink{Texture__utility_8cpp_a3434ccf962e33f7e8d23fae9ffb03540}{freeImgRgb}}(Image);}
+\DoxyCodeLine{57     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classTexture_a5114ff06ead169a29bb5e3f51456b3d9}\label{classTexture_a5114ff06ead169a29bb5e3f51456b3d9}} 
+\index{Texture@{Texture}!Texture@{Texture}}
+\index{Texture@{Texture}!Texture@{Texture}}
+\doxysubsubsection{\texorpdfstring{Texture()}{Texture()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Texture\+::\+Texture (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTexture}{Texture}} \&\&}]{tex0 }\end{DoxyParamCaption})}
+
+Move constructor 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{63     \{}
+\DoxyCodeLine{64         this-\/>\textcolor{keywordtype}{id} = tex.id;}
+\DoxyCodeLine{65         this-\/>textureType = tex.textureType;}
+\DoxyCodeLine{66         this-\/>texPath = tex.texPath;}
+\DoxyCodeLine{67         this-\/>x = tex.x;}
+\DoxyCodeLine{68         this-\/>y = tex.y;}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70         tex.id = 0;}
+\DoxyCodeLine{71     \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classTexture_a3840dc7429982ffaddeafc8d62345b5d}\label{classTexture_a3840dc7429982ffaddeafc8d62345b5d}} 
+\index{Texture@{Texture}!bind@{bind}}
+\index{bind@{bind}!Texture@{Texture}}
+\doxysubsubsection{\texorpdfstring{bind()}{bind()}}
+{\footnotesize\ttfamily void Texture\+::bind (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Binds the texture object 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{111 \{ glBindTexture(textureType, \textcolor{keywordtype}{id}); \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classTexture_a89df42259d964556c1174df4be5ae119}\label{classTexture_a89df42259d964556c1174df4be5ae119}} 
+\index{Texture@{Texture}!genMipmap@{genMipmap}}
+\index{genMipmap@{genMipmap}!Texture@{Texture}}
+\doxysubsubsection{\texorpdfstring{genMipmap()}{genMipmap()}}
+{\footnotesize\ttfamily void Texture\+::gen\+Mipmap (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Generates a texture\textquotesingle{}s mipmaps 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{164     \{}
+\DoxyCodeLine{165         \mbox{\hyperlink{classTexture_a3840dc7429982ffaddeafc8d62345b5d}{bind}}();}
+\DoxyCodeLine{166         glGenerateMipmap(textureType);}
+\DoxyCodeLine{167     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classTexture_a76c482f48cff149afc8cc59cdc8a4f9c}\label{classTexture_a76c482f48cff149afc8cc59cdc8a4f9c}} 
+\index{Texture@{Texture}!getID@{getID}}
+\index{getID@{getID}!Texture@{Texture}}
+\doxysubsubsection{\texorpdfstring{getID()}{getID()}}
+{\footnotesize\ttfamily unsigned int Texture\+::get\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns the name of the texture object 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{86 \{ \textcolor{keywordflow}{return} id; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classTexture_aa046c3a612d8dd80b13b7430841ea369}\label{classTexture_aa046c3a612d8dd80b13b7430841ea369}} 
+\index{Texture@{Texture}!getPath@{getPath}}
+\index{getPath@{getPath}!Texture@{Texture}}
+\doxysubsubsection{\texorpdfstring{getPath()}{getPath()}}
+{\footnotesize\ttfamily const std\+::string \& Texture\+::get\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns the path of the texture 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{92 \{ \textcolor{keywordflow}{return} texPath; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classTexture_a9fd17c1c0ccc398283d2ed8da6e4c296}\label{classTexture_a9fd17c1c0ccc398283d2ed8da6e4c296}} 
+\index{Texture@{Texture}!getTextureType@{getTextureType}}
+\index{getTextureType@{getTextureType}!Texture@{Texture}}
+\doxysubsubsection{\texorpdfstring{getTextureType()}{getTextureType()}}
+{\footnotesize\ttfamily unsigned int Texture\+::get\+Texture\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns the buffer type of the object 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{89 \{ \textcolor{keywordflow}{return} textureType; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classTexture_ae01b2742026e80e5713ed9ac0aead9d2}\label{classTexture_ae01b2742026e80e5713ed9ac0aead9d2}} 
+\index{Texture@{Texture}!getX@{getX}}
+\index{getX@{getX}!Texture@{Texture}}
+\doxysubsubsection{\texorpdfstring{getX()}{getX()}}
+{\footnotesize\ttfamily int Texture\+::getX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns the lenght of the texture 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{95 \{ \textcolor{keywordflow}{return} x; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classTexture_a9d33faa7ad6f3960f8fb785dd2bf5d41}\label{classTexture_a9d33faa7ad6f3960f8fb785dd2bf5d41}} 
+\index{Texture@{Texture}!getY@{getY}}
+\index{getY@{getY}!Texture@{Texture}}
+\doxysubsubsection{\texorpdfstring{getY()}{getY()}}
+{\footnotesize\ttfamily int Texture\+::getY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns the height of the texture 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{96 \{ \textcolor{keywordflow}{return} y; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classTexture_a9cca20d915a1cb3d5ab5e521f4fb5d72}\label{classTexture_a9cca20d915a1cb3d5ab5e521f4fb5d72}} 
+\index{Texture@{Texture}!load@{load}}
+\index{load@{load}!Texture@{Texture}}
+\doxysubsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily void Texture\+::load (\begin{DoxyParamCaption}\item[{std\+::string}]{path,  }\item[{unsigned int}]{texture\+Type }\end{DoxyParamCaption})}
+
+Directly loads a texture object based on the image path 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{134     \{}
+\DoxyCodeLine{135         \textcolor{comment}{//Bind texture}}
+\DoxyCodeLine{136         this-\/>textureType = textureType;}
+\DoxyCodeLine{137         \mbox{\hyperlink{classTexture_a3840dc7429982ffaddeafc8d62345b5d}{bind}}();}
+\DoxyCodeLine{138 }
+\DoxyCodeLine{139         \textcolor{comment}{//Load img}}
+\DoxyCodeLine{140         texPath = path;}
+\DoxyCodeLine{141         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char}* Image = \mbox{\hyperlink{Texture__utility_8cpp_a88b316d040b00b0595fb66309f314766}{loadImgRgb}}(path, \&x, \&y);}
+\DoxyCodeLine{142 }
+\DoxyCodeLine{143         \textcolor{comment}{//Give data to texture}}
+\DoxyCodeLine{144         \mbox{\hyperlink{classTexture_a2bb069310baeb859bb4a818932a98adf}{setData}}(Image, textureType, x, y);}
+\DoxyCodeLine{145 }
+\DoxyCodeLine{146         \textcolor{comment}{//Free image}}
+\DoxyCodeLine{147         \mbox{\hyperlink{Texture__utility_8cpp_a3434ccf962e33f7e8d23fae9ffb03540}{freeImgRgb}}(Image);}
+\DoxyCodeLine{148     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classTexture_ae0754ed614be08aded0aa5cc4376cedd}\label{classTexture_ae0754ed614be08aded0aa5cc4376cedd}} 
+\index{Texture@{Texture}!parameteri@{parameteri}}
+\index{parameteri@{parameteri}!Texture@{Texture}}
+\doxysubsubsection{\texorpdfstring{parameteri()}{parameteri()}}
+{\footnotesize\ttfamily void Texture\+::parameteri (\begin{DoxyParamCaption}\item[{unsigned int}]{param,  }\item[{unsigned int}]{value }\end{DoxyParamCaption})}
+
+Sets a texture parameter 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{173     \{}
+\DoxyCodeLine{174         \mbox{\hyperlink{classTexture_a3840dc7429982ffaddeafc8d62345b5d}{bind}}();}
+\DoxyCodeLine{175         glTexParameteri(textureType, param, value);}
+\DoxyCodeLine{176     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classTexture_a2bb069310baeb859bb4a818932a98adf}\label{classTexture_a2bb069310baeb859bb4a818932a98adf}} 
+\index{Texture@{Texture}!setData@{setData}}
+\index{setData@{setData}!Texture@{Texture}}
+\doxysubsubsection{\texorpdfstring{setData()}{setData()}}
+{\footnotesize\ttfamily void Texture\+::set\+Data (\begin{DoxyParamCaption}\item[{unsigned char $\ast$}]{data,  }\item[{unsigned int}]{texture\+Type,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+Gives data to the texture 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{117     \{}
+\DoxyCodeLine{118         \textcolor{comment}{//Assign}}
+\DoxyCodeLine{119         this-\/>textureType = textureType;}
+\DoxyCodeLine{120         this-\/>x = x;}
+\DoxyCodeLine{121         this-\/>y = y;}
+\DoxyCodeLine{122 }
+\DoxyCodeLine{123         \mbox{\hyperlink{classTexture_a3840dc7429982ffaddeafc8d62345b5d}{bind}}();}
+\DoxyCodeLine{124         glTexImage2D(textureType, 0, GL\_RGB, x, y, 0, GL\_RGB, GL\_UNSIGNED\_BYTE, data);}
+\DoxyCodeLine{125 }
+\DoxyCodeLine{126         \textcolor{comment}{//Set default parameters}}
+\DoxyCodeLine{127         \mbox{\hyperlink{classTexture_a3edfb663887d556e437536480012aa2a}{setDefault}}();}
+\DoxyCodeLine{128     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classTexture_a3edfb663887d556e437536480012aa2a}\label{classTexture_a3edfb663887d556e437536480012aa2a}} 
+\index{Texture@{Texture}!setDefault@{setDefault}}
+\index{setDefault@{setDefault}!Texture@{Texture}}
+\doxysubsubsection{\texorpdfstring{setDefault()}{setDefault()}}
+{\footnotesize\ttfamily void Texture\+::set\+Default (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Sets the texture to the default parameter 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{182     \{}
+\DoxyCodeLine{183         \textcolor{comment}{//Bind texture}}
+\DoxyCodeLine{184         \mbox{\hyperlink{classTexture_a3840dc7429982ffaddeafc8d62345b5d}{bind}}();}
+\DoxyCodeLine{185 }
+\DoxyCodeLine{186         \textcolor{comment}{//Generate mipmaps}}
+\DoxyCodeLine{187         \mbox{\hyperlink{classTexture_a89df42259d964556c1174df4be5ae119}{genMipmap}}();}
+\DoxyCodeLine{188 }
+\DoxyCodeLine{189         \textcolor{comment}{//Clamp to edge}}
+\DoxyCodeLine{190         \mbox{\hyperlink{classTexture_ae0754ed614be08aded0aa5cc4376cedd}{parameteri}}(GL\_TEXTURE\_WRAP\_S, GL\_CLAMP\_TO\_EDGE);}
+\DoxyCodeLine{191         \mbox{\hyperlink{classTexture_ae0754ed614be08aded0aa5cc4376cedd}{parameteri}}(GL\_TEXTURE\_WRAP\_T, GL\_CLAMP\_TO\_EDGE);}
+\DoxyCodeLine{192 }
+\DoxyCodeLine{193         \textcolor{comment}{//Sampling}}
+\DoxyCodeLine{194         \mbox{\hyperlink{classTexture_ae0754ed614be08aded0aa5cc4376cedd}{parameteri}}(GL\_TEXTURE\_MIN\_FILTER, GL\_LINEAR);}
+\DoxyCodeLine{195         \mbox{\hyperlink{classTexture_ae0754ed614be08aded0aa5cc4376cedd}{parameteri}}(GL\_TEXTURE\_MAG\_FILTER, GL\_NEAREST);}
+\DoxyCodeLine{196 }
+\DoxyCodeLine{197         \textcolor{comment}{//Mipmap}}
+\DoxyCodeLine{198         \mbox{\hyperlink{classTexture_ae0754ed614be08aded0aa5cc4376cedd}{parameteri}}(GL\_TEXTURE\_MIN\_FILTER, GL\_LINEAR\_MIPMAP\_LINEAR);}
+\DoxyCodeLine{199     \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+abstractions/\+Texture/\mbox{\hyperlink{Texture_8hpp}{Texture.\+hpp}}\item 
+abstractions/\+Texture/\mbox{\hyperlink{Texture_8cpp}{Texture.\+cpp}}\end{DoxyCompactItemize}

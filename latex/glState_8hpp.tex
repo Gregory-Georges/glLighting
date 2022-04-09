@@ -1,0 +1,79 @@
+\hypertarget{glState_8hpp}{}\doxysection{useful/gl\+State/gl\+State.hpp File Reference}
+\label{glState_8hpp}\index{useful/glState/glState.hpp@{useful/glState/glState.hpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$G\+L/glew.\+h$>$}\newline
+{\ttfamily \#include $<$G\+L\+F\+W/glfw3.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}errors/errors.\+hpp\char`\"{}}\newline
+Include dependency graph for gl\+State.\+hpp\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{glState_8hpp_a62dca73be61ed601f660f75e7bbc7128}{print\+Binded\+Elements}} ()
+\item 
+void \mbox{\hyperlink{glState_8hpp_a344b79156563a286e0cffd41a6c0f24e}{check\+Gl\+Version}} (int req1, int req2, std\+::string functionnality)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{glState_8hpp_a344b79156563a286e0cffd41a6c0f24e}\label{glState_8hpp_a344b79156563a286e0cffd41a6c0f24e}} 
+\index{glState.hpp@{glState.hpp}!checkGlVersion@{checkGlVersion}}
+\index{checkGlVersion@{checkGlVersion}!glState.hpp@{glState.hpp}}
+\doxysubsubsection{\texorpdfstring{checkGlVersion()}{checkGlVersion()}}
+{\footnotesize\ttfamily void check\+Gl\+Version (\begin{DoxyParamCaption}\item[{int}]{req1,  }\item[{int}]{req2,  }\item[{std\+::string}]{functionnality }\end{DoxyParamCaption})}
+
+Checks wether the open\+GL version is supported or not. Throws an error if not 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{42     \{}
+\DoxyCodeLine{43         \textcolor{comment}{//Get version string}}
+\DoxyCodeLine{44         \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char}* versionStr = glGetString(GL\_VERSION);}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46         \textcolor{comment}{//Extract the 2 version characters}}
+\DoxyCodeLine{47         \textcolor{keywordtype}{int} versionNo1 = int(versionStr[0]) -\/ 48;}
+\DoxyCodeLine{48         \textcolor{keywordtype}{int} versionNo2 = int(versionStr[2]) -\/ 48;}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50         \textcolor{comment}{//Compare values}}
+\DoxyCodeLine{51         \textcolor{keywordflow}{if}(versionNo1 < req1 || versionNo1 == req1 \&\& versionNo2 < req2)}
+\DoxyCodeLine{52         \{}
+\DoxyCodeLine{53             std::string errorMsg = \textcolor{stringliteral}{""};}
+\DoxyCodeLine{54             errorMsg += \textcolor{stringliteral}{"Attempt to use functionnality "} + functionnality + \textcolor{stringliteral}{". "};}
+\DoxyCodeLine{55             errorMsg += \textcolor{stringliteral}{"OpenGL version "} + std::to\_string(versionNo1) + \textcolor{stringliteral}{"."} + std::to\_string(versionNo2) + \textcolor{stringliteral}{" not supported. "};}
+\DoxyCodeLine{56             errorMsg += \textcolor{stringliteral}{"Supported version : "} + std::to\_string(req1) + \textcolor{stringliteral}{"."} + std::to\_string(req2) + \textcolor{stringliteral}{"\(\backslash\)n"};}
+\DoxyCodeLine{57             \mbox{\hyperlink{errors_8cpp_a2bd2972bdd57f629af94413984c74455}{throwError}}(errorMsg);}
+\DoxyCodeLine{58         \}}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60         \textcolor{comment}{//else everything is valid}}
+\DoxyCodeLine{61         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{62     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{glState_8hpp_a62dca73be61ed601f660f75e7bbc7128}\label{glState_8hpp_a62dca73be61ed601f660f75e7bbc7128}} 
+\index{glState.hpp@{glState.hpp}!printBindedElements@{printBindedElements}}
+\index{printBindedElements@{printBindedElements}!glState.hpp@{glState.hpp}}
+\doxysubsubsection{\texorpdfstring{printBindedElements()}{printBindedElements()}}
+{\footnotesize\ttfamily void print\+Binded\+Elements (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Check which \+: -\/Index buffer is binded -\/Vertex buffer is binded -\/VA is binded -\/Program is binded -\/\mbox{\hyperlink{classTexture}{Texture}} is binded 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{10     \{}
+\DoxyCodeLine{11         \textcolor{keywordtype}{int} value;}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13         glGetIntegerv(GL\_ARRAY\_BUFFER\_BINDING, \&value);}
+\DoxyCodeLine{14         std::cout << \textcolor{stringliteral}{"Binded vertex buffer : "} << value << \textcolor{stringliteral}{"\(\backslash\)n"};}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16         glGetIntegerv(GL\_ELEMENT\_ARRAY\_BUFFER\_BINDING, \&value);}
+\DoxyCodeLine{17         std::cout << \textcolor{stringliteral}{"Binded index buffer : "} << value << \textcolor{stringliteral}{"\(\backslash\)n"};}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19         glGetIntegerv(GL\_VERTEX\_ARRAY\_BINDING, \&value);}
+\DoxyCodeLine{20         std::cout << \textcolor{stringliteral}{"Binded vertex array : "} << value << \textcolor{stringliteral}{"\(\backslash\)n"};}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22         glGetIntegerv(GL\_CURRENT\_PROGRAM, \&value);}
+\DoxyCodeLine{23         std::cout << \textcolor{stringliteral}{"Using program : "} << value << \textcolor{stringliteral}{"\(\backslash\)n"};}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25         glGetIntegerv(GL\_TEXTURE\_BINDING\_2D, \&value);}
+\DoxyCodeLine{26         std::cout << \textcolor{stringliteral}{"Binded GL\_TEXTURE\_2D : "} << value << \textcolor{stringliteral}{"\(\backslash\)n"};}
+\DoxyCodeLine{27     \}}
+
+\end{DoxyCode}

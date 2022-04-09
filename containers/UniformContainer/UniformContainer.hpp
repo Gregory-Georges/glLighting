@@ -9,6 +9,9 @@
 
 
 
+/**
+ * Container containg uniforms
+ */
 class UniformContainer : public Container<Uniform>
 {
     public:
@@ -17,7 +20,7 @@ class UniformContainer : public Container<Uniform>
     // Constructor / destructor
     //////////////////////////////////
 
-        UniformContainer();
+        UniformContainer();                         /**< Constructs an empty uniform container */
 
 
 
@@ -25,7 +28,7 @@ class UniformContainer : public Container<Uniform>
     // Getters
     //////////////////////////////////
 
-        Uniform& find(const std::string& name);
+        Uniform& find(const std::string& name);     /**< Finds a loaded uniform with the same name */
 };
 
 #endif // UNIFORMCONTAINER_HPP

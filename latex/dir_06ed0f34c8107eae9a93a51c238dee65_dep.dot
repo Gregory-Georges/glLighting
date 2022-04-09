@@ -1,0 +1,11 @@
+digraph "abstractions/Init" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_898d9f057ab0c3f0aea2afe60f29a516 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="abstractions" fontname="Helvetica", fontsize="10", URL="dir_898d9f057ab0c3f0aea2afe60f29a516.html"]
+  dir_06ed0f34c8107eae9a93a51c238dee65 [shape=box, label="Init", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_06ed0f34c8107eae9a93a51c238dee65.html"];
+  }
+  dir_849f2677f61acd918580ee06053041ee [shape=box label="Window" URL="dir_849f2677f61acd918580ee06053041ee.html"];
+  dir_06ed0f34c8107eae9a93a51c238dee65->dir_849f2677f61acd918580ee06053041ee [headlabel="1", labeldistance=1.5 headhref="dir_000005_000014.html"];
+}

@@ -1,0 +1,65 @@
+\hypertarget{classUniformContainer}{}\doxysection{Uniform\+Container Class Reference}
+\label{classUniformContainer}\index{UniformContainer@{UniformContainer}}
+
+
+{\ttfamily \#include $<$Uniform\+Container.\+hpp$>$}
+
+
+
+Inheritance diagram for Uniform\+Container\+:
+% FIG 0
+
+
+Collaboration diagram for Uniform\+Container\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUniformContainer_aac3a8699449f7d937eac17cd21f9861b}{Uniform\+Container}} ()
+\item 
+\mbox{\hyperlink{classUniform}{Uniform}} \& \mbox{\hyperlink{classUniformContainer_a75e5c1a93df91cc23a102bbae91d3e0e}{find}} (const std\+::string \&name)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{classContainer}{Container}} containg uniforms 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classUniformContainer_aac3a8699449f7d937eac17cd21f9861b}\label{classUniformContainer_aac3a8699449f7d937eac17cd21f9861b}} 
+\index{UniformContainer@{UniformContainer}!UniformContainer@{UniformContainer}}
+\index{UniformContainer@{UniformContainer}!UniformContainer@{UniformContainer}}
+\doxysubsubsection{\texorpdfstring{UniformContainer()}{UniformContainer()}}
+{\footnotesize\ttfamily Uniform\+Container\+::\+Uniform\+Container (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Constructs an empty uniform container 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{9 \{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classUniformContainer_a75e5c1a93df91cc23a102bbae91d3e0e}\label{classUniformContainer_a75e5c1a93df91cc23a102bbae91d3e0e}} 
+\index{UniformContainer@{UniformContainer}!find@{find}}
+\index{find@{find}!UniformContainer@{UniformContainer}}
+\doxysubsubsection{\texorpdfstring{find()}{find()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classUniform}{Uniform}} \& Uniform\+Container\+::find (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})}
+
+Finds a loaded uniform with the same name 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{21     \{}
+\DoxyCodeLine{22         \textcolor{keywordtype}{int} size = \mbox{\hyperlink{classContainer_a91846324c055de23d7cd03b2080ee8fe}{container}}.size();}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < size; ++i)}
+\DoxyCodeLine{25             \textcolor{keywordflow}{if}(\mbox{\hyperlink{classContainer_a91846324c055de23d7cd03b2080ee8fe}{container}}.at(i).getName() == name)}
+\DoxyCodeLine{26                 \textcolor{keywordflow}{return} \mbox{\hyperlink{classContainer_a91846324c055de23d7cd03b2080ee8fe}{container}}.at(i);}
+\DoxyCodeLine{27     \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+containers/\+Uniform\+Container/\mbox{\hyperlink{UniformContainer_8hpp}{Uniform\+Container.\+hpp}}\item 
+containers/\+Uniform\+Container/\mbox{\hyperlink{UniformContainer_8cpp}{Uniform\+Container.\+cpp}}\end{DoxyCompactItemize}

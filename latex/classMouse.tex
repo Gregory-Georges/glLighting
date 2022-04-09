@@ -1,0 +1,133 @@
+\hypertarget{classMouse}{}\doxysection{Mouse Class Reference}
+\label{classMouse}\index{Mouse@{Mouse}}
+
+
+{\ttfamily \#include $<$Mouse.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMouse_a27665e0ffffbba9f21784054cb9e2867}{Mouse}} (\mbox{\hyperlink{classWindow}{Window}} \&win)
+\item 
+void \mbox{\hyperlink{classMouse_aca16a990e2758974e0df3d98a738b39d}{init}} (\mbox{\hyperlink{classWindow}{Window}} \&win)
+\item 
+bool \mbox{\hyperlink{classMouse_a6db686ee1030fb6663b6e82beac9d27b}{is\+Valid}} ()
+\item 
+double \mbox{\hyperlink{classMouse_a223b677d600209bbdbe6232c22716168}{get\+Mouse\+PosX}} ()
+\item 
+double \mbox{\hyperlink{classMouse_abc35369497538606ee11a2aead7bdcb6}{get\+Mouse\+PosY}} ()
+\item 
+bool \mbox{\hyperlink{classMouse_ac034ca4efae5e97817c40516c8975c15}{is\+Left\+Pressed}} ()
+\item 
+bool \mbox{\hyperlink{classMouse_a7dfb7062bff50533f49d21c99b893cb2}{is\+Right\+Pressed}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Handles mouse inputs inside an openned glfw window 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMouse_a27665e0ffffbba9f21784054cb9e2867}\label{classMouse_a27665e0ffffbba9f21784054cb9e2867}} 
+\index{Mouse@{Mouse}!Mouse@{Mouse}}
+\index{Mouse@{Mouse}!Mouse@{Mouse}}
+\doxysubsubsection{\texorpdfstring{Mouse()}{Mouse()}}
+{\footnotesize\ttfamily Mouse\+::\+Mouse (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classWindow}{Window}} \&}]{win }\end{DoxyParamCaption})}
+
+Constructs a new keyboard object based on a window 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{11     \{}
+\DoxyCodeLine{12         \mbox{\hyperlink{classMouse_aca16a990e2758974e0df3d98a738b39d}{init}}(win);}
+\DoxyCodeLine{13     \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classMouse_a223b677d600209bbdbe6232c22716168}\label{classMouse_a223b677d600209bbdbe6232c22716168}} 
+\index{Mouse@{Mouse}!getMousePosX@{getMousePosX}}
+\index{getMousePosX@{getMousePosX}!Mouse@{Mouse}}
+\doxysubsubsection{\texorpdfstring{getMousePosX()}{getMousePosX()}}
+{\footnotesize\ttfamily double Mouse\+::get\+Mouse\+PosX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns the position of the mouse on the x axis 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{55     \{}
+\DoxyCodeLine{56         \textcolor{keywordtype}{double} mouseX;}
+\DoxyCodeLine{57         glfwGetCursorPos(associatedWindow, \&mouseX, \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{58         \textcolor{keywordflow}{return} mouseX;}
+\DoxyCodeLine{59     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMouse_abc35369497538606ee11a2aead7bdcb6}\label{classMouse_abc35369497538606ee11a2aead7bdcb6}} 
+\index{Mouse@{Mouse}!getMousePosY@{getMousePosY}}
+\index{getMousePosY@{getMousePosY}!Mouse@{Mouse}}
+\doxysubsubsection{\texorpdfstring{getMousePosY()}{getMousePosY()}}
+{\footnotesize\ttfamily double Mouse\+::get\+Mouse\+PosY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns the position of the mouse on the y axis 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{65     \{}
+\DoxyCodeLine{66         \textcolor{keywordtype}{double} mouseY;}
+\DoxyCodeLine{67         glfwGetCursorPos(associatedWindow, \textcolor{keyword}{nullptr}, \&mouseY);}
+\DoxyCodeLine{68         \textcolor{keywordflow}{return} mouseY;}
+\DoxyCodeLine{69     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMouse_aca16a990e2758974e0df3d98a738b39d}\label{classMouse_aca16a990e2758974e0df3d98a738b39d}} 
+\index{Mouse@{Mouse}!init@{init}}
+\index{init@{init}!Mouse@{Mouse}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily void Mouse\+::init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classWindow}{Window}} \&}]{win }\end{DoxyParamCaption})}
+
+Initializes the mouse object onto a new window 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{29     \{}
+\DoxyCodeLine{30         associatedWindow = win.\mbox{\hyperlink{classWindow_a0a091d94124d3d94a2ce6fc30d9883a8}{getWindow}}();}
+\DoxyCodeLine{31     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMouse_ac034ca4efae5e97817c40516c8975c15}\label{classMouse_ac034ca4efae5e97817c40516c8975c15}} 
+\index{Mouse@{Mouse}!isLeftPressed@{isLeftPressed}}
+\index{isLeftPressed@{isLeftPressed}!Mouse@{Mouse}}
+\doxysubsubsection{\texorpdfstring{isLeftPressed()}{isLeftPressed()}}
+{\footnotesize\ttfamily bool Mouse\+::is\+Left\+Pressed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns if the left mouse button is pressed 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{74     \{}
+\DoxyCodeLine{75         \textcolor{keywordflow}{return} glfwGetMouseButton(associatedWindow, GLFW\_MOUSE\_BUTTON\_LEFT) == GLFW\_PRESS;}
+\DoxyCodeLine{76     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMouse_a7dfb7062bff50533f49d21c99b893cb2}\label{classMouse_a7dfb7062bff50533f49d21c99b893cb2}} 
+\index{Mouse@{Mouse}!isRightPressed@{isRightPressed}}
+\index{isRightPressed@{isRightPressed}!Mouse@{Mouse}}
+\doxysubsubsection{\texorpdfstring{isRightPressed()}{isRightPressed()}}
+{\footnotesize\ttfamily bool Mouse\+::is\+Right\+Pressed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns if the right mouse button is pressed 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{81     \{}
+\DoxyCodeLine{82         \textcolor{keywordflow}{return} glfwGetMouseButton(associatedWindow, GLFW\_MOUSE\_BUTTON\_RIGHT) == GLFW\_PRESS;}
+\DoxyCodeLine{83     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMouse_a6db686ee1030fb6663b6e82beac9d27b}\label{classMouse_a6db686ee1030fb6663b6e82beac9d27b}} 
+\index{Mouse@{Mouse}!isValid@{isValid}}
+\index{isValid@{isValid}!Mouse@{Mouse}}
+\doxysubsubsection{\texorpdfstring{isValid()}{isValid()}}
+{\footnotesize\ttfamily bool Mouse\+::is\+Valid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Checks wether the associated window object still exists 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{37     \{}
+\DoxyCodeLine{38         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{39     \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+abstractions/\+Mouse/\mbox{\hyperlink{Mouse_8hpp}{Mouse.\+hpp}}\item 
+abstractions/\+Mouse/\mbox{\hyperlink{Mouse_8cpp}{Mouse.\+cpp}}\end{DoxyCompactItemize}

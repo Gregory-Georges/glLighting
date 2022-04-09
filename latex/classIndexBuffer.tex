@@ -1,0 +1,61 @@
+\hypertarget{classIndexBuffer}{}\doxysection{Index\+Buffer Class Reference}
+\label{classIndexBuffer}\index{IndexBuffer@{IndexBuffer}}
+
+
+{\ttfamily \#include $<$indexbuffer.\+hpp$>$}
+
+
+
+Inheritance diagram for Index\+Buffer\+:
+% FIG 0
+
+
+Collaboration diagram for Index\+Buffer\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classIndexBuffer_a9484706e14f9ab9dbcbb35c8f1b58d99}{Index\+Buffer}} ()
+\item 
+\mbox{\hyperlink{classIndexBuffer_a29abc053349cc7ddf7cb1ce04295c9db}{Index\+Buffer}} (void $\ast$Data, unsigned int size, unsigned int usage)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Contains an index buffer 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classIndexBuffer_a9484706e14f9ab9dbcbb35c8f1b58d99}\label{classIndexBuffer_a9484706e14f9ab9dbcbb35c8f1b58d99}} 
+\index{IndexBuffer@{IndexBuffer}!IndexBuffer@{IndexBuffer}}
+\index{IndexBuffer@{IndexBuffer}!IndexBuffer@{IndexBuffer}}
+\doxysubsubsection{\texorpdfstring{IndexBuffer()}{IndexBuffer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Index\+Buffer\+::\+Index\+Buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Constructs an empty \mbox{\hyperlink{classIndexBuffer}{Index\+Buffer}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{11     \{}
+\DoxyCodeLine{12         \mbox{\hyperlink{classBuffer_a1fac15861f0d1f19ec4c8d45175234cc}{bufferType}} = GL\_ELEMENT\_ARRAY\_BUFFER;}
+\DoxyCodeLine{13     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classIndexBuffer_a29abc053349cc7ddf7cb1ce04295c9db}\label{classIndexBuffer_a29abc053349cc7ddf7cb1ce04295c9db}} 
+\index{IndexBuffer@{IndexBuffer}!IndexBuffer@{IndexBuffer}}
+\index{IndexBuffer@{IndexBuffer}!IndexBuffer@{IndexBuffer}}
+\doxysubsubsection{\texorpdfstring{IndexBuffer()}{IndexBuffer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Index\+Buffer\+::\+Index\+Buffer (\begin{DoxyParamCaption}\item[{void $\ast$}]{Data,  }\item[{unsigned int}]{size,  }\item[{unsigned int}]{usage }\end{DoxyParamCaption})}
+
+Constructs a filled \mbox{\hyperlink{classIndexBuffer}{Index\+Buffer}}. Binds the buffer 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{19     \{}
+\DoxyCodeLine{20         this-\/>\mbox{\hyperlink{classBuffer_a1fac15861f0d1f19ec4c8d45175234cc}{bufferType}} = GL\_ELEMENT\_ARRAY\_BUFFER;}
+\DoxyCodeLine{21         \mbox{\hyperlink{classBuffer_aef6ddbcef7755097eb26fef6e669534a}{setData}}(Data, size, usage);}
+\DoxyCodeLine{22     \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+abstractions/\+Buffer/\+Index\+Buffer/\mbox{\hyperlink{indexbuffer_8hpp}{indexbuffer.\+hpp}}\item 
+abstractions/\+Buffer/\+Index\+Buffer/\mbox{\hyperlink{indexbuffer_8cpp}{indexbuffer.\+cpp}}\end{DoxyCompactItemize}

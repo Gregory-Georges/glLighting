@@ -1,0 +1,61 @@
+\hypertarget{classVertexBuffer}{}\doxysection{Vertex\+Buffer Class Reference}
+\label{classVertexBuffer}\index{VertexBuffer@{VertexBuffer}}
+
+
+{\ttfamily \#include $<$vertexbuffer.\+hpp$>$}
+
+
+
+Inheritance diagram for Vertex\+Buffer\+:
+% FIG 0
+
+
+Collaboration diagram for Vertex\+Buffer\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classVertexBuffer_adb25d82a47ad82d5b69a75ac111401b8}{Vertex\+Buffer}} ()
+\item 
+\mbox{\hyperlink{classVertexBuffer_a23d37dcce6cb0163c1f14479d795d4f9}{Vertex\+Buffer}} (void $\ast$Data, unsigned int size, unsigned int usage)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Contains a \mbox{\hyperlink{classVertexBuffer}{Vertex\+Buffer}} 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classVertexBuffer_adb25d82a47ad82d5b69a75ac111401b8}\label{classVertexBuffer_adb25d82a47ad82d5b69a75ac111401b8}} 
+\index{VertexBuffer@{VertexBuffer}!VertexBuffer@{VertexBuffer}}
+\index{VertexBuffer@{VertexBuffer}!VertexBuffer@{VertexBuffer}}
+\doxysubsubsection{\texorpdfstring{VertexBuffer()}{VertexBuffer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Vertex\+Buffer\+::\+Vertex\+Buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Constructs an empty \mbox{\hyperlink{classVertexBuffer}{Vertex\+Buffer}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{11     \{}
+\DoxyCodeLine{12         \mbox{\hyperlink{classBuffer_a1fac15861f0d1f19ec4c8d45175234cc}{bufferType}} = GL\_ARRAY\_BUFFER;}
+\DoxyCodeLine{13     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classVertexBuffer_a23d37dcce6cb0163c1f14479d795d4f9}\label{classVertexBuffer_a23d37dcce6cb0163c1f14479d795d4f9}} 
+\index{VertexBuffer@{VertexBuffer}!VertexBuffer@{VertexBuffer}}
+\index{VertexBuffer@{VertexBuffer}!VertexBuffer@{VertexBuffer}}
+\doxysubsubsection{\texorpdfstring{VertexBuffer()}{VertexBuffer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Vertex\+Buffer\+::\+Vertex\+Buffer (\begin{DoxyParamCaption}\item[{void $\ast$}]{Data,  }\item[{unsigned int}]{size,  }\item[{unsigned int}]{usage }\end{DoxyParamCaption})}
+
+Constructs a filled \mbox{\hyperlink{classVertexBuffer}{Vertex\+Buffer}}. Binds the buff4er 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{19     \{}
+\DoxyCodeLine{20         this-\/>\mbox{\hyperlink{classBuffer_a1fac15861f0d1f19ec4c8d45175234cc}{bufferType}} = GL\_ARRAY\_BUFFER;}
+\DoxyCodeLine{21         \mbox{\hyperlink{classBuffer_aef6ddbcef7755097eb26fef6e669534a}{setData}}(Data, size, usage);}
+\DoxyCodeLine{22     \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+abstractions/\+Buffer/\+Vertex\+Buffer/\mbox{\hyperlink{vertexbuffer_8hpp}{vertexbuffer.\+hpp}}\item 
+abstractions/\+Buffer/\+Vertex\+Buffer/\mbox{\hyperlink{vertexbuffer_8cpp}{vertexbuffer.\+cpp}}\end{DoxyCompactItemize}

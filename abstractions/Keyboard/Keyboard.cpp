@@ -6,11 +6,11 @@
 // Constructor / destructor
 //////////////////////////////////
 
-//Constructs a new keyboard object based on a window
-Keyboard::Keyboard(Window& win)
-{
-    init(win);
-}
+    //Constructs a new keyboard object based on a window
+    Keyboard::Keyboard(Window& win)
+    {
+        init(win);
+    }
 
 
 
@@ -24,19 +24,19 @@ Keyboard::Keyboard(Window& win)
 // Initialize
 //////////////////////////////////
 
-//Initializes the keyboard object on a new window
-void Keyboard::init(Window& win)
-{
-    associatedWindow = win.getWindow();
-}
+    //Initializes the keyboard object on a new window
+    void Keyboard::init(Window& win)
+    {
+        associatedWindow = win.getWindow();
+    }
 
 
 
-//Checks whether the associated window object is still valid
-bool Keyboard::isValid()
-{
-    return true;
-}
+    //Checks whether the associated window object is still valid
+    bool Keyboard::isValid()
+    {
+        return true;
+    }
 
 
 
@@ -50,16 +50,16 @@ bool Keyboard::isValid()
 // Getters
 //////////////////////////////////
 
-//Returns the state of the entered key
-int Keyboard::getKeyState(int keyCode)
-{
-    return glfwGetKey(associatedWindow, keyCode);
-}
+    //Returns the state of the entered key
+    int Keyboard::getKeyState(int keyCode)
+    {
+        return glfwGetKey(associatedWindow, keyCode);
+    }
 
 
 
-//Returns true if the key is pressed, false otherwise
-bool Keyboard::isKeyPressed(int keyCode)
-{
-    return glfwGetKey(associatedWindow, keyCode) == GLFW_PRESS;
-}
+    //Returns true if the key is pressed, false otherwise
+    bool Keyboard::isKeyPressed(int keyCode)
+    {
+        return glfwGetKey(associatedWindow, keyCode) == GLFW_PRESS;
+    }
